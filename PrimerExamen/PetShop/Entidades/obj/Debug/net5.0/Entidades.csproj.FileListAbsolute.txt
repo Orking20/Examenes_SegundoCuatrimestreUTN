@@ -1,0 +1,12 @@
+D:\UTN\Segundo cuatrimestre\Programacion II\Examenes\PrimerExamen\PetShop\Entidades\bin\Debug\net5.0\Entidades.deps.json
+D:\UTN\Segundo cuatrimestre\Programacion II\Examenes\PrimerExamen\PetShop\Entidades\bin\Debug\net5.0\Entidades.dll
+D:\UTN\Segundo cuatrimestre\Programacion II\Examenes\PrimerExamen\PetShop\Entidades\bin\Debug\net5.0\ref\Entidades.dll
+D:\UTN\Segundo cuatrimestre\Programacion II\Examenes\PrimerExamen\PetShop\Entidades\bin\Debug\net5.0\Entidades.pdb
+D:\UTN\Segundo cuatrimestre\Programacion II\Examenes\PrimerExamen\PetShop\Entidades\obj\Debug\net5.0\Entidades.csproj.AssemblyReference.cache
+D:\UTN\Segundo cuatrimestre\Programacion II\Examenes\PrimerExamen\PetShop\Entidades\obj\Debug\net5.0\Entidades.GeneratedMSBuildEditorConfig.editorconfig
+D:\UTN\Segundo cuatrimestre\Programacion II\Examenes\PrimerExamen\PetShop\Entidades\obj\Debug\net5.0\Entidades.AssemblyInfoInputs.cache
+D:\UTN\Segundo cuatrimestre\Programacion II\Examenes\PrimerExamen\PetShop\Entidades\obj\Debug\net5.0\Entidades.AssemblyInfo.cs
+D:\UTN\Segundo cuatrimestre\Programacion II\Examenes\PrimerExamen\PetShop\Entidades\obj\Debug\net5.0\Entidades.csproj.CoreCompileInputs.cache
+D:\UTN\Segundo cuatrimestre\Programacion II\Examenes\PrimerExamen\PetShop\Entidades\obj\Debug\net5.0\Entidades.dll
+D:\UTN\Segundo cuatrimestre\Programacion II\Examenes\PrimerExamen\PetShop\Entidades\obj\Debug\net5.0\ref\Entidades.dll
+D:\UTN\Segundo cuatrimestre\Programacion II\Examenes\PrimerExamen\PetShop\Entidades\obj\Debug\net5.0\Entidades.pdb
