@@ -14,10 +14,34 @@ namespace PetShop
     public partial class FrmMenu : Form
     {
         private Form formularioActivo = null;
+        private static List<Cliente> clientes;
+        private static bool flagPrimeraVezModificable = true;
+        private static bool flagPrimeraVez = true;
 
         public FrmMenu()
         {
             InitializeComponent();
+
+            if (flagPrimeraVezModificable)
+            {
+                clientes = new List<Cliente>();
+                flagPrimeraVezModificable = false;
+            }
+
+            if (flagPrimeraVez)
+            {
+                Clientes.Add(Empleado.AltaCliente(41270, "Roberto", "Morales", Convert.ToDateTime("14/05/1992"), 37452102, "Masculino", "Argentina", "Charlone 1302"));
+                Clientes.Add(Empleado.AltaCliente(4200, "Mariana", "Rodriguez", Convert.ToDateTime("03/12/1962"), 30640222, "Femenino", "Argentina", "Moldes 1429"));
+                Clientes.Add(Empleado.AltaCliente(202, "Javier", "Rey", Convert.ToDateTime("21/04/1998"), 40588922, "No binario", "Argentina", "Del Signo 4037"));
+                Clientes.Add(Empleado.AltaCliente(23000, "Marcelo", "Oviedo", Convert.ToDateTime("12/06/1993"), 40842351, "Masculino", "Perú", "Alsina 110"));
+                Clientes.Add(Empleado.AltaCliente(44, "Sofía", "Velez", Convert.ToDateTime("29/03/1997"), 40256483, "Femenino", "Argentina", "José Bonifacio 1406"));
+                Clientes.Add(Empleado.AltaCliente(209, "Camila", "Gutierrez", Convert.ToDateTime("22/11/1984"), 38266548, "No binario", "Argentina", "Giribone 1700"));
+                Clientes.Add(Empleado.AltaCliente(1990, "Farrokh", "Bulsara", Convert.ToDateTime("05/09/1946"), 29542356, "Masculino", "Tanzania", "Zanzíbar 2004"));
+                Clientes.Add(Empleado.AltaCliente(57500, "Carlos", "Díaz", Convert.ToDateTime("22/01/1992"), 35524124, "Masculino", "Argentina", "Av. Forest 1427"));
+                Clientes.Add(Empleado.AltaCliente(800, "Sigvar", "Gangraz", Convert.ToDateTime("20/04/1999"), 42412358, "Masculino", "España", "Metano 10"));
+
+                flagPrimeraVez = false;
+            }
         }
 
         private void AbrirFormularioHijo(Form formularioHijo)
@@ -157,6 +181,26 @@ namespace PetShop
         private void btnBajaModificacionCliente_Click(object sender, EventArgs e)
         {
             AbrirFormularioHijo(new FrmBajaModificacionCliente());
+        }
+
+        public static bool FlagPrimeraVezClientes
+        {
+            get
+            {
+                return flagPrimeraVezModificable;
+            }
+            set
+            {
+                flagPrimeraVezModificable = value;
+            }
+        }
+
+        public static List<Cliente> Clientes
+        {
+            get
+            {
+                return clientes;
+            }
         }
     }
 }

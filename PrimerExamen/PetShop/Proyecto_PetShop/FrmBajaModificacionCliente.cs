@@ -31,11 +31,11 @@ namespace PetShop
             Cliente cliente;
             StringBuilder fechaNacimiento = new StringBuilder();
 
-            if (!FrmAltaCliente.FlagPrimeraVezClientes)
+            if (!FrmMenu.FlagPrimeraVezClientes)
             {
-                for (int i = 0; i < FrmAltaCliente.Clientes.Count; i++)
+                for (int i = 0; i < FrmMenu.Clientes.Count; i++)
                 {
-                    cliente = FrmAltaCliente.Clientes[i];
+                    cliente = FrmMenu.Clientes[i];
 
                     if (nupIdClientes.Value == cliente.IdCliente)
                     {
@@ -89,11 +89,11 @@ namespace PetShop
             long dni;
             Cliente cliente;
 
-            if (!FrmAltaCliente.FlagPrimeraVezClientes)
+            if (!FrmMenu.FlagPrimeraVezClientes)
             {
-                for (int i = 0; i < FrmAltaCliente.Clientes.Count; i++)
+                for (int i = 0; i < FrmMenu.Clientes.Count; i++)
                 {
-                    cliente = FrmAltaCliente.Clientes[i];
+                    cliente = FrmMenu.Clientes[i];
 
                     if (nupIdClientes.Value == cliente.IdCliente)
                     {
@@ -158,17 +158,17 @@ namespace PetShop
         {
             Cliente cliente;
 
-            if (!FrmAltaCliente.FlagPrimeraVezClientes)
+            if (!FrmMenu.FlagPrimeraVezClientes)
             {
-                for (int i = 0; i < FrmAltaCliente.Clientes.Count; i++)
+                for (int i = 0; i < FrmMenu.Clientes.Count; i++)
                 {
-                    cliente = FrmAltaCliente.Clientes[i];
+                    cliente = FrmMenu.Clientes[i];
 
                     if (nupIdClientes.Value == cliente.IdCliente)
                     {
                         if(MessageBox.Show("¿Estás seguro que desea eliminar este cliente?\nEsta acción no se puede deshacer", "Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
                         {
-                            FrmAltaCliente.Clientes.Remove(cliente);
+                            FrmMenu.Clientes.Remove(cliente);
                             OcultarLebel();
                         }
                         break;
@@ -184,9 +184,9 @@ namespace PetShop
                 lblInfo.Visible = true;
             }
 
-            if (FrmAltaCliente.Clientes.Count == 0)
+            if (FrmMenu.Clientes.Count == 0)
             {
-                FrmAltaCliente.FlagPrimeraVezClientes = true;
+                FrmMenu.FlagPrimeraVezClientes = true;
             }
         }
 

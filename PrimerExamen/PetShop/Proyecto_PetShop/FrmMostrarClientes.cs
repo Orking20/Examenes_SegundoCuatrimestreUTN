@@ -30,11 +30,11 @@ namespace PetShop
             StringBuilder nacionalidades = new StringBuilder();
             StringBuilder domicilios = new StringBuilder();
 
-            if (!FrmAltaCliente.FlagPrimeraVezClientes)
+            if (!FrmMenu.FlagPrimeraVezClientes)
             {
-                for (int i = 0; i < FrmAltaCliente.Clientes.Count; i++)
+                for (int i = 0; i < FrmMenu.Clientes.Count; i++)
                 {
-                    cliente = FrmAltaCliente.Clientes[i];
+                    cliente = FrmMenu.Clientes[i];
 
                     ids.AppendLine(cliente.IdCliente.ToString());
                     nombres.AppendLine(cliente.Nombre);
