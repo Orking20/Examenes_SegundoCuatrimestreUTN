@@ -9,13 +9,14 @@ namespace Entidades
     public class Cliente : Persona
     {
         private double saldo;
-        private int idCliente = 0;
+        private int idCliente;
 
         #region Constructor
         /// <summary>
         /// Inicializa los datos de un cliente
         /// </summary>
         /// <param name="saldo">Saldo del cliente</param>
+        /// <param name="idCliente">ID del cliente</param>
         /// <param name="nombre">Nombre del cliente</param>
         /// <param name="apellido">Apellido del cliente</param>
         /// <param name="fechaNacimiento">Fecha de nacimiento del cliente</param>

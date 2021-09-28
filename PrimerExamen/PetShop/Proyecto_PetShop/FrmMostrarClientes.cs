@@ -16,9 +16,10 @@ namespace PetShop
         public FrmMostrarClientes()
         {
             InitializeComponent();
+            MostrarClientes();
         }
 
-        private void btnMostrar_Click(object sender, EventArgs e)
+        private void MostrarClientes()
         {
             Cliente cliente;
             StringBuilder ids = new StringBuilder();
@@ -30,55 +31,48 @@ namespace PetShop
             StringBuilder nacionalidades = new StringBuilder();
             StringBuilder domicilios = new StringBuilder();
 
-            if (!FrmMenu.FlagPrimeraVezClientes)
+            for (int i = 0; i < FrmMenu.Clientes.Count; i++)
             {
-                for (int i = 0; i < FrmMenu.Clientes.Count; i++)
+                cliente = FrmMenu.Clientes[i];
+
+                ids.AppendLine(cliente.IdCliente.ToString());
+                nombres.AppendLine(cliente.Nombre);
+                apellidos.AppendLine(cliente.Apellido);
+                fechasNacimientos.AppendLine($"{cliente.FechaNacimiento.Day}/{cliente.FechaNacimiento.Month}/{cliente.FechaNacimiento.Year}");
+                dnis.AppendLine(cliente.Dni.ToString());
+                if (cliente.Sexo == "Masculino")
                 {
-                    cliente = FrmMenu.Clientes[i];
-
-                    ids.AppendLine(cliente.IdCliente.ToString());
-                    nombres.AppendLine(cliente.Nombre);
-                    apellidos.AppendLine(cliente.Apellido);
-                    fechasNacimientos.AppendLine($"{cliente.FechaNacimiento.Day}/{cliente.FechaNacimiento.Month}/{cliente.FechaNacimiento.Year}");
-                    dnis.AppendLine(cliente.Dni.ToString());
-                    if (cliente.Sexo == "Masculino")
-                    {
-                        sexos.AppendLine("M");
-                    }
-                    else if(cliente.Sexo == "Femenino")
-                    {
-                        sexos.AppendLine("F");
-                    }
-                    else
-                    {
-                        sexos.AppendLine("NB");
-                    }
-                    nacionalidades.AppendLine(cliente.Nacionalidad);
-                    domicilios.AppendLine(cliente.Domicilio);
+                    sexos.AppendLine("M");
                 }
-
-                lblId.Visible = true;
-                lblNombres.Visible = true;
-                lblApellidos.Visible = true;
-                lblFechaNacimiento.Visible = true;
-                lblDni.Visible = true;
-                lblSexo.Visible = true;
-                lblNacionalidad.Visible = true;
-                lblDomicilio.Visible = true;
-
-                lblId.Text = ids.ToString();
-                lblNombres.Text = nombres.ToString();
-                lblApellidos.Text = apellidos.ToString();
-                lblFechaNacimiento.Text = fechasNacimientos.ToString();
-                lblDni.Text = dnis.ToString();
-                lblSexo.Text = sexos.ToString();
-                lblNacionalidad.Text = nacionalidades.ToString();
-                lblDomicilio.Text = domicilios.ToString();
+                else if (cliente.Sexo == "Femenino")
+                {
+                    sexos.AppendLine("F");
+                }
+                else
+                {
+                    sexos.AppendLine("NB");
+                }
+                nacionalidades.AppendLine(cliente.Nacionalidad);
+                domicilios.AppendLine(cliente.Domicilio);
             }
-            else
-            {
-                MessageBox.Show("No hay ningun cliente registrado", "Nada que mostrar", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
+
+            lblId.Visible = true;
+            lblNombres.Visible = true;
+            lblApellidos.Visible = true;
+            lblFechaNacimiento.Visible = true;
+            lblDni.Visible = true;
+            lblSexo.Visible = true;
+            lblNacionalidad.Visible = true;
+            lblDomicilio.Visible = true;
+
+            lblId.Text = ids.ToString();
+            lblNombres.Text = nombres.ToString();
+            lblApellidos.Text = apellidos.ToString();
+            lblFechaNacimiento.Text = fechasNacimientos.ToString();
+            lblDni.Text = dnis.ToString();
+            lblSexo.Text = sexos.ToString();
+            lblNacionalidad.Text = nacionalidades.ToString();
+            lblDomicilio.Text = domicilios.ToString();
         }
     }
 }

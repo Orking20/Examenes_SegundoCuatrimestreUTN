@@ -30,7 +30,6 @@ namespace PetShop
         private void InitializeComponent()
         {
             this.lblTituloNombre = new System.Windows.Forms.Label();
-            this.btnMostrar = new System.Windows.Forms.Button();
             this.lblTituloApellido = new System.Windows.Forms.Label();
             this.lblTituloFechaNacimiento = new System.Windows.Forms.Label();
             this.lblTituloDni = new System.Windows.Forms.Label();
@@ -65,20 +64,6 @@ namespace PetShop
             this.lblTituloNombre.Size = new System.Drawing.Size(75, 21);
             this.lblTituloNombre.TabIndex = 0;
             this.lblTituloNombre.Text = "Nombres";
-            // 
-            // btnMostrar
-            // 
-            this.btnMostrar.BackColor = System.Drawing.Color.DimGray;
-            this.btnMostrar.FlatAppearance.BorderSize = 0;
-            this.btnMostrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DeepSkyBlue;
-            this.btnMostrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMostrar.Location = new System.Drawing.Point(807, 382);
-            this.btnMostrar.Name = "btnMostrar";
-            this.btnMostrar.Size = new System.Drawing.Size(75, 23);
-            this.btnMostrar.TabIndex = 1;
-            this.btnMostrar.Text = "Mostrar";
-            this.btnMostrar.UseVisualStyleBackColor = false;
-            this.btnMostrar.Click += new System.EventHandler(this.btnMostrar_Click);
             // 
             // lblTituloApellido
             // 
@@ -306,6 +291,7 @@ namespace PetShop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.LightSlateGray;
             this.ClientSize = new System.Drawing.Size(923, 442);
             this.Controls.Add(this.panel8);
@@ -332,7 +318,6 @@ namespace PetShop
             this.Controls.Add(this.lblTituloDni);
             this.Controls.Add(this.lblTituloFechaNacimiento);
             this.Controls.Add(this.lblTituloApellido);
-            this.Controls.Add(this.btnMostrar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmMostrarClientes";
             this.Text = "FrmMostrarClientes";
@@ -344,7 +329,6 @@ namespace PetShop
         #endregion
 
         private System.Windows.Forms.Label lblTituloNombre;
-        private System.Windows.Forms.Button btnMostrar;
         private System.Windows.Forms.Label lblTituloApellido;
         private System.Windows.Forms.Label lblTituloFechaNacimiento;
         private System.Windows.Forms.Label lblTituloDni;

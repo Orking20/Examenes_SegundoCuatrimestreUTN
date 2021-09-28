@@ -41,6 +41,7 @@ namespace PetShop
             this.picUsuario = new System.Windows.Forms.PictureBox();
             this.picPass = new System.Windows.Forms.PictureBox();
             this.btnLimpiar = new System.Windows.Forms.Button();
+            this.btnAutoCompletar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.picPrincipal)).BeginInit();
             this.pnlBarra.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picUsuario)).BeginInit();
@@ -121,7 +122,7 @@ namespace PetShop
             this.btnMinimizar.Size = new System.Drawing.Size(30, 30);
             this.btnMinimizar.TabIndex = 11;
             this.btnMinimizar.UseVisualStyleBackColor = true;
-            this.btnMinimizar.Click += new System.EventHandler(this.button2_Click);
+            this.btnMinimizar.Click += new System.EventHandler(this.btnMinimizar_Click);
             // 
             // btnCerrar
             // 
@@ -133,7 +134,7 @@ namespace PetShop
             this.btnCerrar.Size = new System.Drawing.Size(30, 30);
             this.btnCerrar.TabIndex = 10;
             this.btnCerrar.UseVisualStyleBackColor = true;
-            this.btnCerrar.Click += new System.EventHandler(this.button1_Click);
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
             // picUsuario
             // 
@@ -168,7 +169,22 @@ namespace PetShop
             this.btnLimpiar.TabIndex = 4;
             this.btnLimpiar.Text = "Limpiar";
             this.btnLimpiar.UseVisualStyleBackColor = false;
-            this.btnLimpiar.Click += new System.EventHandler(this.button3_Click);
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
+            // 
+            // btnAutoCompletar
+            // 
+            this.btnAutoCompletar.BackColor = System.Drawing.Color.LightSlateGray;
+            this.btnAutoCompletar.FlatAppearance.BorderColor = System.Drawing.Color.LightSlateGray;
+            this.btnAutoCompletar.FlatAppearance.BorderSize = 0;
+            this.btnAutoCompletar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DeepSkyBlue;
+            this.btnAutoCompletar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAutoCompletar.Location = new System.Drawing.Point(78, 473);
+            this.btnAutoCompletar.Name = "btnAutoCompletar";
+            this.btnAutoCompletar.Size = new System.Drawing.Size(112, 25);
+            this.btnAutoCompletar.TabIndex = 12;
+            this.btnAutoCompletar.Text = "Auto completar";
+            this.btnAutoCompletar.UseVisualStyleBackColor = false;
+            this.btnAutoCompletar.Click += new System.EventHandler(this.btnAutoCompletar_Click);
             // 
             // FrmLogin
             // 
@@ -176,6 +192,7 @@ namespace PetShop
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSlateGray;
             this.ClientSize = new System.Drawing.Size(273, 541);
+            this.Controls.Add(this.btnAutoCompletar);
             this.Controls.Add(this.btnLimpiar);
             this.Controls.Add(this.picPass);
             this.Controls.Add(this.picUsuario);
@@ -189,6 +206,7 @@ namespace PetShop
             this.Name = "FrmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Inicio de sesión";
+            this.Load += new System.EventHandler(this.FrmLogin_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picPrincipal)).EndInit();
             this.pnlBarra.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picUsuario)).EndInit();
@@ -210,6 +228,7 @@ namespace PetShop
         private System.Windows.Forms.PictureBox picUsuario;
         private System.Windows.Forms.PictureBox picPass;
         private System.Windows.Forms.Button btnLimpiar;
+        private System.Windows.Forms.Button btnAutoCompletar;
     }
 }
 

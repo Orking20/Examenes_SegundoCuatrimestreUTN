@@ -16,7 +16,6 @@ namespace PetShop
         public FrmAltaCliente()
         {
             InitializeComponent();
-
             this.cmbSexo.Text = "Masculino";
         }
 
@@ -33,23 +32,28 @@ namespace PetShop
             Cliente clienteNuevo;
             Random sueldoRandom = new Random();
 
-            sueldo = sueldoRandom.Next(300000);
-
-            nombre = txtNombre.Text;
-            apellido = txtApellido.Text;
-            fechaNacimiento = ca1FechaNacimiento.SelectionStart.Date;
-            if (!long.TryParse(txtDni.Text, out dni))
+            if (long.TryParse(txtDni.Text, out dni) && Persona.ValidarDni(dni) &&
+                Persona.ValidarNombre(txtNombre.Text) &&
+                Persona.ValidarApellido(txtApellido.Text)
+                && Persona.ValidarSexo(cmbSexo.SelectedItem.ToString())
+                && Persona.ValidarNacionalidad(txtNacionalidad.Text)
+                && Persona.ValidarDomicilio(txtDomicilio.Text))
             {
-                MessageBox.Show("El DNI es inválido", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            sexo = cmbSexo.SelectedItem.ToString();
-            nacionalidad = txtNacionalidad.Text;
-            domicilio = txtDomicilio.Text;
+                nombre = txtNombre.Text;
+                sueldo = sueldoRandom.Next(50000);
+                apellido = txtApellido.Text;
+                fechaNacimiento = ca1FechaNacimiento.SelectionStart.Date;
+                sexo = cmbSexo.SelectedItem.ToString();
+                nacionalidad = txtNacionalidad.Text;
+                domicilio = txtDomicilio.Text;
             
-            clienteNuevo = Empleado.AltaCliente(sueldo, nombre, apellido, fechaNacimiento, dni, sexo, nacionalidad, domicilio);
-            FrmMenu.Clientes.Add(clienteNuevo);
-
-            MessageBox.Show($"El ID de el nuevo cliente es: {clienteNuevo.IdCliente}\nNo olvide dárselo a su cliente para futuras consultas", "ID", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                clienteNuevo = Empleado.AltaCliente(sueldo, nombre, apellido, fechaNacimiento, dni, sexo, nacionalidad, domicilio);
+                FrmMenu.Clientes.Add(clienteNuevo);
+            }
+            else
+            {
+                MessageBox.Show("Uno o varios de los datos ingresados no son válidos\nRevise y corrija los datos por favor", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btnAtras_Click(object sender, EventArgs e)

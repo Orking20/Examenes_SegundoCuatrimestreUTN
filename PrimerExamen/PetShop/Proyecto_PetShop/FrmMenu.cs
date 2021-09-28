@@ -112,6 +112,7 @@ namespace PetShop
                 pnlSubMenuEmpleados.Visible = false;
                 pnlSubMenuProductos.Visible = false;
                 pnlSubMenuClientes.Visible = true;
+                pnlSubMenuAdmin.Visible = false;
             }
         }
 
@@ -131,6 +132,7 @@ namespace PetShop
                 pnlSubMenuClientes.Visible = false;
                 pnlSubMenuEmpleados.Visible = false;
                 pnlSubMenuProductos.Visible = true;
+                pnlSubMenuAdmin.Visible = false;
             }
         }
 
@@ -150,6 +152,21 @@ namespace PetShop
                 pnlSubMenuClientes.Visible = false;
                 pnlSubMenuProductos.Visible = false;
                 pnlSubMenuEmpleados.Visible = true;
+                pnlSubMenuAdmin.Visible = false;
+            }
+        }
+        private void btnAdmin_Click(object sender, EventArgs e)
+        {
+            if (pnlSubMenuAdmin.Visible)
+            {
+                pnlSubMenuAdmin.Visible = false;
+            }
+            else
+            {
+                pnlSubMenuClientes.Visible = false;
+                pnlSubMenuProductos.Visible = false;
+                pnlSubMenuEmpleados.Visible = false;
+                pnlSubMenuAdmin.Visible = true;
             }
         }
 
@@ -183,6 +200,31 @@ namespace PetShop
             AbrirFormularioHijo(new FrmBajaModificacionCliente());
         }
 
+        private void btnAltaEmpleados_Click(object sender, EventArgs e)
+        {
+            AbrirFormularioHijo(new FrmAltaEmpleado());
+        }
+        private void btnMostrarEmpleados_Click(object sender, EventArgs e)
+        {
+            AbrirFormularioHijo(new FrmMostrarEmpleados());
+        }
+        private void btnModificarEmpleados_Click(object sender, EventArgs e)
+        {
+            AbrirFormularioHijo(new FrmBajaModificacionEmpleado());
+        }
+        private void btnAltaAdmin_Click(object sender, EventArgs e)
+        {
+            AbrirFormularioHijo(new FrmAltaAdministrador());
+        }
+        private void btnMostrarAdmin_Click(object sender, EventArgs e)
+        {
+            AbrirFormularioHijo(new FrmMostrarAdministrador());
+        }
+        private void btnFacturacion_Click(object sender, EventArgs e)
+        {
+
+        }
+
         public static bool FlagPrimeraVezClientes
         {
             get
@@ -195,12 +237,32 @@ namespace PetShop
             }
         }
 
+        /// <summary>
+        /// Devuelve el valor de clientes
+        /// </summary>
         public static List<Cliente> Clientes
         {
             get
             {
                 return clientes;
             }
+        }
+
+        /// <summary>
+        /// Muestra la fecha y hora actual
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void tmrTiempo_Tick(object sender, EventArgs e)
+        {
+            StringBuilder hora = new StringBuilder();
+            StringBuilder fecha = new StringBuilder();
+
+            hora.Append($"{DateTime.Now.Hour}:{DateTime.Now.Minute}:{DateTime.Now.Second}");
+            fecha.Append($"{DateTime.Now.Day}/{DateTime.Now.Month}/{DateTime.Now.Year}");
+
+            lblFecha.Text = fecha.ToString();
+            lblHora.Text = hora.ToString();
         }
     }
 }

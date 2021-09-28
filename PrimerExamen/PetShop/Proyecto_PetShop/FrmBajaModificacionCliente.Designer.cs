@@ -29,7 +29,7 @@ namespace PetShop
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblListaClientes = new System.Windows.Forms.Label();
+            this.lblTitulo = new System.Windows.Forms.Label();
             this.lblNombre = new System.Windows.Forms.Label();
             this.lblApellido = new System.Windows.Forms.Label();
             this.lblFechaNacimiento = new System.Windows.Forms.Label();
@@ -73,15 +73,15 @@ namespace PetShop
             this.panel8.SuspendLayout();
             this.SuspendLayout();
             // 
-            // lblListaClientes
+            // lblTitulo
             // 
-            this.lblListaClientes.AutoSize = true;
-            this.lblListaClientes.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblListaClientes.Location = new System.Drawing.Point(12, 9);
-            this.lblListaClientes.Name = "lblListaClientes";
-            this.lblListaClientes.Size = new System.Drawing.Size(86, 30);
-            this.lblListaClientes.TabIndex = 0;
-            this.lblListaClientes.Text = "Clientes";
+            this.lblTitulo.AutoSize = true;
+            this.lblTitulo.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblTitulo.Location = new System.Drawing.Point(12, 9);
+            this.lblTitulo.Name = "lblTitulo";
+            this.lblTitulo.Size = new System.Drawing.Size(86, 30);
+            this.lblTitulo.TabIndex = 0;
+            this.lblTitulo.Text = "Clientes";
             // 
             // lblNombre
             // 
@@ -560,7 +560,7 @@ namespace PetShop
             this.Controls.Add(this.lblApellido);
             this.Controls.Add(this.lblNombre);
             this.Controls.Add(this.btnMostrar);
-            this.Controls.Add(this.lblListaClientes);
+            this.Controls.Add(this.lblTitulo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmBajaModificacionCliente";
             this.Text = "FrmMostrarClientes";
@@ -573,7 +573,7 @@ namespace PetShop
 
         #endregion
 
-        private System.Windows.Forms.Label lblListaClientes;
+        private System.Windows.Forms.Label lblTitulo;
         private System.Windows.Forms.Label lblNombre;
         private System.Windows.Forms.Label lblApellido;
         private System.Windows.Forms.Label lblFechaNacimiento;

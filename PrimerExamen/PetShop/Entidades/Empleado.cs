@@ -8,23 +8,28 @@ namespace Entidades
 {
     public class Empleado : Persona
     {
+        private string usuario;
+        private string password;
         private double sueldo;
-        private int antiguedad;
         private EPuesto puesto;
-        private bool trabajaActualmente;
-        private DateTime horarioLlegada;
+        private string[] diasLaborales;
+        private DateTime horarioEntrada;
         private DateTime horarioSalida;
+        private int idEmpleado;
         private static int idCliente = 0;
 
         #region Constructor
         /// <summary>
         /// Inicializa los datos de un empleado
         /// </summary>
+        /// <param name="usuario">Usuario del empleado</param>
+        /// <param name="password">Password del empleado</param>
         /// <param name="sueldo">Sueldo del empleado</param>
-        /// <param name="antiguedad">Antiguedad del empleado en anios del empleado</param>
-        /// <param name="trabajaActualmente">Trabaja actualmente o es un ex empleado</param>
-        /// <param name="horarioLlegada">Horario de llegada del empleado</param>
+        /// <param name="puesto">Puesto del empleado</param>
+        /// <param name="diasLaborales">Dias laborales del empleado</param>
+        /// <param name="horarioEntrada">Horario de llegada del empleado</param>
         /// <param name="horarioSalida">Horario de llegada del empleado</param>
+        /// <param name="idEmpleado">ID del empleado</param>
         /// <param name="nombre">Nombre del empleado</param>
         /// <param name="apellido">Apellido del empleado</param>
         /// <param name="fechaNacimiento">Fecha de nacimiento del empleado</param>
@@ -32,21 +37,23 @@ namespace Entidades
         /// <param name="sexo">Sexo del empleado</param>
         /// <param name="nacionalidad">Nacionalidad del empleado</param>
         /// <param name="domicilio">Domicilio del empleado</param>
-        public Empleado(double sueldo, int antiguedad, EPuesto puesto, bool trabajaActualmente, DateTime horarioLlegada, DateTime horarioSalida, string nombre, string apellido, DateTime fechaNacimiento, long dni, string sexo, string nacionalidad, string domicilio) : base(nombre, apellido, fechaNacimiento, dni, sexo, nacionalidad, domicilio)
+        public Empleado(string usuario, string password, double sueldo, EPuesto puesto, string[] diasLaborales, DateTime horarioEntrada, DateTime horarioSalida, int idEmpleado, string nombre, string apellido, DateTime fechaNacimiento, long dni, string sexo, string nacionalidad, string domicilio) : base(nombre, apellido, fechaNacimiento, dni, sexo, nacionalidad, domicilio)
         {
+            this.Usuario = usuario;
+            this.Password = password;
             this.Sueldo = sueldo;
-            this.Antiguedad = antiguedad;
-            this.puesto = puesto;
-            this.trabajaActualmente = trabajaActualmente;
-            this.horarioLlegada = horarioLlegada;
-            this.horarioSalida = horarioSalida;
+            this.Puesto = puesto;
+            this.DiasLaborales = diasLaborales;
+            this.HorarioEntrada = horarioEntrada;
+            this.HorarioSalida = horarioSalida;
+            this.idEmpleado = idEmpleado;
         }
         #endregion
 
+        #region AdministrarCliente
         /// <summary>
-        /// Carga a un cliente en la lista
+        /// Crea un nuevo cliente
         /// </summary>
-        /// <param name="clientes">Lista donde estarán los clientes</param>
         /// <param name="saldo">Cantidad de plata que tiene el cliente</param>
         /// <param name="nombre">Nombre del cliente</param>
         /// <param name="apellido">Apellido del cliente</param>
@@ -77,22 +84,53 @@ namespace Entidades
 
             return st.ToString();
         }
+        #endregion
+
 
         public override string Mostrar()
         {
             StringBuilder st = new StringBuilder();
 
             st.AppendLine($"Sueldo: {this.Sueldo}");
-            st.AppendLine($"Antigüedad: {this.Antiguedad}");
             st.AppendLine($"Puesto: {this.puesto}");
-            st.AppendLine($"Trabaja actualmente: {this.trabajaActualmente}");
-            st.AppendLine($"Horario de entrada: {this.horarioLlegada}");
+            st.AppendLine($"Dias laborales: {this.diasLaborales}");
+            st.AppendLine($"Horario de entrada: {this.horarioEntrada}");
             st.AppendLine($"Horario de salida: {this.horarioSalida}");
 
             return base.Mostrar() + st.ToString();
         }
 
         #region Getters/Setters
+        /// <summary>
+        /// Devuelve o establece el valor de usuario
+        /// </summary>
+        public string Usuario
+        {
+            get
+            {
+                return this.usuario;
+            }
+            set
+            {
+                this.usuario = value;
+            }
+        }
+
+        /// <summary>
+        /// Devuelve o establece el valor de password
+        /// </summary>
+        public string Password
+        {
+            get
+            {
+                return this.password;
+            }
+            set
+            {
+                this.password = value;
+            }
+        }
+
         /// <summary>
         /// Devuelve o establece el valor de sueldo
         /// </summary>
@@ -112,20 +150,73 @@ namespace Entidades
         }
 
         /// <summary>
-        /// Devuelve o establece el valor de antiguedad
+        /// Devuelve o establece el puesto
         /// </summary>
-        public int Antiguedad
+        public EPuesto Puesto
         {
             get
             {
-                return this.antiguedad;
+                return this.puesto;
             }
             set
             {
-                if (ValidarAntiguedad(value))
-                {
-                    this.antiguedad = value;
-                }
+                this.puesto = value;
+            }
+        }
+
+        /// <summary>
+        /// Devuelve o establece los diasLaborales
+        /// </summary>
+        public string[] DiasLaborales
+        {
+            get
+            {
+                return this.diasLaborales;
+            }
+            set
+            {
+                this.diasLaborales = value;
+            }
+        }
+
+        /// <summary>
+        /// Devuelve o establece el horarioEntrada
+        /// </summary>
+        public DateTime HorarioEntrada
+        {
+            get
+            {
+                return this.horarioEntrada;
+            }
+            set
+            {
+                this.horarioEntrada = value;
+            }
+        }
+
+        /// <summary>
+        /// Devuelve o establece el horarioSalida
+        /// </summary>
+        public DateTime HorarioSalida
+        {
+            get
+            {
+                return this.horarioSalida;
+            }
+            set
+            {
+                this.horarioSalida = value;
+            }
+        }
+
+        /// <summary>
+        /// Devuelve el idEmpleado
+        /// </summary>
+        public int IdEmpleado
+        {
+            get
+            {
+                return this.idEmpleado;
             }
         }
         #endregion
@@ -136,28 +227,11 @@ namespace Entidades
         /// </summary>
         /// <param name="sueldo">Número a validar</param>
         /// <returns>Retorna true si el sueldo es válido o false si no</returns>
-        private bool ValidarSueldo(double sueldo)
+        public static bool ValidarSueldo(double sueldo)
         {
             bool retorno = false;
 
             if (sueldo >= 0)
-            {
-                retorno = true;
-            }
-
-            return retorno;
-        }
-
-        /// <summary>
-        /// Valida que la antiguedad sea mayor o igual a 0 y menor a 130
-        /// </summary>
-        /// <param name="antiguedad">Número a validar</param>
-        /// <returns>Retorna true si la antiguedad es válida o false si no</returns>
-        private bool ValidarAntiguedad(int antiguedad)
-        {
-            bool retorno = false;
-
-            if (antiguedad >= 0 && antiguedad < 130)
             {
                 retorno = true;
             }

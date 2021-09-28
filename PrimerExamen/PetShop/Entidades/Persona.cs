@@ -185,7 +185,7 @@ namespace Entidades
         /// </summary>
         /// <param name="nombre">Cadena a validar</param>
         /// <returns>Retorna true si la cadena es un nombre válido o false si no</returns>
-        private bool ValidarNombre(string nombre)
+        public static bool ValidarNombre(string nombre)
         {
             bool retorno;
 
@@ -199,7 +199,7 @@ namespace Entidades
         /// </summary>
         /// <param name="apellido">Cadena a validar</param>
         /// <returns>Retorna true si la cadena es un apellido válido o false si no</returns>
-        private bool ValidarApellido(string apellido)
+        public static bool ValidarApellido(string apellido)
         {
             bool retorno;
 
@@ -213,7 +213,7 @@ namespace Entidades
         /// </summary>
         /// <param name="dni">Número a validar</param>
         /// <returns>Retorna true si el número es un DNI válido o false si no</returns>
-        private bool ValidarDni(long dni)
+        public static bool ValidarDni(long dni)
         {
             bool retorno = false;
             long dniNum;
@@ -234,7 +234,7 @@ namespace Entidades
         /// </summary>
         /// <param name="sexo">Cadena a validar</param>
         /// <returns>Retorna true si la cadena es un sexo válido o false si no</returns>
-        private bool ValidarSexo(string sexo)
+        public static bool ValidarSexo(string sexo)
         {
             bool retorno = false;
 
@@ -251,7 +251,7 @@ namespace Entidades
         /// </summary>
         /// <param name="nacionalidad">Cadena a validar</param>
         /// <returns>Retorna true si la cadena es una nacionalidad válida o false si no</returns>
-        private bool ValidarNacionalidad(string nacionalidad)
+        public static bool ValidarNacionalidad(string nacionalidad)
         {
             bool retorno;
 
@@ -265,7 +265,7 @@ namespace Entidades
         /// </summary>
         /// <param name="domicilio">Cadena a validar</param>
         /// <returns>Retorna true si la cadena es un domicilio válido o false si no</returns>
-        private bool ValidarDomicilio(string domicilio)
+        public static bool ValidarDomicilio(string domicilio)
         {
             bool retorno = false;
             int altura;
@@ -291,7 +291,7 @@ namespace Entidades
         /// </summary>
         /// <param name="palabra">Palabra a validar</param>
         /// <returns>Retorna true si la cadena tiene solo letras o false si no</returns>
-        private bool EsSoloLetras(string palabra)
+        public static bool EsSoloLetras(string palabra)
         {
             bool retorno = false;
 

@@ -9,6 +9,7 @@ namespace Entidades
     public enum EPuesto
     {
         cajero,
-        delivery
+        delivery,
+        limpieza
     }
 }

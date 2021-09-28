@@ -77,7 +77,7 @@ namespace PetShop
             // 
             this.txtNombre.Location = new System.Drawing.Point(91, 142);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(121, 23);
+            this.txtNombre.Size = new System.Drawing.Size(159, 23);
             this.txtNombre.TabIndex = 1;
             // 
             // ca1FechaNacimiento
@@ -90,7 +90,7 @@ namespace PetShop
             // 
             this.txtApellido.Location = new System.Drawing.Point(91, 216);
             this.txtApellido.Name = "txtApellido";
-            this.txtApellido.Size = new System.Drawing.Size(121, 23);
+            this.txtApellido.Size = new System.Drawing.Size(159, 23);
             this.txtApellido.TabIndex = 2;
             // 
             // lblApellido
@@ -119,7 +119,7 @@ namespace PetShop
             // 
             this.txtDni.Location = new System.Drawing.Point(91, 281);
             this.txtDni.Name = "txtDni";
-            this.txtDni.Size = new System.Drawing.Size(121, 23);
+            this.txtDni.Size = new System.Drawing.Size(159, 23);
             this.txtDni.TabIndex = 3;
             // 
             // lblFechaNacimiento
@@ -170,14 +170,14 @@ namespace PetShop
             // 
             this.txtNacionalidad.Location = new System.Drawing.Point(336, 142);
             this.txtNacionalidad.Name = "txtNacionalidad";
-            this.txtNacionalidad.Size = new System.Drawing.Size(121, 23);
+            this.txtNacionalidad.Size = new System.Drawing.Size(159, 23);
             this.txtNacionalidad.TabIndex = 4;
             // 
             // txtDomicilio
             // 
             this.txtDomicilio.Location = new System.Drawing.Point(336, 216);
             this.txtDomicilio.Name = "txtDomicilio";
-            this.txtDomicilio.Size = new System.Drawing.Size(121, 23);
+            this.txtDomicilio.Size = new System.Drawing.Size(159, 23);
             this.txtDomicilio.TabIndex = 5;
             // 
             // cmbSexo
@@ -190,7 +190,7 @@ namespace PetShop
             "No binario"});
             this.cmbSexo.Location = new System.Drawing.Point(336, 281);
             this.cmbSexo.Name = "cmbSexo";
-            this.cmbSexo.Size = new System.Drawing.Size(127, 23);
+            this.cmbSexo.Size = new System.Drawing.Size(159, 23);
             this.cmbSexo.TabIndex = 6;
             // 
             // lblTitulo

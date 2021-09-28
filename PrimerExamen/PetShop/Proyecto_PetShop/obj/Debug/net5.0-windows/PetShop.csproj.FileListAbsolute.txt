@@ -24,3 +24,8 @@ D:\UTN\Segundo cuatrimestre\Programacion II\Examenes\PrimerExamen\PetShop\Proyec
 D:\UTN\Segundo cuatrimestre\Programacion II\Examenes\PrimerExamen\PetShop\Proyecto_PetShop\obj\Debug\net5.0-windows\ref\PetShop.dll
 D:\UTN\Segundo cuatrimestre\Programacion II\Examenes\PrimerExamen\PetShop\Proyecto_PetShop\obj\Debug\net5.0-windows\PetShop.pdb
 D:\UTN\Segundo cuatrimestre\Programacion II\Examenes\PrimerExamen\PetShop\Proyecto_PetShop\obj\Debug\net5.0-windows\PetShop.genruntimeconfig.cache
+D:\UTN\Segundo cuatrimestre\Programacion II\Examenes\PrimerExamen\PetShop\Proyecto_PetShop\obj\Debug\net5.0-windows\PetShop.FrmAltaEmpleado.resources
+D:\UTN\Segundo cuatrimestre\Programacion II\Examenes\PrimerExamen\PetShop\Proyecto_PetShop\obj\Debug\net5.0-windows\PetShop.FrmMostrarEmpleados.resources
+D:\UTN\Segundo cuatrimestre\Programacion II\Examenes\PrimerExamen\PetShop\Proyecto_PetShop\obj\Debug\net5.0-windows\PetShop.FrmBajaModificacionEmpleado.resources
+D:\UTN\Segundo cuatrimestre\Programacion II\Examenes\PrimerExamen\PetShop\Proyecto_PetShop\obj\Debug\net5.0-windows\PetShop.FrmAltaAdministrador.resources
+D:\UTN\Segundo cuatrimestre\Programacion II\Examenes\PrimerExamen\PetShop\Proyecto_PetShop\obj\Debug\net5.0-windows\PetShop.FrmMostrarAdministrador.resources
