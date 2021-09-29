@@ -30,6 +30,7 @@ namespace PetShop
         private void InitializeComponent()
         {
             this.grpEmpleado = new System.Windows.Forms.GroupBox();
+            this.lblInfo = new System.Windows.Forms.Label();
             this.lblUsuario = new System.Windows.Forms.Label();
             this.txtUsuario = new System.Windows.Forms.TextBox();
             this.lstPuesto = new System.Windows.Forms.ListBox();
@@ -60,7 +61,6 @@ namespace PetShop
             this.btnLimpiar = new System.Windows.Forms.Button();
             this.lblTitulo = new System.Windows.Forms.Label();
             this.btnAltaEmpleado = new System.Windows.Forms.Button();
-            this.lblInfo = new System.Windows.Forms.Label();
             this.grpEmpleado.SuspendLayout();
             this.grpPersonal.SuspendLayout();
             this.SuspendLayout();
@@ -86,6 +86,16 @@ namespace PetShop
             this.grpEmpleado.TabIndex = 40;
             this.grpEmpleado.TabStop = false;
             this.grpEmpleado.Text = "Datos profesionales";
+            // 
+            // lblInfo
+            // 
+            this.lblInfo.AutoSize = true;
+            this.lblInfo.Font = new System.Drawing.Font("Segoe UI", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblInfo.Location = new System.Drawing.Point(14, 254);
+            this.lblInfo.Name = "lblInfo";
+            this.lblInfo.Size = new System.Drawing.Size(181, 12);
+            this.lblInfo.TabIndex = 58;
+            this.lblInfo.Text = "(Usted tiene acceso a todos los puestos)";
             // 
             // lblUsuario
             // 
@@ -412,16 +422,6 @@ namespace PetShop
             this.btnAltaEmpleado.UseVisualStyleBackColor = false;
             this.btnAltaEmpleado.Click += new System.EventHandler(this.btnAltaEmpleado_Click);
             // 
-            // lblInfo
-            // 
-            this.lblInfo.AutoSize = true;
-            this.lblInfo.Font = new System.Drawing.Font("Segoe UI", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblInfo.Location = new System.Drawing.Point(14, 254);
-            this.lblInfo.Name = "lblInfo";
-            this.lblInfo.Size = new System.Drawing.Size(181, 12);
-            this.lblInfo.TabIndex = 58;
-            this.lblInfo.Text = "(Usted tiene acceso a todos los puestos)";
-            // 
             // FrmAltaAdministrador
             // 
             this.BackColor = System.Drawing.Color.LightSlateGray;
@@ -433,6 +433,7 @@ namespace PetShop
             this.Controls.Add(this.btnAltaEmpleado);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmAltaAdministrador";
+            this.Load += new System.EventHandler(this.FrmAltaAdministrador_Load);
             this.grpEmpleado.ResumeLayout(false);
             this.grpEmpleado.PerformLayout();
             this.grpPersonal.ResumeLayout(false);

@@ -16,12 +16,16 @@ namespace PetShop
         public FrmMostrarEmpleados()
         {
             InitializeComponent();
-            MostrarEmpleados();
         }
 
         private void FrmMostrarEmpleados_Load(object sender, EventArgs e)
         {
+            MostrarEmpleados();
 
+            if (FrmLogin.EsAdmin)
+            {
+                this.BackColor = Color.AntiqueWhite;
+            }
         }
 
         private void MostrarEmpleados()

@@ -16,7 +16,16 @@ namespace PetShop
         public FrmAltaCliente()
         {
             InitializeComponent();
+        }
+
+        private void FrmAltaCliente_Load(object sender, EventArgs e)
+        {
             this.cmbSexo.Text = "Masculino";
+
+            if (FrmLogin.EsAdmin)
+            {
+                this.BackColor = Color.AntiqueWhite;
+            }
         }
 
         private void btnAltaCliente_Click(object sender, EventArgs e)
@@ -54,12 +63,6 @@ namespace PetShop
             {
                 MessageBox.Show("Uno o varios de los datos ingresados no son válidos\nRevise y corrija los datos por favor", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }
-
-        private void btnAtras_Click(object sender, EventArgs e)
-        {
-            new FrmMenu().Show();
-            this.Hide();
         }
 
         private void btnLimpiar_Click(object sender, EventArgs e)

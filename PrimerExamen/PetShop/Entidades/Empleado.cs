@@ -17,6 +17,7 @@ namespace Entidades
         private DateTime horarioSalida;
         private int idEmpleado;
         private static int idCliente = 0;
+        private static int idProducto = 0;
 
         #region Constructor
         /// <summary>
@@ -46,7 +47,7 @@ namespace Entidades
             this.DiasLaborales = diasLaborales;
             this.HorarioEntrada = horarioEntrada;
             this.HorarioSalida = horarioSalida;
-            this.idEmpleado = idEmpleado;
+            this.IdEmpleado = idEmpleado;
         }
         #endregion
 
@@ -71,12 +72,22 @@ namespace Entidades
             return clienteNuevo;
         }
 
+        /// <summary>
+        /// Elimina un cliente de una lista de clientes
+        /// </summary>
+        /// <param name="listaClientes">Lista de clientes</param>
+        /// <param name="cliente">Cliente a eliminar</param>
+        public static void BajaCliente(List<Cliente> listaClientes, Cliente cliente)
+        {
+            listaClientes.Remove(cliente);
+        }
+
         public static string MostrarCliente(Cliente cliente)
         {
             StringBuilder st = new StringBuilder();
 
             st.AppendLine($"Nombre y apellido: {cliente.Nombre} {cliente.Apellido}");
-            st.AppendLine($"Fecha de nacimiento: {cliente.FechaNacimiento}");
+            st.AppendLine($"Fecha de nacimiento: {cliente.FechaNacimiento.Day}/{cliente.FechaNacimiento.Month}/{cliente.FechaNacimiento.Year}");
             st.AppendLine($"DNI: {cliente.Dni}");
             st.AppendLine($"Sexo: {cliente.Sexo}");
             st.AppendLine($"Nacionalidad: {cliente.Nacionalidad}");
@@ -86,16 +97,50 @@ namespace Entidades
         }
         #endregion
 
+        #region AdministrarProductos
+        /// <summary>
+        /// Crea un nuevo producto
+        /// </summary>
+        /// <param name="nombre">Nombre del producto</param>
+        /// <param name="marca">Marca del producto</param>
+        /// <param name="precio">Precio del producto</param>
+        /// <param name="peso">Peso del producto</param>
+        /// <param name="stock">Stock del producto</param>
+        /// <returns></returns>
+        public static Producto AltaProducto(string nombre, string marca, ETipo tipo, double precio, double peso, int stock)
+        {
+            idProducto++;
+
+            Producto productoNuevo = new Producto(nombre, marca, tipo, precio, peso, stock, idProducto);
+
+            return productoNuevo;
+        }
+
+        /// <summary>
+        /// Elimina un producto de una lista de productos
+        /// </summary>
+        /// <param name="listaProductos">Lista de productos</param>
+        /// <param name="producto">Producto a eliminar</param>
+        public static void BajaProducto(List<Producto> listaProductos, Producto producto)
+        {
+            listaProductos.Remove(producto);
+        }
+        #endregion
 
         public override string Mostrar()
         {
             StringBuilder st = new StringBuilder();
 
             st.AppendLine($"Sueldo: {this.Sueldo}");
-            st.AppendLine($"Puesto: {this.puesto}");
-            st.AppendLine($"Dias laborales: {this.diasLaborales}");
-            st.AppendLine($"Horario de entrada: {this.horarioEntrada}");
-            st.AppendLine($"Horario de salida: {this.horarioSalida}");
+            st.AppendLine($"Puesto: {this.Puesto}");
+            st.Append("Días laborales: ");
+            for (int j = 0; j < this.DiasLaborales.Length; j++)
+            {
+                st.Append(this.DiasLaborales[j] + " ");
+            }
+            st.AppendLine("");
+            st.AppendLine($"Horario de entrada: {this.HorarioEntrada.Hour}:{this.HorarioEntrada.Minute}hs.");
+            st.AppendLine($"Horario de salida: {this.HorarioSalida.Hour}:{this.HorarioSalida.Minute}hs.");
 
             return base.Mostrar() + st.ToString();
         }
@@ -218,6 +263,10 @@ namespace Entidades
             {
                 return this.idEmpleado;
             }
+            set
+            {
+                this.idEmpleado = value;
+            }
         }
         #endregion
 
@@ -232,6 +281,26 @@ namespace Entidades
             bool retorno = false;
 
             if (sueldo >= 0)
+            {
+                retorno = true;
+            }
+
+            return retorno;
+        }
+
+        /// <summary>
+        /// Valida que el sueldo sea mayor o igual a 0
+        /// </summary>
+        /// <param name="sueldo">Número a validar</param>
+        /// <returns>Retorna true si el sueldo es válido o false si no</returns>
+        public static bool ValidarHora(string horaMinutos)
+        {
+            bool retorno = false;
+            int hora;
+            int minutos;
+            string[] arrayHorasMinutos = horaMinutos.Split(":");
+
+            if (int.TryParse(arrayHorasMinutos[0], out hora) && hora < 24 && int.TryParse(arrayHorasMinutos[1], out minutos) && minutos < 60)
             {
                 retorno = true;
             }

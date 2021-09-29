@@ -16,7 +16,16 @@ namespace PetShop
         public FrmMostrarAdministrador()
         {
             InitializeComponent();
+        }
+
+        private void FrmMostrarAdministrador_Load(object sender, EventArgs e)
+        {
             MostrarAdministradores();
+
+            if (FrmLogin.EsAdmin)
+            {
+                this.BackColor = Color.AntiqueWhite;
+            }
         }
 
         private void MostrarAdministradores()
@@ -70,9 +79,5 @@ namespace PetShop
             }
         }
 
-        private void FrmMostrarAdministrador_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }

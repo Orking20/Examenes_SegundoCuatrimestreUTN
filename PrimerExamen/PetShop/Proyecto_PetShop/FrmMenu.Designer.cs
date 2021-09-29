@@ -39,7 +39,7 @@ namespace PetShop
             this.button1 = new System.Windows.Forms.Button();
             this.pnlLateral = new System.Windows.Forms.Panel();
             this.pnlLateralBotones = new System.Windows.Forms.Panel();
-            this.button6 = new System.Windows.Forms.Button();
+            this.btnFacturacion = new System.Windows.Forms.Button();
             this.pnlSubMenuAdmin = new System.Windows.Forms.Panel();
             this.btnMostrarAdmin = new System.Windows.Forms.Button();
             this.btnBajaModificacionAdmin = new System.Windows.Forms.Button();
@@ -52,9 +52,8 @@ namespace PetShop
             this.btnEmpleados = new System.Windows.Forms.Button();
             this.btnVentas = new System.Windows.Forms.Button();
             this.pnlSubMenuProductos = new System.Windows.Forms.Panel();
-            this.button4 = new System.Windows.Forms.Button();
-            this.btnEliminarProductos = new System.Windows.Forms.Button();
-            this.btnModificarProfuctos = new System.Windows.Forms.Button();
+            this.btnMostrarProductos = new System.Windows.Forms.Button();
+            this.btnEliminarModificarProfuctos = new System.Windows.Forms.Button();
             this.btnAgregarProductos = new System.Windows.Forms.Button();
             this.btnProductos = new System.Windows.Forms.Button();
             this.pnlSubMenuClientes = new System.Windows.Forms.Panel();
@@ -76,7 +75,6 @@ namespace PetShop
             this.pnlSubMenuProductos.SuspendLayout();
             this.pnlSubMenuClientes.SuspendLayout();
             this.pnlInfo.SuspendLayout();
-            this.pnlPrincipal.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnClientes
@@ -132,7 +130,7 @@ namespace PetShop
             this.button3.Size = new System.Drawing.Size(30, 30);
             this.button3.TabIndex = 18;
             this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.button3.Click += new System.EventHandler(this.btnMaximizar_Click);
             // 
             // button2
             // 
@@ -145,7 +143,7 @@ namespace PetShop
             this.button2.Size = new System.Drawing.Size(30, 30);
             this.button2.TabIndex = 17;
             this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.button2.Click += new System.EventHandler(this.btnMinimizar_Click);
             // 
             // button1
             // 
@@ -158,7 +156,7 @@ namespace PetShop
             this.button1.Size = new System.Drawing.Size(30, 30);
             this.button1.TabIndex = 19;
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
             // pnlLateral
             // 
@@ -168,12 +166,12 @@ namespace PetShop
             this.pnlLateral.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnlLateral.Location = new System.Drawing.Point(0, 30);
             this.pnlLateral.Name = "pnlLateral";
-            this.pnlLateral.Size = new System.Drawing.Size(221, 908);
+            this.pnlLateral.Size = new System.Drawing.Size(221, 583);
             this.pnlLateral.TabIndex = 6;
             // 
             // pnlLateralBotones
             // 
-            this.pnlLateralBotones.Controls.Add(this.button6);
+            this.pnlLateralBotones.Controls.Add(this.btnFacturacion);
             this.pnlLateralBotones.Controls.Add(this.pnlSubMenuAdmin);
             this.pnlLateralBotones.Controls.Add(this.btnAdmin);
             this.pnlLateralBotones.Controls.Add(this.pnlSubMenuEmpleados);
@@ -189,22 +187,23 @@ namespace PetShop
             this.pnlLateralBotones.Size = new System.Drawing.Size(221, 797);
             this.pnlLateralBotones.TabIndex = 5;
             // 
-            // button6
+            // btnFacturacion
             // 
-            this.button6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button6.FlatAppearance.BorderSize = 0;
-            this.button6.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DeepSkyBlue;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button6.ForeColor = System.Drawing.Color.White;
-            this.button6.Location = new System.Drawing.Point(0, 742);
-            this.button6.Name = "button6";
-            this.button6.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.button6.Size = new System.Drawing.Size(221, 44);
-            this.button6.TabIndex = 60;
-            this.button6.Text = "Facturación";
-            this.button6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button6.UseVisualStyleBackColor = true;
+            this.btnFacturacion.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnFacturacion.FlatAppearance.BorderSize = 0;
+            this.btnFacturacion.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DeepSkyBlue;
+            this.btnFacturacion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFacturacion.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnFacturacion.ForeColor = System.Drawing.Color.White;
+            this.btnFacturacion.Location = new System.Drawing.Point(0, 700);
+            this.btnFacturacion.Name = "btnFacturacion";
+            this.btnFacturacion.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnFacturacion.Size = new System.Drawing.Size(221, 44);
+            this.btnFacturacion.TabIndex = 60;
+            this.btnFacturacion.Text = "Facturación";
+            this.btnFacturacion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnFacturacion.UseVisualStyleBackColor = true;
+            this.btnFacturacion.Visible = false;
             // 
             // pnlSubMenuAdmin
             // 
@@ -212,7 +211,7 @@ namespace PetShop
             this.pnlSubMenuAdmin.Controls.Add(this.btnBajaModificacionAdmin);
             this.pnlSubMenuAdmin.Controls.Add(this.btnAltaAdmin);
             this.pnlSubMenuAdmin.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlSubMenuAdmin.Location = new System.Drawing.Point(0, 622);
+            this.pnlSubMenuAdmin.Location = new System.Drawing.Point(0, 580);
             this.pnlSubMenuAdmin.Name = "pnlSubMenuAdmin";
             this.pnlSubMenuAdmin.Size = new System.Drawing.Size(221, 120);
             this.pnlSubMenuAdmin.TabIndex = 18;
@@ -254,6 +253,7 @@ namespace PetShop
             this.btnBajaModificacionAdmin.Text = "Baja/Modificación";
             this.btnBajaModificacionAdmin.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnBajaModificacionAdmin.UseVisualStyleBackColor = false;
+            this.btnBajaModificacionAdmin.Click += new System.EventHandler(this.btnBajaModificacionAdmin_Click);
             // 
             // btnAltaAdmin
             // 
@@ -282,7 +282,7 @@ namespace PetShop
             this.btnAdmin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdmin.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnAdmin.ForeColor = System.Drawing.Color.White;
-            this.btnAdmin.Location = new System.Drawing.Point(0, 578);
+            this.btnAdmin.Location = new System.Drawing.Point(0, 536);
             this.btnAdmin.Name = "btnAdmin";
             this.btnAdmin.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnAdmin.Size = new System.Drawing.Size(221, 44);
@@ -290,6 +290,7 @@ namespace PetShop
             this.btnAdmin.Text = "Administradores";
             this.btnAdmin.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAdmin.UseVisualStyleBackColor = true;
+            this.btnAdmin.Visible = false;
             this.btnAdmin.Click += new System.EventHandler(this.btnAdmin_Click);
             // 
             // pnlSubMenuEmpleados
@@ -298,7 +299,7 @@ namespace PetShop
             this.pnlSubMenuEmpleados.Controls.Add(this.btnBajaModificacionEmpleados);
             this.pnlSubMenuEmpleados.Controls.Add(this.btnAltaEmpleados);
             this.pnlSubMenuEmpleados.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlSubMenuEmpleados.Location = new System.Drawing.Point(0, 458);
+            this.pnlSubMenuEmpleados.Location = new System.Drawing.Point(0, 416);
             this.pnlSubMenuEmpleados.Name = "pnlSubMenuEmpleados";
             this.pnlSubMenuEmpleados.Size = new System.Drawing.Size(221, 120);
             this.pnlSubMenuEmpleados.TabIndex = 16;
@@ -340,7 +341,7 @@ namespace PetShop
             this.btnBajaModificacionEmpleados.Text = "Baja/Modificación";
             this.btnBajaModificacionEmpleados.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnBajaModificacionEmpleados.UseVisualStyleBackColor = false;
-            this.btnBajaModificacionEmpleados.Click += new System.EventHandler(this.btnModificarEmpleados_Click);
+            this.btnBajaModificacionEmpleados.Click += new System.EventHandler(this.btnBajaModificacionEmpleados_Click);
             // 
             // btnAltaEmpleados
             // 
@@ -369,7 +370,7 @@ namespace PetShop
             this.btnEmpleados.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEmpleados.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnEmpleados.ForeColor = System.Drawing.Color.White;
-            this.btnEmpleados.Location = new System.Drawing.Point(0, 414);
+            this.btnEmpleados.Location = new System.Drawing.Point(0, 372);
             this.btnEmpleados.Name = "btnEmpleados";
             this.btnEmpleados.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnEmpleados.Size = new System.Drawing.Size(221, 44);
@@ -377,6 +378,7 @@ namespace PetShop
             this.btnEmpleados.Text = "Empleados";
             this.btnEmpleados.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnEmpleados.UseVisualStyleBackColor = true;
+            this.btnEmpleados.Visible = false;
             this.btnEmpleados.Click += new System.EventHandler(this.btnEmpleados_Click);
             // 
             // btnVentas
@@ -387,7 +389,7 @@ namespace PetShop
             this.btnVentas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVentas.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnVentas.ForeColor = System.Drawing.Color.White;
-            this.btnVentas.Location = new System.Drawing.Point(0, 370);
+            this.btnVentas.Location = new System.Drawing.Point(0, 328);
             this.btnVentas.Name = "btnVentas";
             this.btnVentas.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnVentas.Size = new System.Drawing.Size(221, 44);
@@ -398,70 +400,53 @@ namespace PetShop
             // 
             // pnlSubMenuProductos
             // 
-            this.pnlSubMenuProductos.Controls.Add(this.button4);
-            this.pnlSubMenuProductos.Controls.Add(this.btnEliminarProductos);
-            this.pnlSubMenuProductos.Controls.Add(this.btnModificarProfuctos);
+            this.pnlSubMenuProductos.Controls.Add(this.btnMostrarProductos);
+            this.pnlSubMenuProductos.Controls.Add(this.btnEliminarModificarProfuctos);
             this.pnlSubMenuProductos.Controls.Add(this.btnAgregarProductos);
             this.pnlSubMenuProductos.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlSubMenuProductos.Location = new System.Drawing.Point(0, 208);
             this.pnlSubMenuProductos.Name = "pnlSubMenuProductos";
-            this.pnlSubMenuProductos.Size = new System.Drawing.Size(221, 162);
+            this.pnlSubMenuProductos.Size = new System.Drawing.Size(221, 120);
             this.pnlSubMenuProductos.TabIndex = 13;
             this.pnlSubMenuProductos.Visible = false;
             // 
-            // button4
+            // btnMostrarProductos
             // 
-            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(82)))), ((int)(((byte)(82)))));
-            this.button4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DeepSkyBlue;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(0, 117);
-            this.button4.Name = "button4";
-            this.button4.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.button4.Size = new System.Drawing.Size(221, 39);
-            this.button4.TabIndex = 9;
-            this.button4.Text = "Mostrar";
-            this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.UseVisualStyleBackColor = false;
+            this.btnMostrarProductos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(82)))), ((int)(((byte)(82)))));
+            this.btnMostrarProductos.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnMostrarProductos.FlatAppearance.BorderSize = 0;
+            this.btnMostrarProductos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DeepSkyBlue;
+            this.btnMostrarProductos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMostrarProductos.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnMostrarProductos.ForeColor = System.Drawing.Color.White;
+            this.btnMostrarProductos.Location = new System.Drawing.Point(0, 78);
+            this.btnMostrarProductos.Name = "btnMostrarProductos";
+            this.btnMostrarProductos.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
+            this.btnMostrarProductos.Size = new System.Drawing.Size(221, 39);
+            this.btnMostrarProductos.TabIndex = 9;
+            this.btnMostrarProductos.Text = "Mostrar";
+            this.btnMostrarProductos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnMostrarProductos.UseVisualStyleBackColor = false;
+            this.btnMostrarProductos.Click += new System.EventHandler(this.btnMostrarProductos_Click);
             // 
-            // btnEliminarProductos
+            // btnEliminarModificarProfuctos
             // 
-            this.btnEliminarProductos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(82)))), ((int)(((byte)(82)))));
-            this.btnEliminarProductos.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnEliminarProductos.FlatAppearance.BorderSize = 0;
-            this.btnEliminarProductos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DeepSkyBlue;
-            this.btnEliminarProductos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEliminarProductos.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnEliminarProductos.ForeColor = System.Drawing.Color.White;
-            this.btnEliminarProductos.Location = new System.Drawing.Point(0, 78);
-            this.btnEliminarProductos.Name = "btnEliminarProductos";
-            this.btnEliminarProductos.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.btnEliminarProductos.Size = new System.Drawing.Size(221, 39);
-            this.btnEliminarProductos.TabIndex = 8;
-            this.btnEliminarProductos.Text = "Eliminar";
-            this.btnEliminarProductos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEliminarProductos.UseVisualStyleBackColor = false;
-            // 
-            // btnModificarProfuctos
-            // 
-            this.btnModificarProfuctos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(82)))), ((int)(((byte)(82)))));
-            this.btnModificarProfuctos.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnModificarProfuctos.FlatAppearance.BorderSize = 0;
-            this.btnModificarProfuctos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DeepSkyBlue;
-            this.btnModificarProfuctos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnModificarProfuctos.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnModificarProfuctos.ForeColor = System.Drawing.Color.White;
-            this.btnModificarProfuctos.Location = new System.Drawing.Point(0, 39);
-            this.btnModificarProfuctos.Name = "btnModificarProfuctos";
-            this.btnModificarProfuctos.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.btnModificarProfuctos.Size = new System.Drawing.Size(221, 39);
-            this.btnModificarProfuctos.TabIndex = 7;
-            this.btnModificarProfuctos.Text = "Modificar";
-            this.btnModificarProfuctos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnModificarProfuctos.UseVisualStyleBackColor = false;
+            this.btnEliminarModificarProfuctos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(82)))), ((int)(((byte)(82)))));
+            this.btnEliminarModificarProfuctos.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnEliminarModificarProfuctos.FlatAppearance.BorderSize = 0;
+            this.btnEliminarModificarProfuctos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DeepSkyBlue;
+            this.btnEliminarModificarProfuctos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEliminarModificarProfuctos.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnEliminarModificarProfuctos.ForeColor = System.Drawing.Color.White;
+            this.btnEliminarModificarProfuctos.Location = new System.Drawing.Point(0, 39);
+            this.btnEliminarModificarProfuctos.Name = "btnEliminarModificarProfuctos";
+            this.btnEliminarModificarProfuctos.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
+            this.btnEliminarModificarProfuctos.Size = new System.Drawing.Size(221, 39);
+            this.btnEliminarModificarProfuctos.TabIndex = 7;
+            this.btnEliminarModificarProfuctos.Text = "Eliminar/Modificar";
+            this.btnEliminarModificarProfuctos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEliminarModificarProfuctos.UseVisualStyleBackColor = false;
+            this.btnEliminarModificarProfuctos.Click += new System.EventHandler(this.btnEliminarModificarProfuctos_Click);
             // 
             // btnAgregarProductos
             // 
@@ -480,6 +465,7 @@ namespace PetShop
             this.btnAgregarProductos.Text = "Agregar";
             this.btnAgregarProductos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAgregarProductos.UseVisualStyleBackColor = false;
+            this.btnAgregarProductos.Click += new System.EventHandler(this.btnAgregarProductos_Click);
             // 
             // btnProductos
             // 
@@ -571,10 +557,11 @@ namespace PetShop
             // pnlInfo
             // 
             this.pnlInfo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(109)))), ((int)(((byte)(126)))));
+            this.pnlInfo.Controls.Add(this.btnCambioPass);
             this.pnlInfo.Controls.Add(this.lblFecha);
             this.pnlInfo.Controls.Add(this.lblHora);
             this.pnlInfo.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnlInfo.Location = new System.Drawing.Point(221, 797);
+            this.pnlInfo.Location = new System.Drawing.Point(221, 472);
             this.pnlInfo.Name = "pnlInfo";
             this.pnlInfo.Size = new System.Drawing.Size(923, 141);
             this.pnlInfo.TabIndex = 7;
@@ -606,11 +593,11 @@ namespace PetShop
             // 
             // pnlPrincipal
             // 
-            this.pnlPrincipal.Controls.Add(this.btnCambioPass);
+            this.pnlPrincipal.BackColor = System.Drawing.Color.LightSlateGray;
             this.pnlPrincipal.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlPrincipal.Location = new System.Drawing.Point(221, 30);
             this.pnlPrincipal.Name = "pnlPrincipal";
-            this.pnlPrincipal.Size = new System.Drawing.Size(923, 767);
+            this.pnlPrincipal.Size = new System.Drawing.Size(923, 442);
             this.pnlPrincipal.TabIndex = 8;
             // 
             // btnCambioPass
@@ -620,7 +607,7 @@ namespace PetShop
             this.btnCambioPass.FlatAppearance.BorderSize = 0;
             this.btnCambioPass.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DeepSkyBlue;
             this.btnCambioPass.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCambioPass.Location = new System.Drawing.Point(781, 738);
+            this.btnCambioPass.Location = new System.Drawing.Point(781, 15);
             this.btnCambioPass.Name = "btnCambioPass";
             this.btnCambioPass.Size = new System.Drawing.Size(130, 23);
             this.btnCambioPass.TabIndex = 59;
@@ -637,7 +624,7 @@ namespace PetShop
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSlateGray;
-            this.ClientSize = new System.Drawing.Size(1144, 938);
+            this.ClientSize = new System.Drawing.Size(1144, 613);
             this.Controls.Add(this.pnlPrincipal);
             this.Controls.Add(this.pnlInfo);
             this.Controls.Add(this.pnlLateral);
@@ -657,7 +644,6 @@ namespace PetShop
             this.pnlSubMenuClientes.ResumeLayout(false);
             this.pnlInfo.ResumeLayout(false);
             this.pnlInfo.PerformLayout();
-            this.pnlPrincipal.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -683,9 +669,8 @@ namespace PetShop
         private System.Windows.Forms.Button btnEmpleados;
         private System.Windows.Forms.Button btnVentas;
         private System.Windows.Forms.Panel pnlSubMenuProductos;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button btnEliminarProductos;
-        private System.Windows.Forms.Button btnModificarProfuctos;
+        private System.Windows.Forms.Button btnMostrarProductos;
+        private System.Windows.Forms.Button btnEliminarModificarProfuctos;
         private System.Windows.Forms.Button btnAgregarProductos;
         private System.Windows.Forms.Button btnProductos;
         private System.Windows.Forms.Panel pnlInfo;
@@ -699,6 +684,6 @@ namespace PetShop
         private System.Windows.Forms.Button btnAdmin;
         private System.Windows.Forms.Panel pnlSubMenuAdmin;
         private System.Windows.Forms.Button btnBajaModificacionAdmin;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button btnFacturacion;
     }
 }

@@ -16,7 +16,16 @@ namespace PetShop
         public FrmMostrarClientes()
         {
             InitializeComponent();
+        }
+
+        private void FrmMostrarClientes_Load(object sender, EventArgs e)
+        {
             MostrarClientes();
+
+            if (FrmLogin.EsAdmin)
+            {
+                this.BackColor = Color.AntiqueWhite;
+            }
         }
 
         private void MostrarClientes()

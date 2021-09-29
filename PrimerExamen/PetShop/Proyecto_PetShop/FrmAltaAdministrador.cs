@@ -16,8 +16,17 @@ namespace PetShop
         public FrmAltaAdministrador()
         {
             InitializeComponent();
+        }
+
+        private void FrmAltaAdministrador_Load(object sender, EventArgs e)
+        {
             this.lstPuesto.DataSource = Enum.GetValues(typeof(EPuesto));
             this.cmbSexo.Text = "Masculino";
+
+            if (FrmLogin.EsAdmin)
+            {
+                this.BackColor = Color.AntiqueWhite;
+            }
         }
 
         private void btnAltaEmpleado_Click(object sender, EventArgs e)

@@ -45,7 +45,7 @@ namespace Entidades
             StringBuilder st = new StringBuilder();
 
             st.AppendLine($"Nombre y apellido: {this.Nombre} {this.Apellido}");
-            st.AppendLine($"Fecha de nacimiento: {this.FechaNacimiento}");
+            st.AppendLine($"Fecha de nacimiento: {this.FechaNacimiento.Day}/{this.FechaNacimiento.Month}/{this.FechaNacimiento.Year}");
             st.AppendLine($"DNI: {this.Dni}");
             st.AppendLine($"Sexo: {this.Sexo}");
             st.AppendLine($"Nacionalidad: {this.Nacionalidad}");
@@ -209,6 +209,24 @@ namespace Entidades
         }
 
         /// <summary>
+        /// Valida que la cadena ingresada sea una fecha de nacimiento válida
+        /// </summary>
+        /// <param name="fechaNacimiento">Cadena a validar</param>
+        /// <returns>Retorna true si la cadena es un apellido válido o false si no</returns>
+        public static bool ValidarFechaNacimiento(string fechaNacimiento)
+        {
+            bool retorno = false;
+            DateTime fecha;
+
+            if (DateTime.TryParse(fechaNacimiento, out fecha))
+            {
+                retorno = true;
+            }
+
+            return retorno;
+        }
+
+        /// <summary>
         /// Valida que el número ingresado sea un DNI válido
         /// </summary>
         /// <param name="dni">Número a validar</param>
@@ -216,14 +234,10 @@ namespace Entidades
         public static bool ValidarDni(long dni)
         {
             bool retorno = false;
-            long dniNum;
 
             if (dni.ToString().Length == 8)
             {
-                if (long.TryParse(dni.ToString(), out dniNum))
-                {
-                    retorno = true;
-                }
+                retorno = true;
             }
 
             return retorno;

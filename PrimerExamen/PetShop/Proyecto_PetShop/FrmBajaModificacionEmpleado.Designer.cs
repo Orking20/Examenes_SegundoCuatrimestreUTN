@@ -30,15 +30,8 @@ namespace PetShop
         private void InitializeComponent()
         {
             this.panel11 = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
             this.panel8 = new System.Windows.Forms.Panel();
             this.panel10 = new System.Windows.Forms.Panel();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.cmbSexo = new System.Windows.Forms.ComboBox();
             this.txtNacionalidad = new System.Windows.Forms.TextBox();
             this.txtDni = new System.Windows.Forms.TextBox();
@@ -51,40 +44,35 @@ namespace PetShop
             this.lblId = new System.Windows.Forms.Label();
             this.lblInfo = new System.Windows.Forms.Label();
             this.nupIdEmpleado = new System.Windows.Forms.NumericUpDown();
-            this.lblNacionalidadEmpleado = new System.Windows.Forms.Label();
-            this.lblSexoEmpleado = new System.Windows.Forms.Label();
-            this.lblDniEmpleado = new System.Windows.Forms.Label();
-            this.lblFechaNacimientoEmpleado = new System.Windows.Forms.Label();
-            this.lblApellidoEmpleado = new System.Windows.Forms.Label();
-            this.lblNombreEmpleado = new System.Windows.Forms.Label();
-            this.lblFechaNacimiento = new System.Windows.Forms.Label();
-            this.lblNacionalidad = new System.Windows.Forms.Label();
-            this.lblSexo = new System.Windows.Forms.Label();
-            this.lblDni = new System.Windows.Forms.Label();
-            this.lblApellido = new System.Windows.Forms.Label();
-            this.lblNombre = new System.Windows.Forms.Label();
             this.btnMostrar = new System.Windows.Forms.Button();
             this.lblTitulo = new System.Windows.Forms.Label();
-            this.panel9 = new System.Windows.Forms.Panel();
             this.txtSueldo = new System.Windows.Forms.TextBox();
-            this.lblSueldoEmpleado = new System.Windows.Forms.Label();
-            this.lblSueldo = new System.Windows.Forms.Label();
-            this.panel12 = new System.Windows.Forms.Panel();
-            this.lblPuestoEmpleado = new System.Windows.Forms.Label();
-            this.lblPuesto = new System.Windows.Forms.Label();
-            this.panel13 = new System.Windows.Forms.Panel();
-            this.lblHorarioEntradaEmpleado = new System.Windows.Forms.Label();
-            this.lblHorarioEntrada = new System.Windows.Forms.Label();
             this.panel14 = new System.Windows.Forms.Panel();
-            this.lblHorarioSalidaEmpleado = new System.Windows.Forms.Label();
-            this.lblHorarioSalida = new System.Windows.Forms.Label();
             this.cmbPuesto = new System.Windows.Forms.ComboBox();
             this.mtxHoraEntrada = new System.Windows.Forms.MaskedTextBox();
             this.mtxHoraSalida = new System.Windows.Forms.MaskedTextBox();
-            this.panel15 = new System.Windows.Forms.Panel();
             this.txtDomicilio = new System.Windows.Forms.TextBox();
+            this.lblMostrar = new System.Windows.Forms.Label();
+            this.lblNombre = new System.Windows.Forms.Label();
+            this.lblApellido = new System.Windows.Forms.Label();
+            this.lblFechaNacimiento = new System.Windows.Forms.Label();
+            this.lblDni = new System.Windows.Forms.Label();
+            this.lblSexo = new System.Windows.Forms.Label();
+            this.lblNacionalidad = new System.Windows.Forms.Label();
             this.lblDomicilio = new System.Windows.Forms.Label();
-            this.lblDomicilioEmpleado = new System.Windows.Forms.Label();
+            this.lblSueldo = new System.Windows.Forms.Label();
+            this.lblPuesto = new System.Windows.Forms.Label();
+            this.lblDiasLaborales = new System.Windows.Forms.Label();
+            this.chkLunes = new System.Windows.Forms.CheckBox();
+            this.lblHoraEntrada = new System.Windows.Forms.Label();
+            this.lblHoraSalida = new System.Windows.Forms.Label();
+            this.chkMartes = new System.Windows.Forms.CheckBox();
+            this.chkMiercoles = new System.Windows.Forms.CheckBox();
+            this.chkJueves = new System.Windows.Forms.CheckBox();
+            this.chkViernes = new System.Windows.Forms.CheckBox();
+            this.chkSabado = new System.Windows.Forms.CheckBox();
+            this.chkDomingo = new System.Windows.Forms.CheckBox();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.panel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nupIdEmpleado)).BeginInit();
             this.SuspendLayout();
@@ -92,34 +80,18 @@ namespace PetShop
             // panel11
             // 
             this.panel11.BackColor = System.Drawing.Color.DimGray;
-            this.panel11.Location = new System.Drawing.Point(259, 46);
+            this.panel11.Location = new System.Drawing.Point(259, 57);
             this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(2, 385);
+            this.panel11.Size = new System.Drawing.Size(2, 365);
             this.panel11.TabIndex = 88;
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.DimGray;
-            this.panel1.Location = new System.Drawing.Point(262, 81);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(577, 2);
-            this.panel1.TabIndex = 80;
-            // 
-            // panel5
-            // 
-            this.panel5.BackColor = System.Drawing.Color.DimGray;
-            this.panel5.Location = new System.Drawing.Point(411, 46);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(2, 385);
-            this.panel5.TabIndex = 79;
             // 
             // panel8
             // 
             this.panel8.BackColor = System.Drawing.Color.DimGray;
             this.panel8.Controls.Add(this.panel10);
-            this.panel8.Location = new System.Drawing.Point(259, 46);
+            this.panel8.Location = new System.Drawing.Point(259, 57);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(577, 2);
+            this.panel8.Size = new System.Drawing.Size(583, 2);
             this.panel8.TabIndex = 86;
             // 
             // panel10
@@ -130,46 +102,6 @@ namespace PetShop
             this.panel10.Size = new System.Drawing.Size(2, 302);
             this.panel10.TabIndex = 49;
             // 
-            // panel7
-            // 
-            this.panel7.BackColor = System.Drawing.Color.DimGray;
-            this.panel7.Location = new System.Drawing.Point(262, 250);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(577, 2);
-            this.panel7.TabIndex = 85;
-            // 
-            // panel6
-            // 
-            this.panel6.BackColor = System.Drawing.Color.DimGray;
-            this.panel6.Location = new System.Drawing.Point(262, 215);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(577, 2);
-            this.panel6.TabIndex = 84;
-            // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.DimGray;
-            this.panel4.Location = new System.Drawing.Point(262, 180);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(577, 2);
-            this.panel4.TabIndex = 83;
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.DimGray;
-            this.panel3.Location = new System.Drawing.Point(262, 145);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(577, 2);
-            this.panel3.TabIndex = 82;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.DimGray;
-            this.panel2.Location = new System.Drawing.Point(262, 111);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(577, 2);
-            this.panel2.TabIndex = 81;
-            // 
             // cmbSexo
             // 
             this.cmbSexo.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -179,7 +111,7 @@ namespace PetShop
             "Masculino",
             "Femenino",
             "No binario"});
-            this.cmbSexo.Location = new System.Drawing.Point(433, 186);
+            this.cmbSexo.Location = new System.Drawing.Point(447, 180);
             this.cmbSexo.Name = "cmbSexo";
             this.cmbSexo.Size = new System.Drawing.Size(389, 23);
             this.cmbSexo.TabIndex = 78;
@@ -188,7 +120,7 @@ namespace PetShop
             // txtNacionalidad
             // 
             this.txtNacionalidad.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtNacionalidad.Location = new System.Drawing.Point(433, 221);
+            this.txtNacionalidad.Location = new System.Drawing.Point(447, 209);
             this.txtNacionalidad.Name = "txtNacionalidad";
             this.txtNacionalidad.PlaceholderText = "Ingrese la nueva nacionalidad";
             this.txtNacionalidad.Size = new System.Drawing.Size(389, 23);
@@ -198,7 +130,7 @@ namespace PetShop
             // txtDni
             // 
             this.txtDni.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtDni.Location = new System.Drawing.Point(433, 151);
+            this.txtDni.Location = new System.Drawing.Point(447, 151);
             this.txtDni.Name = "txtDni";
             this.txtDni.PlaceholderText = "Ingrese el nuevo DNI";
             this.txtDni.Size = new System.Drawing.Size(389, 23);
@@ -208,7 +140,7 @@ namespace PetShop
             // txtFechaNacimiento
             // 
             this.txtFechaNacimiento.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtFechaNacimiento.Location = new System.Drawing.Point(433, 119);
+            this.txtFechaNacimiento.Location = new System.Drawing.Point(447, 122);
             this.txtFechaNacimiento.Name = "txtFechaNacimiento";
             this.txtFechaNacimiento.PlaceholderText = "Ingrese la nueva fecha de nacimiento separadas por \'/\'";
             this.txtFechaNacimiento.Size = new System.Drawing.Size(389, 23);
@@ -218,7 +150,7 @@ namespace PetShop
             // txtApellido
             // 
             this.txtApellido.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtApellido.Location = new System.Drawing.Point(433, 87);
+            this.txtApellido.Location = new System.Drawing.Point(447, 93);
             this.txtApellido.Name = "txtApellido";
             this.txtApellido.PlaceholderText = "Ingrese el nuevo apellido";
             this.txtApellido.Size = new System.Drawing.Size(389, 23);
@@ -245,7 +177,7 @@ namespace PetShop
             // txtNombre
             // 
             this.txtNombre.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtNombre.Location = new System.Drawing.Point(433, 52);
+            this.txtNombre.Location = new System.Drawing.Point(447, 64);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.PlaceholderText = "Ingrese el nuevo nombre";
             this.txtNombre.Size = new System.Drawing.Size(389, 23);
@@ -326,144 +258,6 @@ namespace PetShop
             0,
             0});
             // 
-            // lblNacionalidadEmpleado
-            // 
-            this.lblNacionalidadEmpleado.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblNacionalidadEmpleado.AutoSize = true;
-            this.lblNacionalidadEmpleado.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblNacionalidadEmpleado.Location = new System.Drawing.Point(433, 220);
-            this.lblNacionalidadEmpleado.Name = "lblNacionalidadEmpleado";
-            this.lblNacionalidadEmpleado.Size = new System.Drawing.Size(170, 20);
-            this.lblNacionalidadEmpleado.TabIndex = 64;
-            this.lblNacionalidadEmpleado.Text = "Nacionalidad Empleado";
-            this.lblNacionalidadEmpleado.Visible = false;
-            // 
-            // lblSexoEmpleado
-            // 
-            this.lblSexoEmpleado.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblSexoEmpleado.AutoSize = true;
-            this.lblSexoEmpleado.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblSexoEmpleado.Location = new System.Drawing.Point(433, 185);
-            this.lblSexoEmpleado.Name = "lblSexoEmpleado";
-            this.lblSexoEmpleado.Size = new System.Drawing.Size(113, 20);
-            this.lblSexoEmpleado.TabIndex = 63;
-            this.lblSexoEmpleado.Text = "Sexo Empleado";
-            this.lblSexoEmpleado.Visible = false;
-            // 
-            // lblDniEmpleado
-            // 
-            this.lblDniEmpleado.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblDniEmpleado.AutoSize = true;
-            this.lblDniEmpleado.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblDniEmpleado.Location = new System.Drawing.Point(433, 150);
-            this.lblDniEmpleado.Name = "lblDniEmpleado";
-            this.lblDniEmpleado.Size = new System.Drawing.Size(107, 20);
-            this.lblDniEmpleado.TabIndex = 62;
-            this.lblDniEmpleado.Text = "DNI Empleado";
-            this.lblDniEmpleado.Visible = false;
-            // 
-            // lblFechaNacimientoEmpleado
-            // 
-            this.lblFechaNacimientoEmpleado.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblFechaNacimientoEmpleado.AutoSize = true;
-            this.lblFechaNacimientoEmpleado.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblFechaNacimientoEmpleado.Location = new System.Drawing.Point(433, 118);
-            this.lblFechaNacimientoEmpleado.Name = "lblFechaNacimientoEmpleado";
-            this.lblFechaNacimientoEmpleado.Size = new System.Drawing.Size(197, 20);
-            this.lblFechaNacimientoEmpleado.TabIndex = 61;
-            this.lblFechaNacimientoEmpleado.Text = "Fecha nacimiento Empleado";
-            this.lblFechaNacimientoEmpleado.Visible = false;
-            // 
-            // lblApellidoEmpleado
-            // 
-            this.lblApellidoEmpleado.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblApellidoEmpleado.AutoSize = true;
-            this.lblApellidoEmpleado.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblApellidoEmpleado.Location = new System.Drawing.Point(433, 86);
-            this.lblApellidoEmpleado.Name = "lblApellidoEmpleado";
-            this.lblApellidoEmpleado.Size = new System.Drawing.Size(138, 20);
-            this.lblApellidoEmpleado.TabIndex = 60;
-            this.lblApellidoEmpleado.Text = "Apellido Empleado";
-            this.lblApellidoEmpleado.Visible = false;
-            // 
-            // lblNombreEmpleado
-            // 
-            this.lblNombreEmpleado.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblNombreEmpleado.AutoSize = true;
-            this.lblNombreEmpleado.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblNombreEmpleado.Location = new System.Drawing.Point(433, 51);
-            this.lblNombreEmpleado.Name = "lblNombreEmpleado";
-            this.lblNombreEmpleado.Size = new System.Drawing.Size(136, 20);
-            this.lblNombreEmpleado.TabIndex = 59;
-            this.lblNombreEmpleado.Text = "Nombre Empleado";
-            this.lblNombreEmpleado.Visible = false;
-            // 
-            // lblFechaNacimiento
-            // 
-            this.lblFechaNacimiento.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblFechaNacimiento.AutoSize = true;
-            this.lblFechaNacimiento.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblFechaNacimiento.Location = new System.Drawing.Point(267, 118);
-            this.lblFechaNacimiento.Name = "lblFechaNacimiento";
-            this.lblFechaNacimiento.Size = new System.Drawing.Size(146, 20);
-            this.lblFechaNacimiento.TabIndex = 53;
-            this.lblFechaNacimiento.Text = "Fecha de nacimiento";
-            // 
-            // lblNacionalidad
-            // 
-            this.lblNacionalidad.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblNacionalidad.AutoSize = true;
-            this.lblNacionalidad.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblNacionalidad.Location = new System.Drawing.Point(267, 220);
-            this.lblNacionalidad.Name = "lblNacionalidad";
-            this.lblNacionalidad.Size = new System.Drawing.Size(98, 20);
-            this.lblNacionalidad.TabIndex = 56;
-            this.lblNacionalidad.Text = "Nacionalidad";
-            // 
-            // lblSexo
-            // 
-            this.lblSexo.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblSexo.AutoSize = true;
-            this.lblSexo.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblSexo.Location = new System.Drawing.Point(267, 185);
-            this.lblSexo.Name = "lblSexo";
-            this.lblSexo.Size = new System.Drawing.Size(41, 20);
-            this.lblSexo.TabIndex = 55;
-            this.lblSexo.Text = "Sexo";
-            // 
-            // lblDni
-            // 
-            this.lblDni.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblDni.AutoSize = true;
-            this.lblDni.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblDni.Location = new System.Drawing.Point(267, 150);
-            this.lblDni.Name = "lblDni";
-            this.lblDni.Size = new System.Drawing.Size(35, 20);
-            this.lblDni.TabIndex = 54;
-            this.lblDni.Text = "DNI";
-            // 
-            // lblApellido
-            // 
-            this.lblApellido.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblApellido.AutoSize = true;
-            this.lblApellido.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblApellido.Location = new System.Drawing.Point(267, 86);
-            this.lblApellido.Name = "lblApellido";
-            this.lblApellido.Size = new System.Drawing.Size(66, 20);
-            this.lblApellido.TabIndex = 52;
-            this.lblApellido.Text = "Apellido";
-            // 
-            // lblNombre
-            // 
-            this.lblNombre.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblNombre.AutoSize = true;
-            this.lblNombre.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblNombre.Location = new System.Drawing.Point(267, 51);
-            this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(64, 20);
-            this.lblNombre.TabIndex = 51;
-            this.lblNombre.Text = "Nombre";
-            // 
             // btnMostrar
             // 
             this.btnMostrar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -490,139 +284,23 @@ namespace PetShop
             this.lblTitulo.TabIndex = 50;
             this.lblTitulo.Text = "Empleados";
             // 
-            // panel9
-            // 
-            this.panel9.BackColor = System.Drawing.Color.DimGray;
-            this.panel9.Location = new System.Drawing.Point(262, 322);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(577, 2);
-            this.panel9.TabIndex = 92;
-            // 
             // txtSueldo
             // 
             this.txtSueldo.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtSueldo.Location = new System.Drawing.Point(433, 292);
+            this.txtSueldo.Location = new System.Drawing.Point(447, 267);
             this.txtSueldo.Name = "txtSueldo";
             this.txtSueldo.PlaceholderText = "Ingrese el nuevo sueldo";
             this.txtSueldo.Size = new System.Drawing.Size(389, 23);
             this.txtSueldo.TabIndex = 91;
             this.txtSueldo.Visible = false;
             // 
-            // lblSueldoEmpleado
-            // 
-            this.lblSueldoEmpleado.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblSueldoEmpleado.AutoSize = true;
-            this.lblSueldoEmpleado.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblSueldoEmpleado.Location = new System.Drawing.Point(433, 292);
-            this.lblSueldoEmpleado.Name = "lblSueldoEmpleado";
-            this.lblSueldoEmpleado.Size = new System.Drawing.Size(127, 20);
-            this.lblSueldoEmpleado.TabIndex = 90;
-            this.lblSueldoEmpleado.Text = "Sueldo Empleado";
-            this.lblSueldoEmpleado.Visible = false;
-            // 
-            // lblSueldo
-            // 
-            this.lblSueldo.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblSueldo.AutoSize = true;
-            this.lblSueldo.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblSueldo.Location = new System.Drawing.Point(267, 292);
-            this.lblSueldo.Name = "lblSueldo";
-            this.lblSueldo.Size = new System.Drawing.Size(55, 20);
-            this.lblSueldo.TabIndex = 89;
-            this.lblSueldo.Text = "Sueldo";
-            // 
-            // panel12
-            // 
-            this.panel12.BackColor = System.Drawing.Color.DimGray;
-            this.panel12.Location = new System.Drawing.Point(262, 357);
-            this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(577, 2);
-            this.panel12.TabIndex = 96;
-            // 
-            // lblPuestoEmpleado
-            // 
-            this.lblPuestoEmpleado.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblPuestoEmpleado.AutoSize = true;
-            this.lblPuestoEmpleado.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblPuestoEmpleado.Location = new System.Drawing.Point(433, 327);
-            this.lblPuestoEmpleado.Name = "lblPuestoEmpleado";
-            this.lblPuestoEmpleado.Size = new System.Drawing.Size(125, 20);
-            this.lblPuestoEmpleado.TabIndex = 94;
-            this.lblPuestoEmpleado.Text = "Puesto Empleado";
-            this.lblPuestoEmpleado.Visible = false;
-            // 
-            // lblPuesto
-            // 
-            this.lblPuesto.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblPuesto.AutoSize = true;
-            this.lblPuesto.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblPuesto.Location = new System.Drawing.Point(267, 327);
-            this.lblPuesto.Name = "lblPuesto";
-            this.lblPuesto.Size = new System.Drawing.Size(53, 20);
-            this.lblPuesto.TabIndex = 93;
-            this.lblPuesto.Text = "Puesto";
-            // 
-            // panel13
-            // 
-            this.panel13.BackColor = System.Drawing.Color.DimGray;
-            this.panel13.Location = new System.Drawing.Point(262, 393);
-            this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(577, 2);
-            this.panel13.TabIndex = 100;
-            // 
-            // lblHorarioEntradaEmpleado
-            // 
-            this.lblHorarioEntradaEmpleado.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblHorarioEntradaEmpleado.AutoSize = true;
-            this.lblHorarioEntradaEmpleado.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblHorarioEntradaEmpleado.Location = new System.Drawing.Point(433, 363);
-            this.lblHorarioEntradaEmpleado.Name = "lblHorarioEntradaEmpleado";
-            this.lblHorarioEntradaEmpleado.Size = new System.Drawing.Size(187, 20);
-            this.lblHorarioEntradaEmpleado.TabIndex = 98;
-            this.lblHorarioEntradaEmpleado.Text = "Horario Entrada Empleado";
-            this.lblHorarioEntradaEmpleado.Visible = false;
-            // 
-            // lblHorarioEntrada
-            // 
-            this.lblHorarioEntrada.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblHorarioEntrada.AutoSize = true;
-            this.lblHorarioEntrada.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblHorarioEntrada.Location = new System.Drawing.Point(267, 363);
-            this.lblHorarioEntrada.Name = "lblHorarioEntrada";
-            this.lblHorarioEntrada.Size = new System.Drawing.Size(115, 20);
-            this.lblHorarioEntrada.TabIndex = 97;
-            this.lblHorarioEntrada.Text = "Horario entrada";
-            // 
             // panel14
             // 
             this.panel14.BackColor = System.Drawing.Color.DimGray;
-            this.panel14.Location = new System.Drawing.Point(262, 428);
+            this.panel14.Location = new System.Drawing.Point(257, 421);
             this.panel14.Name = "panel14";
-            this.panel14.Size = new System.Drawing.Size(577, 2);
+            this.panel14.Size = new System.Drawing.Size(583, 2);
             this.panel14.TabIndex = 104;
-            // 
-            // lblHorarioSalidaEmpleado
-            // 
-            this.lblHorarioSalidaEmpleado.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblHorarioSalidaEmpleado.AutoSize = true;
-            this.lblHorarioSalidaEmpleado.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblHorarioSalidaEmpleado.Location = new System.Drawing.Point(433, 398);
-            this.lblHorarioSalidaEmpleado.Name = "lblHorarioSalidaEmpleado";
-            this.lblHorarioSalidaEmpleado.Size = new System.Drawing.Size(177, 20);
-            this.lblHorarioSalidaEmpleado.TabIndex = 102;
-            this.lblHorarioSalidaEmpleado.Text = "Horario Salida Empleado";
-            this.lblHorarioSalidaEmpleado.Visible = false;
-            // 
-            // lblHorarioSalida
-            // 
-            this.lblHorarioSalida.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblHorarioSalida.AutoSize = true;
-            this.lblHorarioSalida.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblHorarioSalida.Location = new System.Drawing.Point(267, 398);
-            this.lblHorarioSalida.Name = "lblHorarioSalida";
-            this.lblHorarioSalida.Size = new System.Drawing.Size(103, 20);
-            this.lblHorarioSalida.TabIndex = 101;
-            this.lblHorarioSalida.Text = "Horario salida";
             // 
             // cmbPuesto
             // 
@@ -633,7 +311,7 @@ namespace PetShop
             "Masculino",
             "Femenino",
             "No binario"});
-            this.cmbPuesto.Location = new System.Drawing.Point(433, 327);
+            this.cmbPuesto.Location = new System.Drawing.Point(447, 296);
             this.cmbPuesto.Name = "cmbPuesto";
             this.cmbPuesto.Size = new System.Drawing.Size(389, 23);
             this.cmbPuesto.TabIndex = 105;
@@ -641,7 +319,7 @@ namespace PetShop
             // 
             // mtxHoraEntrada
             // 
-            this.mtxHoraEntrada.Location = new System.Drawing.Point(433, 363);
+            this.mtxHoraEntrada.Location = new System.Drawing.Point(447, 355);
             this.mtxHoraEntrada.Mask = "00:00";
             this.mtxHoraEntrada.Name = "mtxHoraEntrada";
             this.mtxHoraEntrada.Size = new System.Drawing.Size(389, 23);
@@ -651,7 +329,7 @@ namespace PetShop
             // 
             // mtxHoraSalida
             // 
-            this.mtxHoraSalida.Location = new System.Drawing.Point(433, 398);
+            this.mtxHoraSalida.Location = new System.Drawing.Point(447, 384);
             this.mtxHoraSalida.Mask = "00:00";
             this.mtxHoraSalida.Name = "mtxHoraSalida";
             this.mtxHoraSalida.Size = new System.Drawing.Size(389, 23);
@@ -659,46 +337,257 @@ namespace PetShop
             this.mtxHoraSalida.ValidatingType = typeof(System.DateTime);
             this.mtxHoraSalida.Visible = false;
             // 
-            // panel15
-            // 
-            this.panel15.BackColor = System.Drawing.Color.DimGray;
-            this.panel15.Location = new System.Drawing.Point(262, 285);
-            this.panel15.Name = "panel15";
-            this.panel15.Size = new System.Drawing.Size(577, 2);
-            this.panel15.TabIndex = 110;
-            // 
             // txtDomicilio
             // 
             this.txtDomicilio.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtDomicilio.Location = new System.Drawing.Point(433, 256);
+            this.txtDomicilio.Location = new System.Drawing.Point(447, 237);
             this.txtDomicilio.Name = "txtDomicilio";
             this.txtDomicilio.PlaceholderText = "Ingrese el nuevo domicilio";
             this.txtDomicilio.Size = new System.Drawing.Size(389, 23);
             this.txtDomicilio.TabIndex = 109;
             this.txtDomicilio.Visible = false;
             // 
+            // lblMostrar
+            // 
+            this.lblMostrar.AutoSize = true;
+            this.lblMostrar.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblMostrar.Location = new System.Drawing.Point(268, 66);
+            this.lblMostrar.Name = "lblMostrar";
+            this.lblMostrar.Size = new System.Drawing.Size(96, 32);
+            this.lblMostrar.TabIndex = 110;
+            this.lblMostrar.Text = "Mostrar";
+            this.lblMostrar.Visible = false;
+            // 
+            // lblNombre
+            // 
+            this.lblNombre.AutoSize = true;
+            this.lblNombre.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblNombre.Location = new System.Drawing.Point(268, 67);
+            this.lblNombre.Name = "lblNombre";
+            this.lblNombre.Size = new System.Drawing.Size(64, 20);
+            this.lblNombre.TabIndex = 111;
+            this.lblNombre.Text = "Nombre";
+            this.lblNombre.Visible = false;
+            // 
+            // lblApellido
+            // 
+            this.lblApellido.AutoSize = true;
+            this.lblApellido.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblApellido.Location = new System.Drawing.Point(268, 96);
+            this.lblApellido.Name = "lblApellido";
+            this.lblApellido.Size = new System.Drawing.Size(66, 20);
+            this.lblApellido.TabIndex = 112;
+            this.lblApellido.Text = "Apellido";
+            this.lblApellido.Visible = false;
+            // 
+            // lblFechaNacimiento
+            // 
+            this.lblFechaNacimiento.AutoSize = true;
+            this.lblFechaNacimiento.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblFechaNacimiento.Location = new System.Drawing.Point(268, 125);
+            this.lblFechaNacimiento.Name = "lblFechaNacimiento";
+            this.lblFechaNacimiento.Size = new System.Drawing.Size(146, 20);
+            this.lblFechaNacimiento.TabIndex = 113;
+            this.lblFechaNacimiento.Text = "Fecha de nacimiento";
+            this.lblFechaNacimiento.Visible = false;
+            // 
+            // lblDni
+            // 
+            this.lblDni.AutoSize = true;
+            this.lblDni.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblDni.Location = new System.Drawing.Point(268, 154);
+            this.lblDni.Name = "lblDni";
+            this.lblDni.Size = new System.Drawing.Size(35, 20);
+            this.lblDni.TabIndex = 114;
+            this.lblDni.Text = "DNI";
+            this.lblDni.Visible = false;
+            // 
+            // lblSexo
+            // 
+            this.lblSexo.AutoSize = true;
+            this.lblSexo.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblSexo.Location = new System.Drawing.Point(268, 183);
+            this.lblSexo.Name = "lblSexo";
+            this.lblSexo.Size = new System.Drawing.Size(41, 20);
+            this.lblSexo.TabIndex = 115;
+            this.lblSexo.Text = "Sexo";
+            this.lblSexo.Visible = false;
+            // 
+            // lblNacionalidad
+            // 
+            this.lblNacionalidad.AutoSize = true;
+            this.lblNacionalidad.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblNacionalidad.Location = new System.Drawing.Point(268, 212);
+            this.lblNacionalidad.Name = "lblNacionalidad";
+            this.lblNacionalidad.Size = new System.Drawing.Size(98, 20);
+            this.lblNacionalidad.TabIndex = 116;
+            this.lblNacionalidad.Text = "Nacionalidad";
+            this.lblNacionalidad.Visible = false;
+            // 
             // lblDomicilio
             // 
-            this.lblDomicilio.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblDomicilio.AutoSize = true;
-            this.lblDomicilio.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblDomicilio.Location = new System.Drawing.Point(267, 255);
+            this.lblDomicilio.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblDomicilio.Location = new System.Drawing.Point(268, 240);
             this.lblDomicilio.Name = "lblDomicilio";
             this.lblDomicilio.Size = new System.Drawing.Size(74, 20);
-            this.lblDomicilio.TabIndex = 108;
+            this.lblDomicilio.TabIndex = 117;
             this.lblDomicilio.Text = "Domicilio";
+            this.lblDomicilio.Visible = false;
             // 
-            // lblDomicilioEmpleado
+            // lblSueldo
             // 
-            this.lblDomicilioEmpleado.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblDomicilioEmpleado.AutoSize = true;
-            this.lblDomicilioEmpleado.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblDomicilioEmpleado.Location = new System.Drawing.Point(433, 255);
-            this.lblDomicilioEmpleado.Name = "lblDomicilioEmpleado";
-            this.lblDomicilioEmpleado.Size = new System.Drawing.Size(146, 20);
-            this.lblDomicilioEmpleado.TabIndex = 111;
-            this.lblDomicilioEmpleado.Text = "Domicilio Empleado";
-            this.lblDomicilioEmpleado.Visible = false;
+            this.lblSueldo.AutoSize = true;
+            this.lblSueldo.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblSueldo.Location = new System.Drawing.Point(268, 270);
+            this.lblSueldo.Name = "lblSueldo";
+            this.lblSueldo.Size = new System.Drawing.Size(55, 20);
+            this.lblSueldo.TabIndex = 118;
+            this.lblSueldo.Text = "Sueldo";
+            this.lblSueldo.Visible = false;
+            // 
+            // lblPuesto
+            // 
+            this.lblPuesto.AutoSize = true;
+            this.lblPuesto.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblPuesto.Location = new System.Drawing.Point(268, 299);
+            this.lblPuesto.Name = "lblPuesto";
+            this.lblPuesto.Size = new System.Drawing.Size(53, 20);
+            this.lblPuesto.TabIndex = 119;
+            this.lblPuesto.Text = "Puesto";
+            this.lblPuesto.Visible = false;
+            // 
+            // lblDiasLaborales
+            // 
+            this.lblDiasLaborales.AutoSize = true;
+            this.lblDiasLaborales.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblDiasLaborales.Location = new System.Drawing.Point(268, 328);
+            this.lblDiasLaborales.Name = "lblDiasLaborales";
+            this.lblDiasLaborales.Size = new System.Drawing.Size(103, 20);
+            this.lblDiasLaborales.TabIndex = 120;
+            this.lblDiasLaborales.Text = "Dias laborales";
+            this.lblDiasLaborales.Visible = false;
+            // 
+            // chkLunes
+            // 
+            this.chkLunes.AutoSize = true;
+            this.chkLunes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.chkLunes.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.chkLunes.Location = new System.Drawing.Point(447, 324);
+            this.chkLunes.Name = "chkLunes";
+            this.chkLunes.Size = new System.Drawing.Size(32, 24);
+            this.chkLunes.TabIndex = 121;
+            this.chkLunes.Text = "L";
+            this.chkLunes.UseVisualStyleBackColor = true;
+            this.chkLunes.Visible = false;
+            // 
+            // lblHoraEntrada
+            // 
+            this.lblHoraEntrada.AutoSize = true;
+            this.lblHoraEntrada.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblHoraEntrada.Location = new System.Drawing.Point(268, 358);
+            this.lblHoraEntrada.Name = "lblHoraEntrada";
+            this.lblHoraEntrada.Size = new System.Drawing.Size(118, 20);
+            this.lblHoraEntrada.TabIndex = 122;
+            this.lblHoraEntrada.Text = "Hora de entrada";
+            this.lblHoraEntrada.Visible = false;
+            // 
+            // lblHoraSalida
+            // 
+            this.lblHoraSalida.AutoSize = true;
+            this.lblHoraSalida.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblHoraSalida.Location = new System.Drawing.Point(268, 387);
+            this.lblHoraSalida.Name = "lblHoraSalida";
+            this.lblHoraSalida.Size = new System.Drawing.Size(106, 20);
+            this.lblHoraSalida.TabIndex = 123;
+            this.lblHoraSalida.Text = "Hora de salida";
+            this.lblHoraSalida.Visible = false;
+            // 
+            // chkMartes
+            // 
+            this.chkMartes.AutoSize = true;
+            this.chkMartes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.chkMartes.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.chkMartes.Location = new System.Drawing.Point(503, 324);
+            this.chkMartes.Name = "chkMartes";
+            this.chkMartes.Size = new System.Drawing.Size(46, 24);
+            this.chkMartes.TabIndex = 124;
+            this.chkMartes.Text = "Ma";
+            this.chkMartes.UseVisualStyleBackColor = true;
+            this.chkMartes.Visible = false;
+            // 
+            // chkMiercoles
+            // 
+            this.chkMiercoles.AutoSize = true;
+            this.chkMiercoles.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.chkMiercoles.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.chkMiercoles.Location = new System.Drawing.Point(570, 324);
+            this.chkMiercoles.Name = "chkMiercoles";
+            this.chkMiercoles.Size = new System.Drawing.Size(42, 24);
+            this.chkMiercoles.TabIndex = 125;
+            this.chkMiercoles.Text = "Mi";
+            this.chkMiercoles.UseVisualStyleBackColor = true;
+            this.chkMiercoles.Visible = false;
+            // 
+            // chkJueves
+            // 
+            this.chkJueves.AutoSize = true;
+            this.chkJueves.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.chkJueves.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.chkJueves.Location = new System.Drawing.Point(635, 324);
+            this.chkJueves.Name = "chkJueves";
+            this.chkJueves.Size = new System.Drawing.Size(30, 24);
+            this.chkJueves.TabIndex = 126;
+            this.chkJueves.Text = "J";
+            this.chkJueves.UseVisualStyleBackColor = true;
+            this.chkJueves.Visible = false;
+            // 
+            // chkViernes
+            // 
+            this.chkViernes.AutoSize = true;
+            this.chkViernes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.chkViernes.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.chkViernes.Location = new System.Drawing.Point(692, 324);
+            this.chkViernes.Name = "chkViernes";
+            this.chkViernes.Size = new System.Drawing.Size(34, 24);
+            this.chkViernes.TabIndex = 127;
+            this.chkViernes.Text = "V";
+            this.chkViernes.UseVisualStyleBackColor = true;
+            this.chkViernes.Visible = false;
+            // 
+            // chkSabado
+            // 
+            this.chkSabado.AutoSize = true;
+            this.chkSabado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.chkSabado.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.chkSabado.Location = new System.Drawing.Point(750, 324);
+            this.chkSabado.Name = "chkSabado";
+            this.chkSabado.Size = new System.Drawing.Size(33, 24);
+            this.chkSabado.TabIndex = 128;
+            this.chkSabado.Text = "S";
+            this.chkSabado.UseVisualStyleBackColor = true;
+            this.chkSabado.Visible = false;
+            // 
+            // chkDomingo
+            // 
+            this.chkDomingo.AutoSize = true;
+            this.chkDomingo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.chkDomingo.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.chkDomingo.Location = new System.Drawing.Point(804, 324);
+            this.chkDomingo.Name = "chkDomingo";
+            this.chkDomingo.Size = new System.Drawing.Size(36, 24);
+            this.chkDomingo.TabIndex = 129;
+            this.chkDomingo.Text = "D";
+            this.chkDomingo.UseVisualStyleBackColor = true;
+            this.chkDomingo.Visible = false;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.DimGray;
+            this.panel1.Location = new System.Drawing.Point(842, 57);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(2, 365);
+            this.panel1.TabIndex = 130;
             // 
             // FrmBajaModificacionEmpleado
             // 
@@ -706,59 +595,47 @@ namespace PetShop
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSlateGray;
             this.ClientSize = new System.Drawing.Size(923, 442);
-            this.Controls.Add(this.txtDomicilio);
-            this.Controls.Add(this.lblDomicilioEmpleado);
-            this.Controls.Add(this.panel15);
+            this.Controls.Add(this.panel14);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.chkDomingo);
+            this.Controls.Add(this.chkSabado);
+            this.Controls.Add(this.chkViernes);
+            this.Controls.Add(this.chkJueves);
+            this.Controls.Add(this.chkMiercoles);
+            this.Controls.Add(this.chkMartes);
+            this.Controls.Add(this.lblHoraSalida);
+            this.Controls.Add(this.lblHoraEntrada);
+            this.Controls.Add(this.chkLunes);
+            this.Controls.Add(this.lblDiasLaborales);
+            this.Controls.Add(this.lblPuesto);
+            this.Controls.Add(this.lblSueldo);
             this.Controls.Add(this.lblDomicilio);
+            this.Controls.Add(this.lblNacionalidad);
+            this.Controls.Add(this.lblSexo);
+            this.Controls.Add(this.lblDni);
+            this.Controls.Add(this.lblFechaNacimiento);
+            this.Controls.Add(this.lblApellido);
+            this.Controls.Add(this.lblNombre);
+            this.Controls.Add(this.txtDomicilio);
             this.Controls.Add(this.mtxHoraSalida);
             this.Controls.Add(this.mtxHoraEntrada);
             this.Controls.Add(this.cmbPuesto);
-            this.Controls.Add(this.panel14);
-            this.Controls.Add(this.lblHorarioSalidaEmpleado);
-            this.Controls.Add(this.lblHorarioSalida);
-            this.Controls.Add(this.panel13);
-            this.Controls.Add(this.lblHorarioEntradaEmpleado);
-            this.Controls.Add(this.lblHorarioEntrada);
-            this.Controls.Add(this.panel12);
-            this.Controls.Add(this.lblPuestoEmpleado);
-            this.Controls.Add(this.lblPuesto);
-            this.Controls.Add(this.panel9);
             this.Controls.Add(this.txtSueldo);
-            this.Controls.Add(this.lblSueldoEmpleado);
-            this.Controls.Add(this.lblSueldo);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel11);
-            this.Controls.Add(this.panel5);
-            this.Controls.Add(this.panel8);
-            this.Controls.Add(this.panel7);
-            this.Controls.Add(this.panel6);
-            this.Controls.Add(this.panel4);
-            this.Controls.Add(this.panel3);
             this.Controls.Add(this.cmbSexo);
             this.Controls.Add(this.txtNacionalidad);
             this.Controls.Add(this.txtDni);
             this.Controls.Add(this.txtFechaNacimiento);
             this.Controls.Add(this.txtApellido);
-            this.Controls.Add(this.btnAplicarCambios);
             this.Controls.Add(this.txtNombre);
+            this.Controls.Add(this.lblMostrar);
+            this.Controls.Add(this.panel11);
+            this.Controls.Add(this.panel8);
+            this.Controls.Add(this.btnAplicarCambios);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.lblId);
             this.Controls.Add(this.lblInfo);
             this.Controls.Add(this.nupIdEmpleado);
-            this.Controls.Add(this.lblNacionalidadEmpleado);
-            this.Controls.Add(this.lblSexoEmpleado);
-            this.Controls.Add(this.lblDniEmpleado);
-            this.Controls.Add(this.lblFechaNacimientoEmpleado);
-            this.Controls.Add(this.lblApellidoEmpleado);
-            this.Controls.Add(this.lblNombreEmpleado);
-            this.Controls.Add(this.lblFechaNacimiento);
-            this.Controls.Add(this.lblNacionalidad);
-            this.Controls.Add(this.lblSexo);
-            this.Controls.Add(this.lblDni);
-            this.Controls.Add(this.lblApellido);
-            this.Controls.Add(this.lblNombre);
             this.Controls.Add(this.btnMostrar);
             this.Controls.Add(this.lblTitulo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -775,15 +652,8 @@ namespace PetShop
         #endregion
 
         private System.Windows.Forms.Panel panel11;
-        private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Panel panel10;
-        private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.ComboBox cmbSexo;
         private System.Windows.Forms.TextBox txtNacionalidad;
         private System.Windows.Forms.TextBox txtDni;
@@ -796,39 +666,34 @@ namespace PetShop
         private System.Windows.Forms.Label lblId;
         private System.Windows.Forms.Label lblInfo;
         private System.Windows.Forms.NumericUpDown nupIdEmpleado;
-        private System.Windows.Forms.Label lblNacionalidadEmpleado;
-        private System.Windows.Forms.Label lblSexoEmpleado;
-        private System.Windows.Forms.Label lblDniEmpleado;
-        private System.Windows.Forms.Label lblFechaNacimientoEmpleado;
-        private System.Windows.Forms.Label lblApellidoEmpleado;
-        private System.Windows.Forms.Label lblNombreEmpleado;
-        private System.Windows.Forms.Label lblFechaNacimiento;
-        private System.Windows.Forms.Label lblNacionalidad;
-        private System.Windows.Forms.Label lblSexo;
-        private System.Windows.Forms.Label lblDni;
-        private System.Windows.Forms.Label lblApellido;
-        private System.Windows.Forms.Label lblNombre;
         private System.Windows.Forms.Button btnMostrar;
         private System.Windows.Forms.Label lblTitulo;
-        private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.TextBox txtSueldo;
-        private System.Windows.Forms.Label lblSueldoEmpleado;
-        private System.Windows.Forms.Label lblSueldo;
-        private System.Windows.Forms.Panel panel12;
-        private System.Windows.Forms.Label lblPuestoEmpleado;
-        private System.Windows.Forms.Label lblPuesto;
-        private System.Windows.Forms.Panel panel13;
-        private System.Windows.Forms.Label lblHorarioEntradaEmpleado;
-        private System.Windows.Forms.Label lblHorarioEntrada;
         private System.Windows.Forms.Panel panel14;
-        private System.Windows.Forms.Label lblHorarioSalidaEmpleado;
-        private System.Windows.Forms.Label lblHorarioSalida;
         private System.Windows.Forms.ComboBox cmbPuesto;
         private System.Windows.Forms.MaskedTextBox mtxHoraEntrada;
         private System.Windows.Forms.MaskedTextBox mtxHoraSalida;
-        private System.Windows.Forms.Panel panel15;
         private System.Windows.Forms.TextBox txtDomicilio;
+        private System.Windows.Forms.Label lblMostrar;
+        private System.Windows.Forms.Label lblNombre;
+        private System.Windows.Forms.Label lblApellido;
+        private System.Windows.Forms.Label lblFechaNacimiento;
+        private System.Windows.Forms.Label lblDni;
+        private System.Windows.Forms.Label lblSexo;
+        private System.Windows.Forms.Label lblNacionalidad;
         private System.Windows.Forms.Label lblDomicilio;
-        private System.Windows.Forms.Label lblDomicilioEmpleado;
+        private System.Windows.Forms.Label lblSueldo;
+        private System.Windows.Forms.Label lblPuesto;
+        private System.Windows.Forms.Label lblDiasLaborales;
+        private System.Windows.Forms.CheckBox chkLunes;
+        private System.Windows.Forms.Label lblHoraEntrada;
+        private System.Windows.Forms.Label lblHoraSalida;
+        private System.Windows.Forms.CheckBox chkMartes;
+        private System.Windows.Forms.CheckBox chkMiercoles;
+        private System.Windows.Forms.CheckBox chkJueves;
+        private System.Windows.Forms.CheckBox chkViernes;
+        private System.Windows.Forms.CheckBox chkSabado;
+        private System.Windows.Forms.CheckBox chkDomingo;
+        private System.Windows.Forms.Panel panel1;
     }
 }

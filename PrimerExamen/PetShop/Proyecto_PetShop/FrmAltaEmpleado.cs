@@ -16,8 +16,17 @@ namespace PetShop
         public FrmAltaEmpleado()
         {
             InitializeComponent();
+        }
+
+        private void FrmAltaEmpleado_Load(object sender, EventArgs e)
+        {
             this.lstPuesto.DataSource = Enum.GetValues(typeof(EPuesto));
             this.cmbSexo.Text = "Masculino";
+
+            if (FrmLogin.EsAdmin)
+            {
+                this.BackColor = Color.AntiqueWhite;
+            }
         }
 
         private void btnAltaEmpleado_Click(object sender, EventArgs e)
@@ -86,19 +95,24 @@ namespace PetShop
                 horarioSalida = Convert.ToDateTime(mtxHoraSalida.Text);
                 nombre = txtNombre.Text;
                 apellido = txtApellido.Text;
-                if (long.TryParse(txtDni.Text, out dni))
-                {
-                    nacionalidad = txtNacionalidad.Text;
-                    domicilio = txtDomicilio.Text;
-                    fechaNacimiento = ca1FechaNacimiento.SelectionStart.Date;
-                    sexo = cmbSexo.SelectedItem.ToString();
+                nacionalidad = txtNacionalidad.Text;
+                domicilio = txtDomicilio.Text;
+                fechaNacimiento = ca1FechaNacimiento.SelectionStart.Date;
+                sexo = cmbSexo.SelectedItem.ToString();
 
+                if (puesto == EPuesto.administrador)
+                {
+                    empleadoNuevo = Administrador.AltaAdministrador(usuario, password, sueldo, puesto, diasLaborales, horarioEntrada, horarioSalida, nombre, apellido, fechaNacimiento, dni, sexo, nacionalidad, domicilio);
+                    FrmLogin.Administradores.Add((Administrador)empleadoNuevo);
+                }
+                else
+                {
                     empleadoNuevo = Administrador.AltaEmpleado(usuario, password, sueldo, puesto, diasLaborales, horarioEntrada, horarioSalida, nombre, apellido, fechaNacimiento, dni, sexo, nacionalidad, domicilio);
                     FrmLogin.Empleados.Add(empleadoNuevo);
-                    FrmLogin.Usuarios.Add(usuario, password);
-
-                    MessageBox.Show($"Esta es la contraseña para el usuario {usuario}: {password}\nEscribala y asegúrese de cambiarla", "Contraseña", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
+                FrmLogin.Usuarios.Add(usuario, password);
+
+                MessageBox.Show($"Esta es la contraseña para el usuario {usuario}: {password}\nEscribala y asegúrese de cambiarla", "Contraseña", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {

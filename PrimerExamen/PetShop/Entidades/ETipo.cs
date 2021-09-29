@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
-    public enum EPuesto
+    public enum ETipo
     {
-        administrador,
-        cajero,
-        delivery,
-        limpieza
+        alimento,
+        juguete,
+        cama,
+        cuidado
     }
 }

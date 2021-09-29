@@ -13,26 +13,59 @@ namespace PetShop
 {
     public partial class FrmLogin : Form
     {
-        static List<Empleado> empleados;
-        static List<Administrador> administradores;
-        static Dictionary<string, string> usuarios;
+        private static List<Empleado> empleados;
+        private static List<Administrador> administradores;
+        private static List<Producto> productos;
+        private static Dictionary<string, string> usuarios;
+        private static bool esAdmin;
 
+        /// <summary>
+        /// Carga los componentes gráficos
+        /// </summary>
         public FrmLogin()
         {
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Carga algunos datos
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void FrmLogin_Load(object sender, EventArgs e)
         {
-            HardcodeoEmpleados();
-            HardcodeoAdministradores();
-            HardcodeoUsuarios();
+            Hardcodeo();
         }
 
+        /// <summary>
+        /// Si el usuario y la contraseña son correctas accede al menú
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnIngresar_Click(object sender, EventArgs e)
         {
             if (usuarios.ContainsKey(txtUsuario.Text) && txtPass.Text == usuarios[txtUsuario.Text])
             {
+                for (int i = 0; i < usuarios.Count; i++)
+                {
+                    if (i < empleados.Count)
+                    {
+                        if (empleados[i].Usuario == txtUsuario.Text && empleados[i].Password == txtPass.Text)
+                        {
+                            esAdmin = false;
+                            break;
+                        }
+                    }
+                    if (i < administradores.Count)
+                    {
+                        if (administradores[i].Usuario == txtUsuario.Text && administradores[i].Password == txtPass.Text)
+                        {
+                            esAdmin = true;
+                            break;
+                        }
+                    }
+                }
+
                 new FrmMenu().Show();
                 this.Hide();
             }
@@ -112,44 +145,44 @@ namespace PetShop
         }
 
         #region Hardcodeo
-        private void HardcodeoEmpleados()
+        /// <summary>
+        /// Carga algunos empleados
+        /// </summary>
+        private void Hardcodeo()
         {
             empleados = new List<Empleado>();
-
-            string[] diasLaborales = new string[5] { "L", "Ma", "Mi", "J", "V" };
-            string[] diasLaborales2 = new string[3] { "L", "Mi", "S" };
-            string[] diasLaborales3 = new string[2] { "S", "D" };
-
-            empleados.Add(Administrador.AltaEmpleado("Gonzalo", "Kublai", 25000, EPuesto.cajero, diasLaborales, Convert.ToDateTime("12:00"), Convert.ToDateTime("19:00"), "Gonzalo", "Marquinez", Convert.ToDateTime("14/07/1992"), 41542195, "Masculino", "Argentina", "Cabrera 3015"));
-            empleados.Add(Administrador.AltaEmpleado("Juli", "EmpanadaFrita", 19000, EPuesto.delivery, diasLaborales, Convert.ToDateTime("13:00"), Convert.ToDateTime("19:00"), "Julia", "Dominguez", Convert.ToDateTime("23/03/2000"), 40462485, "Femenino", "Argentina", "Bompland 5002"));
-            empleados.Add(Administrador.AltaEmpleado("Juancita", "Merales123", 25000, EPuesto.limpieza, diasLaborales2, Convert.ToDateTime("13:00"), Convert.ToDateTime("15:00"), "Juana", "Merales", Convert.ToDateTime("19/12/1990"), 38452158, "No binario", "Paraguay", "Av. Santa Fe 5124"));
-            empleados.Add(Administrador.AltaEmpleado("Marce", "lito246", 20000, EPuesto.cajero, diasLaborales3, Convert.ToDateTime("12:00"), Convert.ToDateTime("19:00"), "Marcelo", "Ricaño", Convert.ToDateTime("01/01/1993"), 40830644, "Masculino", "Argentina", "Bersalles 203"));
-        }
-
-        private void HardcodeoAdministradores()
-        {
             administradores = new List<Administrador>();
-
-            string[] diasLaborales4 = new string[7] { "L", "Ma", "Mi", "J", "V", "S", "D" };
-            
-            administradores.Add(Administrador.AltaAdministrador("Tatiana", "jinjer123", 73000, EPuesto.cajero, diasLaborales4, Convert.ToDateTime("12:00"), Convert.ToDateTime("19:00"), "Tatiana", "Shmaylyuk", Convert.ToDateTime("15/03/1987"), 38245987, "Femenino", "Ucrania", "Pavón 3120"));
-            administradores.Add(Administrador.AltaAdministrador("Will", "Lorna_400", 68000, EPuesto.cajero, diasLaborales4, Convert.ToDateTime("12:00"), Convert.ToDateTime("19:00"), "William", "Ramos", Convert.ToDateTime("02/05/1982"), 36846528, "Masculino", "Argentina", "Salcedo 2857"));
-        }
-
-        private void HardcodeoUsuarios()
-        {
+            productos = new List<Producto>();
             usuarios = new Dictionary<string, string>();
 
-            usuarios.Add("Gonzalo", "Kublai");
-            usuarios.Add("Juli", "EmpanadaFrita");
-            usuarios.Add("Juancita", "Merales123");
-            usuarios.Add("Marce", "lito246");
-            usuarios.Add("Tatiana", "jinjer123");
-            usuarios.Add("Will", "Lorna_400");
+            Empleado empleado1 = Administrador.AltaEmpleado("Gonzalo", "Kublai", 25000, EPuesto.cajero, new string[] { "L", "Ma", "Mi", "J", "V", null, null }, Convert.ToDateTime("12:00"), Convert.ToDateTime("19:00"), "Gonzalo", "Marquinez", Convert.ToDateTime("14/07/1992"), 41542195, "Masculino", "Argentina", "Cabrera 3015");
+            Empleado empleado2 = Administrador.AltaEmpleado("Juli", "EmpanadaFrita", 19000, EPuesto.delivery, new string[] { "L", "Ma", "Mi", "J", "V", null, null }, Convert.ToDateTime("13:00"), Convert.ToDateTime("19:00"), "Julia", "Dominguez", Convert.ToDateTime("23/03/2000"), 40462485, "Femenino", "Argentina", "Bompland 5002");
+            Empleado empleado3 = Administrador.AltaEmpleado("Juancita", "Merales123", 25000, EPuesto.limpieza, new string[] { "L", null, "Mi", null, null, "S", null }, Convert.ToDateTime("13:00"), Convert.ToDateTime("15:00"), "Juana", "Merales", Convert.ToDateTime("19/12/1990"), 38452158, "No binario", "Paraguay", "Av. Santa Fe 5124");
+            Empleado empleado4 = Administrador.AltaEmpleado("Marce", "lito246", 20000, EPuesto.cajero, new string[] { null, null, null, null, null, "S", "D" }, Convert.ToDateTime("12:00"), Convert.ToDateTime("19:00"), "Marcelo", "Ricaño", Convert.ToDateTime("01/01/1993"), 40830644, "Masculino", "Argentina", "Bersalles 203");
+            Administrador admin1 = Administrador.AltaAdministrador("Tatiana", "jinjer123", 73000, EPuesto.administrador, new string[] { "L", "Ma", "Mi", "J", "V", "S", "D" }, Convert.ToDateTime("12:00"), Convert.ToDateTime("19:00"), "Tatiana", "Shmaylyuk", Convert.ToDateTime("15/03/1987"), 38245987, "Femenino", "Ucrania", "Pavón 3120");
+            Administrador admin2 = Administrador.AltaAdministrador("Will", "Lorna_400", 68000, EPuesto.administrador, new string[] { "L", "Ma", "Mi", "J", "V", "S", "D" }, Convert.ToDateTime("12:00"), Convert.ToDateTime("19:00"), "William", "Ramos", Convert.ToDateTime("02/05/1982"), 36846528, "Masculino", "Argentina", "Salcedo 2857");
+
+            empleados.Add(empleado1);
+            empleados.Add(empleado2);
+            empleados.Add(empleado3);
+            empleados.Add(empleado4);
+
+            administradores.Add(admin1);
+            administradores.Add(admin2);
+
+            usuarios.Add(empleado1.Usuario, empleado1.Password);
+            usuarios.Add(empleado2.Usuario, empleado2.Password);
+            usuarios.Add(empleado3.Usuario, empleado3.Password);
+            usuarios.Add(empleado4.Usuario, empleado4.Password);
+            usuarios.Add(admin1.Usuario, admin1.Password);
+            usuarios.Add(admin2.Usuario, admin2.Password);
         }
         #endregion
 
         #region Getters
+        /// <summary>
+        /// Devuelve la lista de empleados
+        /// </summary>
         public static List<Empleado> Empleados
         {
             get
@@ -158,6 +191,9 @@ namespace PetShop
             }
         }
 
+        /// <summary>
+        /// Devuelve la lista de administradores
+        /// </summary>
         public static List<Administrador> Administradores
         {
             get
@@ -166,6 +202,20 @@ namespace PetShop
             }
         }
 
+        /// <summary>
+        /// Devuelve la lista de productos
+        /// </summary>
+        public static List<Producto> Productos
+        {
+            get
+            {
+                return productos;
+            }
+        }
+
+        /// <summary>
+        /// Devuelve el diccionario de usuarios
+        /// </summary>
         public static Dictionary<string, string> Usuarios
         {
             get
@@ -173,7 +223,17 @@ namespace PetShop
                 return usuarios;
             }
         }
-        #endregion
 
+        /// <summary>
+        /// Devuelve el valor de esAdmin
+        /// </summary>
+        public static bool EsAdmin
+        {
+            get
+            {
+                return esAdmin;
+            }
+        }
+        #endregion
     }
 }

@@ -244,6 +244,7 @@ namespace PetShop
             this.Name = "FrmAltaCliente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cliente";
+            this.Load += new System.EventHandler(this.FrmAltaCliente_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

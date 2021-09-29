@@ -321,6 +321,7 @@ namespace PetShop
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmMostrarClientes";
             this.Text = "FrmMostrarClientes";
+            this.Load += new System.EventHandler(this.FrmMostrarClientes_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

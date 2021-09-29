@@ -13,70 +13,100 @@ namespace PetShop
 {
     public partial class FrmBajaModificacionEmpleado : Form
     {
+        /// <summary>
+        /// Inicializa los componentes gráficos de este formulario
+        /// </summary>
         public FrmBajaModificacionEmpleado()
         {
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Carga los datos cuando se abre el formulario
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void FrmBajaModificacionEmpleado_Load(object sender, EventArgs e)
         {
             this.cmbPuesto.DataSource = Enum.GetValues(typeof(EPuesto));
+
+            if (FrmLogin.EsAdmin)
+            {
+                this.BackColor = Color.AntiqueWhite;
+            }
         }
 
+        #region BotonMostrar
+        /// <summary>
+        /// Muestra los datos del empleado con el ID ingresado
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnMostrar_Click(object sender, EventArgs e)
         {
             Empleado empleado;
-            StringBuilder fechaNacimiento = new StringBuilder();
-            StringBuilder horarioEntrada = new StringBuilder();
-            StringBuilder horarioSalida = new StringBuilder();
 
-            for (int i = 0; i < FrmLogin.Empleados.Count; i++)
+            if (FrmLogin.Empleados.Count > 0)
             {
-                empleado = FrmLogin.Empleados[i];
-
-                if (nupIdEmpleado.Value == empleado.IdEmpleado)
+                for (int i = 0; i < FrmLogin.Empleados.Count; i++)
                 {
-                    fechaNacimiento.Append($"{empleado.FechaNacimiento.Day}/{empleado.FechaNacimiento.Month}/{empleado.FechaNacimiento.Year}");
-                    horarioEntrada.Append($"{empleado.HorarioEntrada.Hour}:{empleado.HorarioSalida.Minute}hs.");
-                    horarioSalida.Append($"{empleado.HorarioSalida.Hour}:{empleado.HorarioSalida.Minute}hs.");
+                    empleado = FrmLogin.Empleados[i];
 
-                    lblInfo.Visible = false;
-                    OcultarTextBox();
-                    MostrarLebel();
+                    if (nupIdEmpleado.Value == empleado.IdEmpleado)
+                    {
+                        lblInfo.Visible = false;
+                        OcultarLebel();
+                        OcultarTextBox();
+                        lblMostrar.Visible = true;
+                        lblMostrar.Text = empleado.Mostrar();
+                        break;
+                    }
+                    else
+                    {
+                        lblInfo.Visible = true;
+                        lblMostrar.Visible = false;
+                        OcultarLebel();
+                    }
+                }
+            }
+            else
+            {
+                lblInfo.Visible = true;
+            }
+        }
+        #endregion
 
-                    lblNombreEmpleado.Text = empleado.Nombre;
-                    lblApellidoEmpleado.Text = empleado.Apellido;
-                    lblFechaNacimientoEmpleado.Text = fechaNacimiento.ToString();
-                    lblDniEmpleado.Text = empleado.Dni.ToString();
-                    lblSexoEmpleado.Text = empleado.Sexo;
-                    lblNacionalidadEmpleado.Text = empleado.Nacionalidad;
-                    lblDomicilioEmpleado.Text = empleado.Domicilio;
-                    lblSueldoEmpleado.Text = empleado.Sueldo.ToString();
-                    lblPuestoEmpleado.Text = empleado.Puesto.ToString();
-                    lblHorarioEntradaEmpleado.Text = horarioEntrada.ToString();
-                    lblHorarioSalidaEmpleado.Text = horarioSalida.ToString();
-                    break;
-                }
-                else
-                {
-                    lblInfo.Visible = true;
-                    OcultarLebel();
-                }
+        #region BotonModificar_AplicarCambios
+        /// <summary>
+        /// Entra en el modo modificación
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            if (FrmLogin.Empleados.Count > 0)
+            {
+                OcultarLebel();
+                MostrarLebel();
+                MostrarTextBox();
+                lblMostrar.Visible = false;
+                btnAplicarCambios.Visible = true;
+            }
+            else
+            {
+                lblInfo.Visible = true;
             }
         }
 
-        private void btnModificar_Click(object sender, EventArgs e)
-        {
-            OcultarLebel();
-            MostrarTextBox();
-            btnAplicarCambios.Visible = true;
-        }
-
+        /// <summary>
+        /// Sobreescribe los datos deseados del empleado
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnAplicarCambios_Click(object sender, EventArgs e)
         {
             Empleado empleado;
-            long dni;
-            double sueldo;
+            StringBuilder sb;
 
             for (int i = 0; i < FrmLogin.Empleados.Count; i++)
             {
@@ -86,63 +116,22 @@ namespace PetShop
                 {
                     lblInfo.Visible = false;
 
-                    if (MessageBox.Show("¿Seguro que desea guardar los cambios?", "Guardar cambios", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    if (Validaciones(empleado, out sb))
                     {
-                        if (txtNombre.Text != string.Empty)
-                        {
-                            empleado.Nombre = txtNombre.Text;
-                        }
-                        if (txtApellido.Text != string.Empty)
-                        {
-                            empleado.Apellido = txtApellido.Text;
-                        }
-                        if (txtFechaNacimiento.Text != string.Empty)
-                        {
-                            empleado.FechaNacimiento = Convert.ToDateTime(txtFechaNacimiento.Text);
-                        }
-                        if (txtDni.Text != string.Empty)
-                        {
-                            if (!long.TryParse(txtDni.Text, out dni))
-                            {
-                                MessageBox.Show("El DNI es inválido", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            }
-                            empleado.Dni = dni;
-                        }
-                        if (cmbSexo.SelectedItem != null)
-                        {
-                            empleado.Sexo = cmbSexo.SelectedItem.ToString();
-                        }
-                        if (txtNacionalidad.Text != string.Empty)
-                        {
-                            empleado.Nacionalidad = txtNacionalidad.Text;
-                        }
-                        if (txtDomicilio.Text != string.Empty)
-                        {
-                            empleado.Domicilio = txtDomicilio.Text;
-                        }
-                        if (txtSueldo.Text != string.Empty)
-                        {
-                            if (!double.TryParse(txtSueldo.Text, out sueldo))
-                            {
-                                MessageBox.Show("El sueldo es inválido", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            }
-                            empleado.Sueldo = sueldo;
-                        }
-                        if (cmbPuesto.SelectedItem != null)
-                        {
-                            empleado.Puesto = (EPuesto)cmbPuesto.SelectedItem;
-                        }
-                        if (mtxHoraEntrada.Text != "  :")
-                        {
-                            empleado.HorarioEntrada = Convert.ToDateTime(mtxHoraEntrada.Text);
-                        }
-                        if (mtxHoraSalida.Text != "  :")
-                        {
-                            empleado.HorarioSalida = Convert.ToDateTime(mtxHoraSalida.Text);
-                        }
-                        LimpiarTextBox();
+                        MessageBox.Show($"Estos campos no son válidos.\nAsegurese de cambiarlos\n{sb}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
-                    break;
+                    else
+                    {
+                        if (MessageBox.Show("¿Seguro que desea guardar los cambios?", "Guardar cambios", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                        {
+                            OcultarLebel();
+                            OcultarTextBox();
+                            LimpiarTextBox();
+                            lblMostrar.Text = empleado.Mostrar();
+                            lblMostrar.Visible = true;
+                            break;
+                        }
+                    }
                 }
                 else
                 {
@@ -150,31 +139,233 @@ namespace PetShop
                 }
             }
         }
+        #endregion
 
+        #region BotonEliminar
+        /// <summary>
+        /// Elimina el empleado con el ID seleccionado
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnEliminar_Click(object sender, EventArgs e)
         {
             Empleado empleado;
 
-            for (int i = 0; i < FrmLogin.Empleados.Count; i++)
+            if (FrmLogin.Empleados.Count > 0)
             {
-                empleado = FrmLogin.Empleados[i];
-
-                if (nupIdEmpleado.Value == empleado.IdEmpleado)
+                for (int i = 0; i < FrmLogin.Empleados.Count; i++)
                 {
-                    if (MessageBox.Show("¿Estás seguro que desea eliminar este empleado?\nEsta acción no se puede deshacer", "Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                    empleado = FrmLogin.Empleados[i];
+
+                    if (nupIdEmpleado.Value == empleado.IdEmpleado)
                     {
-                        FrmLogin.Empleados.Remove(empleado);
-                        OcultarLebel();
+                        lblInfo.Visible = false;
+
+                        if (MessageBox.Show("¿Estás seguro que desea eliminar este empleado?\nEsta acción no se puede deshacer", "Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                        {
+                            Administrador.BajaEmpleado(FrmLogin.Empleados, empleado);
+                            OcultarLebel();
+                            lblMostrar.Visible = false;
+                        }
+                        break;
                     }
-                    break;
+                    else
+                    {
+                        lblInfo.Visible = true;
+                    }
+                }
+            }
+            else
+            {
+                lblInfo.Visible = true;
+            }
+        }
+        #endregion
+
+        #region Validaciones
+        private bool Validaciones(Empleado empleado, out StringBuilder sb)
+        {
+            bool error = false;
+            long dni;
+            double sueldo;
+            sb = new StringBuilder();
+
+            if (txtNombre.Text != string.Empty)
+            {
+                if (Empleado.ValidarNombre(txtNombre.Text))
+                {
+                    empleado.Nombre = txtNombre.Text;
                 }
                 else
                 {
-                    lblInfo.Visible = true;
+                    sb.AppendLine("Nombre");
+                    error = true;
                 }
             }
-        }
+            if (txtApellido.Text != string.Empty)
+            {
+                if (Empleado.ValidarApellido(txtApellido.Text))
+                {
+                    empleado.Apellido = txtApellido.Text;
+                }
+                else
+                {
+                    sb.AppendLine("Apellido");
+                    error = true;
+                }
+            }
+            if (txtFechaNacimiento.Text != string.Empty)
+            {
+                if (Empleado.ValidarFechaNacimiento(txtFechaNacimiento.Text))
+                {
+                    empleado.FechaNacimiento = Convert.ToDateTime(txtFechaNacimiento.Text);
+                }
+                else
+                {
+                    sb.AppendLine("Fecha de nacimiento");
+                    error = true;
+                }
+            }
+            if (txtDni.Text != string.Empty)
+            {
+                if (long.TryParse(txtDni.Text, out dni) && Empleado.ValidarDni(dni))
+                {
+                    empleado.Dni = dni;
+                }
+                else
+                {
+                    sb.AppendLine("DNI");
+                    error = true;
+                }
+            }
+            if (cmbSexo.SelectedItem != null)
+            {
+                empleado.Sexo = cmbSexo.SelectedItem.ToString();
+            }
+            if (txtNacionalidad.Text != string.Empty)
+            {
+                if (Empleado.ValidarNacionalidad(txtNacionalidad.Text))
+                {
+                    empleado.Nacionalidad = txtNacionalidad.Text;
+                }
+                else
+                {
+                    sb.AppendLine("Nacionalidad");
+                    error = true;
+                }
+            }
+            if (txtDomicilio.Text != string.Empty)
+            {
+                if (Empleado.ValidarDomicilio(txtDomicilio.Text))
+                {
+                    empleado.Domicilio = txtDomicilio.Text;
+                }
+                else
+                {
+                    sb.AppendLine("Domicilio");
+                    error = true;
+                }
+            }
+            if (txtSueldo.Text != string.Empty)
+            {
+                if (double.TryParse(txtSueldo.Text, out sueldo) && Empleado.ValidarSueldo(sueldo))
+                {
+                    empleado.Sueldo = sueldo;
+                }
+                else
+                {
+                    sb.AppendLine("Sueldo");
+                    error = true;
+                }
+            }
+            if (cmbPuesto.SelectedItem != null)
+            {
+                empleado.Puesto = (EPuesto)cmbPuesto.SelectedItem;
+            }
+            if (chkLunes.Checked)
+            {
+                empleado.DiasLaborales[0] = "L";
+            }
+            else
+            {
+                empleado.DiasLaborales[0] = null;
+            }
+            if (chkMartes.Checked)
+            {
+                empleado.DiasLaborales[1] = "Ma";
+            }
+            else
+            {
+                empleado.DiasLaborales[1] = null;
+            }
+            if (chkMiercoles.Checked)
+            {
+                empleado.DiasLaborales[2] = "Mi";
+            }
+            else
+            {
+                empleado.DiasLaborales[2] = null;
+            }
+            if (chkJueves.Checked)
+            {
+                empleado.DiasLaborales[3] = "J";
+            }
+            else
+            {
+                empleado.DiasLaborales[3] = null;
+            }
+            if (chkViernes.Checked)
+            {
+                empleado.DiasLaborales[4] = "V";
+            }
+            else
+            {
+                empleado.DiasLaborales[4] = null;
+            }
+            if (chkSabado.Checked)
+            {
+                empleado.DiasLaborales[5] = "S";
+            }
+            else
+            {
+                empleado.DiasLaborales[5] = null;
+            }
+            if (chkDomingo.Checked)
+            {
+                empleado.DiasLaborales[6] = "D";
+            }
+            else
+            {
+                empleado.DiasLaborales[6] = null;
+            }
+            if (mtxHoraEntrada.Text != "  :")
+            {
+                if (Empleado.ValidarHora(mtxHoraEntrada.Text))
+                {
+                    empleado.HorarioEntrada = Convert.ToDateTime(mtxHoraEntrada.Text);
+                }
+                else
+                {
+                    sb.AppendLine("Hora de entrada");
+                    error = true;
+                }
+            }
+            if (mtxHoraSalida.Text != "  :")
+            {
+                if (Empleado.ValidarHora(mtxHoraSalida.Text))
+                {
+                    empleado.HorarioSalida = Convert.ToDateTime(mtxHoraSalida.Text);
+                }
+                else
+                {
+                    sb.AppendLine("Hora de salida");
+                    error = true;
+                }
+            }
 
+            return error;
+        }
+        #endregion
 
         #region Visibilidad Label/TextBox
         /// <summary>
@@ -192,6 +383,13 @@ namespace PetShop
             txtDomicilio.Visible = false;
             txtSueldo.Visible = false;
             cmbPuesto.Visible = false;
+            chkLunes.Visible = false;
+            chkMartes.Visible = false;
+            chkMiercoles.Visible = false;
+            chkJueves.Visible = false;
+            chkViernes.Visible = false;
+            chkSabado.Visible = false;
+            chkDomingo.Visible = false;
             mtxHoraEntrada.Visible = false;
             mtxHoraSalida.Visible = false;
         }
@@ -202,17 +400,18 @@ namespace PetShop
         /// </summary>
         private void OcultarLebel()
         {
-            lblNombreEmpleado.Visible = false;
-            lblApellidoEmpleado.Visible = false;
-            lblFechaNacimientoEmpleado.Visible = false;
-            lblDniEmpleado.Visible = false;
-            lblSexoEmpleado.Visible = false;
-            lblNacionalidadEmpleado.Visible = false;
-            lblDomicilioEmpleado.Visible = false;
-            lblSueldoEmpleado.Visible = false;
-            lblPuestoEmpleado.Visible = false;
-            lblHorarioEntradaEmpleado.Visible = false;
-            lblHorarioSalidaEmpleado.Visible = false;
+            lblNombre.Visible = false;
+            lblApellido.Visible = false;
+            lblFechaNacimiento.Visible = false;
+            lblDni.Visible = false;
+            lblSexo.Visible = false;
+            lblNacionalidad.Visible = false;
+            lblDomicilio.Visible = false;
+            lblSueldo.Visible = false;
+            lblPuesto.Visible = false;
+            lblDiasLaborales.Visible = false;
+            lblHoraEntrada.Visible = false;
+            lblHoraSalida.Visible = false;
         }
 
         /// <summary>
@@ -230,6 +429,13 @@ namespace PetShop
             txtDomicilio.Visible = true;
             txtSueldo.Visible = true;
             cmbPuesto.Visible = true;
+            chkLunes.Visible = true;
+            chkMartes.Visible = true;
+            chkMiercoles.Visible = true;
+            chkJueves.Visible = true;
+            chkViernes.Visible = true;
+            chkSabado.Visible = true;
+            chkDomingo.Visible = true;
             mtxHoraEntrada.Visible = true;
             mtxHoraSalida.Visible = true;
         }
@@ -239,17 +445,18 @@ namespace PetShop
         /// </summary>
         private void MostrarLebel()
         {
-            lblNombreEmpleado.Visible = true;
-            lblApellidoEmpleado.Visible = true;
-            lblFechaNacimientoEmpleado.Visible = true;
-            lblDniEmpleado.Visible = true;
-            lblSexoEmpleado.Visible = true;
-            lblNacionalidadEmpleado.Visible = true;
-            lblDomicilioEmpleado.Visible = true;
-            lblSueldoEmpleado.Visible = true;
-            lblPuestoEmpleado.Visible = true;
-            lblHorarioEntradaEmpleado.Visible = true;
-            lblHorarioSalidaEmpleado.Visible = true;
+            lblNombre.Visible = true;
+            lblApellido.Visible = true;
+            lblFechaNacimiento.Visible = true;
+            lblDni.Visible = true;
+            lblSexo.Visible = true;
+            lblNacionalidad.Visible = true;
+            lblDomicilio.Visible = true;
+            lblSueldo.Visible = true;
+            lblPuesto.Visible = true;
+            lblDiasLaborales.Visible = true;
+            lblHoraEntrada.Visible = true;
+            lblHoraSalida.Visible = true;
         }
 
         /// <summary>
@@ -266,10 +473,16 @@ namespace PetShop
             txtDomicilio.Text = string.Empty;
             txtSueldo.Text = string.Empty;
             cmbPuesto.SelectedItem = null;
+            chkLunes.Checked = false;
+            chkMartes.Checked = false;
+            chkMiercoles.Checked = false;
+            chkJueves.Checked = false;
+            chkViernes.Checked = false;
+            chkSabado.Checked = false;
+            chkDomingo.Checked = false;
             mtxHoraEntrada.Text = string.Empty;
             mtxHoraSalida.Text = string.Empty;
         }
         #endregion
-
     }
 }

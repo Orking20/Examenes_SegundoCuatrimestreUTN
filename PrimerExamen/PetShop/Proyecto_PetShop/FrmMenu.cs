@@ -15,21 +15,27 @@ namespace PetShop
     {
         private Form formularioActivo = null;
         private static List<Cliente> clientes;
-        private static bool flagPrimeraVezModificable = true;
         private static bool flagPrimeraVez = true;
 
+        /// <summary>
+        /// Carga los componentes gráficos del formulario
+        /// </summary>
         public FrmMenu()
         {
             InitializeComponent();
+        }
 
-            if (flagPrimeraVezModificable)
-            {
-                clientes = new List<Cliente>();
-                flagPrimeraVezModificable = false;
-            }
-
+        /// <summary>
+        /// Carga algunos datos
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void FrmMenu_Load(object sender, EventArgs e)
+        {
             if (flagPrimeraVez)
             {
+                clientes = new List<Cliente>();
+
                 Clientes.Add(Empleado.AltaCliente(41270, "Roberto", "Morales", Convert.ToDateTime("14/05/1992"), 37452102, "Masculino", "Argentina", "Charlone 1302"));
                 Clientes.Add(Empleado.AltaCliente(4200, "Mariana", "Rodriguez", Convert.ToDateTime("03/12/1962"), 30640222, "Femenino", "Argentina", "Moldes 1429"));
                 Clientes.Add(Empleado.AltaCliente(202, "Javier", "Rey", Convert.ToDateTime("21/04/1998"), 40588922, "No binario", "Argentina", "Del Signo 4037"));
@@ -41,6 +47,18 @@ namespace PetShop
                 Clientes.Add(Empleado.AltaCliente(800, "Sigvar", "Gangraz", Convert.ToDateTime("20/04/1999"), 42412358, "Masculino", "España", "Metano 10"));
 
                 flagPrimeraVez = false;
+            }
+
+            if (FrmLogin.EsAdmin)
+            {
+                pnlPrincipal.BackColor = Color.AntiqueWhite;
+                btnFacturacion.Visible = true;
+                pnlSubMenuEmpleados.Visible = true;
+                pnlSubMenuEmpleados.Visible = false;
+                btnEmpleados.Visible = true;
+                pnlSubMenuAdmin.Visible = true;
+                pnlSubMenuAdmin.Visible = false;
+                btnAdmin.Visible = true;
             }
         }
 
@@ -64,7 +82,7 @@ namespace PetShop
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void button1_Click(object sender, EventArgs e)
+        private void btnCerrar_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
@@ -74,7 +92,7 @@ namespace PetShop
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void button2_Click(object sender, EventArgs e)
+        private void btnMinimizar_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
         }
@@ -84,7 +102,7 @@ namespace PetShop
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void button3_Click(object sender, EventArgs e)
+        private void btnMaximizar_Click(object sender, EventArgs e)
         {
             if (this.WindowState == FormWindowState.Normal)
             {
@@ -170,10 +188,6 @@ namespace PetShop
             }
         }
 
-        private void FrmMenu_Load(object sender, EventArgs e)
-        {
-
-        }
 
         /// <summary>
         /// Abre un formulario para dar de alta un cliente
@@ -186,7 +200,7 @@ namespace PetShop
         }
 
         /// <summary>
-        /// Muestra los datos de un cliente
+        /// Abre un formulario para mostrar los clientes
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -195,46 +209,92 @@ namespace PetShop
             AbrirFormularioHijo(new FrmMostrarClientes());
         }
 
+        /// <summary>
+        /// Abre un formulario para modificar o eliminar clientes
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnBajaModificacionCliente_Click(object sender, EventArgs e)
         {
             AbrirFormularioHijo(new FrmBajaModificacionCliente());
         }
 
+        /// <summary>
+        /// Abre un formulario para dar de alta un empleado
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnAltaEmpleados_Click(object sender, EventArgs e)
         {
             AbrirFormularioHijo(new FrmAltaEmpleado());
         }
+
+        /// <summary>
+        /// Abre un formulario para mostrar los empleados
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnMostrarEmpleados_Click(object sender, EventArgs e)
         {
             AbrirFormularioHijo(new FrmMostrarEmpleados());
         }
-        private void btnModificarEmpleados_Click(object sender, EventArgs e)
+
+        /// <summary>
+        /// Abre un formulario para modificar o eliminar empleados
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnBajaModificacionEmpleados_Click(object sender, EventArgs e)
         {
             AbrirFormularioHijo(new FrmBajaModificacionEmpleado());
         }
+
+        /// <summary>
+        /// Abre un formulario para dar de alta un administrador
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnAltaAdmin_Click(object sender, EventArgs e)
         {
             AbrirFormularioHijo(new FrmAltaAdministrador());
         }
+
+        /// <summary>
+        /// Abre un formulario para mostrar los administradores
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnMostrarAdmin_Click(object sender, EventArgs e)
         {
             AbrirFormularioHijo(new FrmMostrarAdministrador());
         }
-        private void btnFacturacion_Click(object sender, EventArgs e)
-        {
 
+        /// <summary>
+        /// Abre un formulario para modificar o eliminar administradores
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnBajaModificacionAdmin_Click(object sender, EventArgs e)
+        {
+            AbrirFormularioHijo(new FrmBajaModificacionAdministrador());
         }
 
-        public static bool FlagPrimeraVezClientes
+        /// <summary>
+        /// Abre un formulario para agregar un producto
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnAgregarProductos_Click(object sender, EventArgs e)
         {
-            get
-            {
-                return flagPrimeraVezModificable;
-            }
-            set
-            {
-                flagPrimeraVezModificable = value;
-            }
+            AbrirFormularioHijo(new FrmAgregarProducto());
+        }
+        private void btnEliminarModificarProfuctos_Click(object sender, EventArgs e)
+        {
+            AbrirFormularioHijo(new FrmEliminarModificarProducto());
+        }
+        private void btnMostrarProductos_Click(object sender, EventArgs e)
+        {
+            AbrirFormularioHijo(new FrmMostrarProducto());
         }
 
         /// <summary>

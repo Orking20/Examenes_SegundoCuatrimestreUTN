@@ -11,12 +11,12 @@ using Entidades;
 
 namespace PetShop
 {
-    public partial class FrmBajaModificacionCliente : Form
+    public partial class FrmEliminarModificarProducto : Form
     {
         /// <summary>
         /// Inicializa los componentes gráficos de este formulario
         /// </summary>
-        public FrmBajaModificacionCliente()
+        public FrmEliminarModificarProducto()
         {
             InitializeComponent();
         }
@@ -26,8 +26,10 @@ namespace PetShop
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void FrmBajaModificacionCliente_Load(object sender, EventArgs e)
+        private void FrmEliminarModificarProducto_Load(object sender, EventArgs e)
         {
+            this.cmbTipo.DataSource = Enum.GetValues(typeof(ETipo));
+
             if (FrmLogin.EsAdmin)
             {
                 this.BackColor = Color.AntiqueWhite;
@@ -36,27 +38,27 @@ namespace PetShop
 
         #region BotonMostrar
         /// <summary>
-        /// Muestra los datos del cliente con el ID ingresado
+        /// Muestra los datos del empleado con el ID ingresado
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void btnMostrar_Click(object sender, EventArgs e)
         {
-            Cliente cliente;
+            Producto producto;
 
-            if (FrmMenu.Clientes.Count > 0)
+            if (FrmLogin.Productos.Count > 0)
             {
-                for (int i = 0; i < FrmMenu.Clientes.Count; i++)
+                for (int i = 0; i < FrmLogin.Productos.Count; i++)
                 {
-                    cliente = FrmMenu.Clientes[i];
+                    producto = FrmLogin.Productos[i];
 
-                    if (nupIdClientes.Value == cliente.IdCliente)
+                    if (nupIdProductos.Value == producto.IdProducto)
                     {
                         lblInfo.Visible = false;
                         OcultarLebel();
                         OcultarTextBox();
                         lblMostrar.Visible = true;
-                        lblMostrar.Text = cliente.Mostrar();
+                        lblMostrar.Text = producto.Mostrar();
                         break;
                     }
                     else
@@ -82,7 +84,7 @@ namespace PetShop
         /// <param name="e"></param>
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            if (FrmMenu.Clientes.Count > 0)
+            if (FrmLogin.Productos.Count > 0)
             {
                 OcultarLebel();
                 MostrarLebel();
@@ -97,24 +99,24 @@ namespace PetShop
         }
 
         /// <summary>
-        /// Sobreescribe los datos deseados del cliente
+        /// Sobreescribe los datos deseados del producto
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void btnAplicarCambios_Click(object sender, EventArgs e)
         {
-            Cliente cliente;
+            Producto producto;
             StringBuilder sb;
 
-            for (int i = 0; i < FrmMenu.Clientes.Count; i++)
+            for (int i = 0; i < FrmLogin.Productos.Count; i++)
             {
-                cliente = FrmMenu.Clientes[i];
+                producto = FrmLogin.Productos[i];
 
-                if (nupIdClientes.Value == cliente.IdCliente)
+                if (nupIdProductos.Value == producto.IdProducto)
                 {
                     lblInfo.Visible = false;
 
-                    if (Validaciones(cliente, out sb))
+                    if (Validaciones(producto, out sb))
                     {
                         MessageBox.Show($"Estos campos no son válidos.\nAsegurese de cambiarlos\n{sb}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
@@ -125,7 +127,7 @@ namespace PetShop
                             OcultarLebel();
                             OcultarTextBox();
                             LimpiarTextBox();
-                            lblMostrar.Text = cliente.Mostrar();
+                            lblMostrar.Text = producto.Mostrar();
                             lblMostrar.Visible = true;
                             break;
                         }
@@ -141,27 +143,27 @@ namespace PetShop
 
         #region BotonEliminar
         /// <summary>
-        /// Elimina el cliente con el ID seleccionado
+        /// Elimina el producto con el ID seleccionado
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            Cliente cliente;
+            Producto producto;
 
-            if (FrmMenu.Clientes.Count > 0)
+            if (FrmLogin.Productos.Count > 0)
             {
-                for (int i = 0; i < FrmMenu.Clientes.Count; i++)
+                for (int i = 0; i < FrmLogin.Productos.Count; i++)
                 {
-                    cliente = FrmMenu.Clientes[i];
+                    producto = FrmLogin.Productos[i];
 
-                    if (nupIdClientes.Value == cliente.IdCliente)
+                    if (nupIdProductos.Value == producto.IdProducto)
                     {
                         lblInfo.Visible = false;
 
                         if (MessageBox.Show("¿Estás seguro que desea eliminar este cliente?\nEsta acción no se puede deshacer", "Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
                         {
-                            Empleado.BajaCliente(FrmMenu.Clientes, cliente);
+                            Empleado.BajaProducto(FrmLogin.Productos, producto);
                             OcultarLebel();
                             lblMostrar.Visible = false;
                         }
@@ -181,17 +183,19 @@ namespace PetShop
         #endregion
 
         #region Validaciones
-        private bool Validaciones(Cliente cliente, out StringBuilder sb)
+        private bool Validaciones(Producto producto, out StringBuilder sb)
         {
             bool error = false;
-            long dni;
+            double precio;
+            double peso;
+            int stock;
             sb = new StringBuilder();
 
             if (txtNombre.Text != string.Empty)
             {
-                if (Cliente.ValidarNombre(txtNombre.Text))
+                if (Producto.ValidarNombre(txtNombre.Text))
                 {
-                    cliente.Nombre = txtNombre.Text;
+                    producto.Nombre = txtNombre.Text;
                 }
                 else
                 {
@@ -199,68 +203,40 @@ namespace PetShop
                     error = true;
                 }
             }
-            if (txtApellido.Text != string.Empty)
+            if (txtMarca.Text != string.Empty)
             {
-                if (Cliente.ValidarApellido(txtApellido.Text))
+                producto.Marca = txtMarca.Text;
+            }
+            if (cmbTipo.SelectedItem != null)
+            {
+                producto.Tipo = (ETipo)cmbTipo.SelectedItem;
+            }
+            if (nudPrecio.Value != 0 && double.TryParse(nudPrecio.Text, out precio))
+            {
+                if (Producto.ValidarPrecio(precio))
                 {
-                    cliente.Apellido = txtApellido.Text;
-                }
-                else
-                {
-                    sb.AppendLine("Apellido");
-                    error = true;
+                    producto.Precio = precio;
                 }
             }
-            if (txtFechaNacimiento.Text != string.Empty)
+            if (nudPeso.Value != 0 && double.TryParse(nudPeso.Text, out peso))
             {
-                if (Cliente.ValidarFechaNacimiento(txtFechaNacimiento.Text))
+                if (Producto.ValidarPeso(peso))
                 {
-                    cliente.FechaNacimiento = Convert.ToDateTime(txtFechaNacimiento.Text);
-                }
-                else
-                {
-                    sb.AppendLine("Fecha de nacimiento");
-                    error = true;
+                    producto.Peso = peso;
                 }
             }
-            if (txtDni.Text != string.Empty)
+            if (nudStockSumar.Value != 0 && int.TryParse(nudStockSumar.Text, out stock))
             {
-                if (long.TryParse(txtDni.Text, out dni) && Cliente.ValidarDni(dni))
+                if (Producto.ValidarStock(stock))
                 {
-                    cliente.Dni = dni;
-                }
-                else
-                {
-                    sb.AppendLine("DNI");
-                    error = true;
+                    producto.Stock += stock;
                 }
             }
-            if (cmbSexo.SelectedItem != null)
+            if (nudStock.Value != 0 && int.TryParse(nudStock.Text, out stock))
             {
-                cliente.Sexo = cmbSexo.SelectedItem.ToString();
-            }
-            if (txtNacionalidad.Text != string.Empty)
-            {
-                if (Cliente.ValidarNacionalidad(txtNacionalidad.Text))
+                if (Producto.ValidarStock(stock))
                 {
-                    cliente.Nacionalidad = txtNacionalidad.Text;
-                }
-                else
-                {
-                    sb.AppendLine("Nacionalidad");
-                    error = true;
-                }
-            }
-            if (txtDomicilio.Text != string.Empty)
-            {
-                if (Cliente.ValidarDomicilio(txtDomicilio.Text))
-                {
-                    cliente.Domicilio = txtDomicilio.Text;
-                }
-                else
-                {
-                    sb.AppendLine("Domicilio");
-                    error = true;
+                    producto.Stock = stock;
                 }
             }
 
@@ -276,12 +252,12 @@ namespace PetShop
         {
             btnAplicarCambios.Visible = false;
             txtNombre.Visible = false;
-            txtApellido.Visible = false;
-            txtFechaNacimiento.Visible = false;
-            txtDni.Visible = false;
-            cmbSexo.Visible = false;
-            txtNacionalidad.Visible = false;
-            txtDomicilio.Visible = false;
+            txtMarca.Visible = false;
+            cmbTipo.Visible = false;
+            nudPrecio.Visible = false;
+            nudPeso.Visible = false;
+            nudStock.Visible = false;
+            nudStockSumar.Visible = false;
         }
 
         /// <summary>
@@ -290,12 +266,13 @@ namespace PetShop
         private void OcultarLebel()
         {
             lblNombre.Visible = false;
-            lblApellido.Visible = false;
-            lblFechaNacimiento.Visible = false;
-            lblDni.Visible = false;
-            lblSexo.Visible = false;
-            lblNacionalidad.Visible = false;
-            lblDomicilio.Visible = false;
+            lblMarca.Visible = false;
+            lblTipo.Visible = false;
+            lblPrecio.Visible = false;
+            lblPeso.Visible = false;
+            lblStock.Visible = false;
+            lblTotal.Visible = false;
+            lblSumar.Visible = false;
         }
 
         /// <summary>
@@ -305,12 +282,12 @@ namespace PetShop
         {
             btnAplicarCambios.Visible = true;
             txtNombre.Visible = true;
-            txtApellido.Visible = true;
-            txtFechaNacimiento.Visible = true;
-            txtDni.Visible = true;
-            cmbSexo.Visible = true;
-            txtNacionalidad.Visible = true;
-            txtDomicilio.Visible = true;
+            txtMarca.Visible = true;
+            cmbTipo.Visible = true;
+            nudPrecio.Visible = true;
+            nudPeso.Visible = true;
+            nudStock.Visible = true;
+            nudStockSumar.Visible = true;
         }
 
         /// <summary>
@@ -319,12 +296,13 @@ namespace PetShop
         private void MostrarLebel()
         {
             lblNombre.Visible = true;
-            lblApellido.Visible = true;
-            lblFechaNacimiento.Visible = true;
-            lblDni.Visible = true;
-            lblSexo.Visible = true;
-            lblNacionalidad.Visible = true;
-            lblDomicilio.Visible = true;
+            lblMarca.Visible = true;
+            lblTipo.Visible = true;
+            lblPrecio.Visible = true;
+            lblPeso.Visible = true;
+            lblStock.Visible = true;
+            lblTotal.Visible = true;
+            lblSumar.Visible = true;
         }
 
         /// <summary>
@@ -333,12 +311,11 @@ namespace PetShop
         private void LimpiarTextBox()
         {
             txtNombre.Text = string.Empty;
-            txtApellido.Text = string.Empty;
-            txtFechaNacimiento.Text = string.Empty;
-            txtDni.Text = string.Empty;
-            cmbSexo.SelectedItem = null;
-            txtNacionalidad.Text = string.Empty;
-            txtDomicilio.Text = string.Empty;
+            txtMarca.Text = string.Empty;
+            nudPrecio.Value = 0;
+            nudPeso.Value = 0;
+            nudStock.Value = 0;
+            nudStockSumar.Value = 0;
         }
         #endregion
     }

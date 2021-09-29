@@ -423,6 +423,7 @@ namespace PetShop
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmAltaEmpleado";
             this.Text = "FrmAltaEmpleado";
+            this.Load += new System.EventHandler(this.FrmAltaEmpleado_Load);
             this.grpPersonal.ResumeLayout(false);
             this.grpPersonal.PerformLayout();
             this.grpEmpleado.ResumeLayout(false);

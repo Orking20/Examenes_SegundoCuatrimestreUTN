@@ -47,23 +47,14 @@ namespace Entidades
             return administradorNuevo;
         }
 
-        public static string MostrarAdministrador(Administrador administrador)
+        /// <summary>
+        /// Elimina un administrador de la lista de administradores
+        /// </summary>
+        /// <param name="listaAdministradores">Lista de administradores</param>
+        /// <param name="administrador">Administrador a eliminar</param>
+        public static void BajaAdministrador(List<Administrador> listaAdministradores, Administrador administrador)
         {
-            StringBuilder st = new StringBuilder();
-
-            st.AppendLine($"Sueldo: {administrador.Sueldo}");
-            st.AppendLine($"Puesto: {administrador.Puesto}");
-            st.AppendLine($"Días laborales: {administrador.DiasLaborales}");
-            st.AppendLine($"Horario de entrada: {administrador.HorarioEntrada}");
-            st.AppendLine($"Horario de salida: {administrador.HorarioSalida}");
-            st.AppendLine($"Nombre y apellido: {administrador.Nombre} {administrador.Apellido}");
-            st.AppendLine($"Fecha de nacimiento: {administrador.FechaNacimiento}");
-            st.AppendLine($"DNI: {administrador.Dni}");
-            st.AppendLine($"Sexo: {administrador.Sexo}");
-            st.AppendLine($"Nacionalidad: {administrador}");
-            st.AppendLine($"Domicilio: {administrador.Domicilio}");
-
-            return st.ToString();
+            listaAdministradores.Remove(administrador);
         }
         #endregion
 
@@ -95,23 +86,19 @@ namespace Entidades
             return empleadoNuevo;
         }
 
-        public static string MostrarEmpleado(Empleado empleado)
+        /// <summary>
+        /// Elimina un empleado de una lista de empleados
+        /// </summary>
+        /// <param name="listaEmpleados">Lista de empleados</param>
+        /// <param name="empleado">Empleado a eliminar</param>
+        public static void BajaEmpleado(List<Empleado> listaEmpleados, Empleado empleado)
         {
-            StringBuilder st = new StringBuilder();
+            listaEmpleados.Remove(empleado);
+        }
 
-            st.AppendLine($"Sueldo: {empleado.Sueldo}");
-            st.AppendLine($"Puesto: {empleado.Puesto}");
-            st.AppendLine($"Días laborales: {empleado.DiasLaborales}");
-            st.AppendLine($"Horario de entrada: {empleado.HorarioEntrada}");
-            st.AppendLine($"Horario de salida: {empleado.HorarioSalida}");
-            st.AppendLine($"Nombre y apellido: {empleado.Nombre} {empleado.Apellido}");
-            st.AppendLine($"Fecha de nacimiento: {empleado.FechaNacimiento}");
-            st.AppendLine($"DNI: {empleado.Dni}");
-            st.AppendLine($"Sexo: {empleado.Sexo}");
-            st.AppendLine($"Nacionalidad: {empleado}");
-            st.AppendLine($"Domicilio: {empleado.Domicilio}");
-
-            return st.ToString();
+        public static void MostrarEmpleado(Empleado empleado)
+        {
+            empleado.Mostrar();
         }
         #endregion
 
