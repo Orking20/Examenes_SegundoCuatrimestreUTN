@@ -36,7 +36,7 @@ namespace PetShop
             {
                 clientes = new List<Cliente>();
 
-                Clientes.Add(Empleado.AltaCliente(41270, "Roberto", "Morales", Convert.ToDateTime("14/05/1992"), 37452102, "Masculino", "Argentina", "Charlone 1302"));
+                Clientes.Add(Empleado.AltaCliente(2000, "Roberto", "Morales", Convert.ToDateTime("14/05/1992"), 37452102, "Masculino", "Argentina", "Charlone 1302"));
                 Clientes.Add(Empleado.AltaCliente(4200, "Mariana", "Rodriguez", Convert.ToDateTime("03/12/1962"), 30640222, "Femenino", "Argentina", "Moldes 1429"));
                 Clientes.Add(Empleado.AltaCliente(202, "Javier", "Rey", Convert.ToDateTime("21/04/1998"), 40588922, "No binario", "Argentina", "Del Signo 4037"));
                 Clientes.Add(Empleado.AltaCliente(23000, "Marcelo", "Oviedo", Convert.ToDateTime("12/06/1993"), 40842351, "Masculino", "Perú", "Alsina 110"));
@@ -95,23 +95,6 @@ namespace PetShop
         private void btnMinimizar_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
-        }
-
-        /// <summary>
-        /// Agranda o achica la ventana
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void btnMaximizar_Click(object sender, EventArgs e)
-        {
-            if (this.WindowState == FormWindowState.Normal)
-            {
-                this.WindowState = FormWindowState.Maximized;
-            }
-            else
-            {
-                this.WindowState = FormWindowState.Normal;
-            }
         }
 
         /// <summary>
@@ -187,7 +170,6 @@ namespace PetShop
                 pnlSubMenuAdmin.Visible = true;
             }
         }
-
 
         /// <summary>
         /// Abre un formulario para dar de alta un cliente
@@ -296,6 +278,14 @@ namespace PetShop
         {
             AbrirFormularioHijo(new FrmMostrarProducto());
         }
+        private void btnVentas_Click(object sender, EventArgs e)
+        {
+            pnlSubMenuClientes.Visible = false;
+            pnlSubMenuProductos.Visible = false;
+            pnlSubMenuEmpleados.Visible = false;
+            pnlSubMenuAdmin.Visible = false;
+            AbrirFormularioHijo(new FrmVenta());
+        }
 
         /// <summary>
         /// Devuelve el valor de clientes
@@ -324,5 +314,6 @@ namespace PetShop
             lblFecha.Text = fecha.ToString();
             lblHora.Text = hora.ToString();
         }
+
     }
 }

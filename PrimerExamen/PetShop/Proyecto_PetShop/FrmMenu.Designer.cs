@@ -34,7 +34,6 @@ namespace PetShop
             this.btnClientes = new System.Windows.Forms.Button();
             this.picPrincipal = new System.Windows.Forms.PictureBox();
             this.pnlBarra = new System.Windows.Forms.Panel();
-            this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.pnlLateral = new System.Windows.Forms.Panel();
@@ -61,10 +60,10 @@ namespace PetShop
             this.btnBajaModificacionCliente = new System.Windows.Forms.Button();
             this.btnAltaCliente = new System.Windows.Forms.Button();
             this.pnlInfo = new System.Windows.Forms.Panel();
+            this.btnCambioPass = new System.Windows.Forms.Button();
             this.lblFecha = new System.Windows.Forms.Label();
             this.lblHora = new System.Windows.Forms.Label();
             this.pnlPrincipal = new System.Windows.Forms.Panel();
-            this.btnCambioPass = new System.Windows.Forms.Button();
             this.tmrTiempo = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.picPrincipal)).BeginInit();
             this.pnlBarra.SuspendLayout();
@@ -110,7 +109,6 @@ namespace PetShop
             // pnlBarra
             // 
             this.pnlBarra.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.pnlBarra.Controls.Add(this.button3);
             this.pnlBarra.Controls.Add(this.button2);
             this.pnlBarra.Controls.Add(this.button1);
             this.pnlBarra.Dock = System.Windows.Forms.DockStyle.Top;
@@ -119,26 +117,13 @@ namespace PetShop
             this.pnlBarra.Size = new System.Drawing.Size(1144, 30);
             this.pnlBarra.TabIndex = 5;
             // 
-            // button3
-            // 
-            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
-            this.button3.Location = new System.Drawing.Point(1078, 0);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(30, 30);
-            this.button3.TabIndex = 18;
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.btnMaximizar_Click);
-            // 
             // button2
             // 
             this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button2.FlatAppearance.BorderSize = 0;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.Location = new System.Drawing.Point(1042, 0);
+            this.button2.Location = new System.Drawing.Point(1078, 0);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(30, 30);
             this.button2.TabIndex = 17;
@@ -397,6 +382,7 @@ namespace PetShop
             this.btnVentas.Text = "Ventas";
             this.btnVentas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnVentas.UseVisualStyleBackColor = true;
+            this.btnVentas.Click += new System.EventHandler(this.btnVentas_Click);
             // 
             // pnlSubMenuProductos
             // 
@@ -566,6 +552,20 @@ namespace PetShop
             this.pnlInfo.Size = new System.Drawing.Size(923, 141);
             this.pnlInfo.TabIndex = 7;
             // 
+            // btnCambioPass
+            // 
+            this.btnCambioPass.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCambioPass.BackColor = System.Drawing.Color.DimGray;
+            this.btnCambioPass.FlatAppearance.BorderSize = 0;
+            this.btnCambioPass.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DeepSkyBlue;
+            this.btnCambioPass.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCambioPass.Location = new System.Drawing.Point(781, 15);
+            this.btnCambioPass.Name = "btnCambioPass";
+            this.btnCambioPass.Size = new System.Drawing.Size(130, 23);
+            this.btnCambioPass.TabIndex = 59;
+            this.btnCambioPass.Text = "Cambiar password";
+            this.btnCambioPass.UseVisualStyleBackColor = false;
+            // 
             // lblFecha
             // 
             this.lblFecha.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
@@ -599,20 +599,6 @@ namespace PetShop
             this.pnlPrincipal.Name = "pnlPrincipal";
             this.pnlPrincipal.Size = new System.Drawing.Size(923, 442);
             this.pnlPrincipal.TabIndex = 8;
-            // 
-            // btnCambioPass
-            // 
-            this.btnCambioPass.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCambioPass.BackColor = System.Drawing.Color.DimGray;
-            this.btnCambioPass.FlatAppearance.BorderSize = 0;
-            this.btnCambioPass.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DeepSkyBlue;
-            this.btnCambioPass.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCambioPass.Location = new System.Drawing.Point(781, 15);
-            this.btnCambioPass.Name = "btnCambioPass";
-            this.btnCambioPass.Size = new System.Drawing.Size(130, 23);
-            this.btnCambioPass.TabIndex = 59;
-            this.btnCambioPass.Text = "Cambiar password";
-            this.btnCambioPass.UseVisualStyleBackColor = false;
             // 
             // tmrTiempo
             // 
@@ -656,7 +642,6 @@ namespace PetShop
         private System.Windows.Forms.Panel pnlLateral;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Panel pnlSubMenuClientes;
         private System.Windows.Forms.Button btnMostrarClientes;
         private System.Windows.Forms.Button btnAltaCliente;

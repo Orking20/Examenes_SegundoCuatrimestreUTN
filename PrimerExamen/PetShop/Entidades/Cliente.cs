@@ -38,6 +38,10 @@ namespace Entidades
         /// </summary>
         public double Saldo
         {
+            get
+            {
+                return this.saldo;
+            }
             set
             {
                 if (ValidarSaldo(value))

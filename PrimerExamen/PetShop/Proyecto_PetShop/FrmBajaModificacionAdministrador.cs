@@ -28,6 +28,8 @@ namespace PetShop
         /// <param name="e"></param>
         private void FrmBajaModificacionAdministrador_Load(object sender, EventArgs e)
         {
+            this.cmbPuesto.DataSource = Enum.GetValues(typeof(EPuesto));
+
             if (FrmLogin.EsAdmin)
             {
                 this.BackColor = Color.AntiqueWhite;

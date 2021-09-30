@@ -236,7 +236,7 @@ namespace Entidades
         {
             bool retorno = false;
 
-            if (stock > 0)
+            if (stock >= 0)
             {
                 retorno = true;
             }

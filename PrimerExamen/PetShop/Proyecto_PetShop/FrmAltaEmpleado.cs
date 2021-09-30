@@ -59,6 +59,14 @@ namespace PetShop
                 usuario = txtUsuario.Text;
                 password = random.Next(100000, 999999).ToString();
                 puesto = (EPuesto)lstPuesto.SelectedItem;
+                horarioEntrada = Convert.ToDateTime(mtxHoraEntrada.Text);
+                horarioSalida = Convert.ToDateTime(mtxHoraSalida.Text);
+                nombre = txtNombre.Text;
+                apellido = txtApellido.Text;
+                nacionalidad = txtNacionalidad.Text;
+                domicilio = txtDomicilio.Text;
+                fechaNacimiento = ca1FechaNacimiento.SelectionStart.Date;
+                sexo = cmbSexo.SelectedItem.ToString();
 
                 for (int i = 0; i < 7; i++)
                 {
@@ -90,15 +98,6 @@ namespace PetShop
                         }
                     }
                 }
-
-                horarioEntrada = Convert.ToDateTime(mtxHoraEntrada.Text);
-                horarioSalida = Convert.ToDateTime(mtxHoraSalida.Text);
-                nombre = txtNombre.Text;
-                apellido = txtApellido.Text;
-                nacionalidad = txtNacionalidad.Text;
-                domicilio = txtDomicilio.Text;
-                fechaNacimiento = ca1FechaNacimiento.SelectionStart.Date;
-                sexo = cmbSexo.SelectedItem.ToString();
 
                 if (puesto == EPuesto.administrador)
                 {
