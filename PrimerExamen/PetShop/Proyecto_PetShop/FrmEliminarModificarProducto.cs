@@ -193,15 +193,7 @@ namespace PetShop
 
             if (txtNombre.Text != string.Empty)
             {
-                if (Producto.ValidarNombre(txtNombre.Text))
-                {
-                    producto.Nombre = txtNombre.Text;
-                }
-                else
-                {
-                    sb.AppendLine("Nombre");
-                    error = true;
-                }
+                producto.Nombre = txtNombre.Text;
             }
             if (txtMarca.Text != string.Empty)
             {

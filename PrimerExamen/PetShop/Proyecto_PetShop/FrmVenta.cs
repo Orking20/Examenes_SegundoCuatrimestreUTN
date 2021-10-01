@@ -26,49 +26,26 @@ namespace PetShop
             }
         }
 
-        private void btnMostrarCliente_Click(object sender, EventArgs e)
-        {
-            Cliente cliente = BuscarCliente();
-
-            if (cliente != null)
-            {
-                lblNombreCliente.Text = cliente.Nombre;
-                lblApellidoCliente.Text = cliente.Apellido;
-                lblDniCliente.Text = cliente.Dni.ToString();
-
-                lblNombreCliente.Visible = true;
-                lblApellidoCliente.Visible = true;
-                lblDniCliente.Visible = true;
-            }
-        }
-
-        private void btnMostrarProducto_Click(object sender, EventArgs e)
-        {
-            Producto producto = BuscarProducto();
-
-            if (producto != null)
-            {
-                lblNombreProducto.Text = producto.Nombre;
-                lblMarcaProducto.Text = producto.Marca;
-                lblPrecioProducto.Text = producto.Precio.ToString();
-                lblStockProducto.Text = producto.Stock.ToString();
-
-                lblNombreProducto.Visible = true;
-                lblMarcaProducto.Visible = true;
-                lblPrecioProducto.Visible = true;
-                lblStockProducto.Visible = true;
-            }
-        }
-
         private void btnVender_Click(object sender, EventArgs e)
         {
+            Cliente cliente;
+            Producto producto;
             int stock = (int)nudStock.Value;
             string mensaje;
 
-            mensaje = Venta.VenderProducto(BuscarProducto(), BuscarCliente(), stock);
+            cliente = BuscarCliente();
+            producto = BuscarProducto();
+
+            mensaje = Venta.VenderProducto(producto, cliente, stock);
             
             lblVendido.Visible = true;
             lblVendido.Text = mensaje;
+
+            if (mensaje == "¡Vendido!")
+            {
+                FrmLogin.Facturas.Add(cliente, producto);
+                FrmLogin.Stocks.Add(cliente, stock);
+            }
         }
 
         private void nudStock_ValueChanged(object sender, EventArgs e)
@@ -93,6 +70,9 @@ namespace PetShop
                     if (nudIdClientes.Value == cliente.IdCliente)
                     {
                         lblInfoCliente.Visible = false;
+                        lblNombreCliente.Visible = true;
+                        lblApellidoCliente.Visible = true;
+                        lblDniCliente.Visible = true;
                         break;
                     }
                     else
@@ -129,6 +109,10 @@ namespace PetShop
                     if (nudIdProducto.Value == producto.IdProducto)
                     {
                         lblInfoProducto.Visible = false;
+                        lblNombreProducto.Visible = true;
+                        lblMarcaProducto.Visible = true;
+                        lblPrecioProducto.Visible = true;
+                        lblStockProducto.Visible = true;
                         break;
                     }
                     else
@@ -152,6 +136,40 @@ namespace PetShop
             }
 
             return producto;
+        }
+
+        private void nudIdClientes_ValueChanged(object sender, EventArgs e)
+        {
+            Cliente cliente = BuscarCliente();
+
+            if (cliente != null)
+            {
+                lblNombreCliente.Text = cliente.Nombre;
+                lblApellidoCliente.Text = cliente.Apellido;
+                lblDniCliente.Text = cliente.Dni.ToString();
+
+                lblNombreCliente.Visible = true;
+                lblApellidoCliente.Visible = true;
+                lblDniCliente.Visible = true;
+            }
+        }
+
+        private void nudIdProducto_ValueChanged(object sender, EventArgs e)
+        {
+            Producto producto = BuscarProducto();
+
+            if (producto != null)
+            {
+                lblNombreProducto.Text = producto.Nombre;
+                lblMarcaProducto.Text = producto.Marca;
+                lblPrecioProducto.Text = producto.Precio.ToString();
+                lblStockProducto.Text = producto.Stock.ToString();
+
+                lblNombreProducto.Visible = true;
+                lblMarcaProducto.Visible = true;
+                lblPrecioProducto.Visible = true;
+                lblStockProducto.Visible = true;
+            }
         }
     }
 }

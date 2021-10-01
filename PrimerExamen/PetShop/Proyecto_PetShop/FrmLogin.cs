@@ -16,7 +16,9 @@ namespace PetShop
         private static List<Empleado> empleados;
         private static List<Administrador> administradores;
         private static List<Producto> productos;
+        private static Dictionary<Cliente, int> stocks;
         private static Dictionary<string, string> usuarios;
+        private static Dictionary<Cliente, Producto> facturas;
         private static bool esAdmin;
 
         /// <summary>
@@ -153,7 +155,9 @@ namespace PetShop
             empleados = new List<Empleado>();
             administradores = new List<Administrador>();
             productos = new List<Producto>();
+            stocks = new Dictionary<Cliente, int>();
             usuarios = new Dictionary<string, string>();
+            facturas = new Dictionary<Cliente, Producto>();
 
             Empleado empleado1 = Administrador.AltaEmpleado("Gonzalo", "Kublai", 25000, EPuesto.cajero, new string[] { "L", "Ma", "Mi", "J", "V", null, null }, Convert.ToDateTime("12:00"), Convert.ToDateTime("19:00"), "Gonzalo", "Marquinez", Convert.ToDateTime("14/07/1992"), 41542195, "Masculino", "Argentina", "Cabrera 3015");
             Empleado empleado2 = Administrador.AltaEmpleado("Juli", "EmpanadaFrita", 19000, EPuesto.delivery, new string[] { "L", "Ma", "Mi", "J", "V", null, null }, Convert.ToDateTime("13:00"), Convert.ToDateTime("19:00"), "Julia", "Dominguez", Convert.ToDateTime("23/03/2000"), 40462485, "Femenino", "Argentina", "Bompland 5002");
@@ -161,6 +165,26 @@ namespace PetShop
             Empleado empleado4 = Administrador.AltaEmpleado("Marce", "lito246", 20000, EPuesto.cajero, new string[] { null, null, null, null, null, "S", "D" }, Convert.ToDateTime("12:00"), Convert.ToDateTime("19:00"), "Marcelo", "Ricaño", Convert.ToDateTime("01/01/1993"), 40830644, "Masculino", "Argentina", "Bersalles 203");
             Administrador admin1 = Administrador.AltaAdministrador("Tatiana", "jinjer123", 73000, EPuesto.administrador, new string[] { "L", "Ma", "Mi", "J", "V", "S", "D" }, Convert.ToDateTime("12:00"), Convert.ToDateTime("19:00"), "Tatiana", "Shmaylyuk", Convert.ToDateTime("15/03/1987"), 38245987, "Femenino", "Ucrania", "Pavón 3120");
             Administrador admin2 = Administrador.AltaAdministrador("Will", "Lorna_400", 68000, EPuesto.administrador, new string[] { "L", "Ma", "Mi", "J", "V", "S", "D" }, Convert.ToDateTime("12:00"), Convert.ToDateTime("19:00"), "William", "Ramos", Convert.ToDateTime("02/05/1982"), 36846528, "Masculino", "Argentina", "Salcedo 2857");
+            Producto producto1 = Empleado.AltaProducto("Hueso", "Dog Chow", ETipo.alimento, 480, 1, 30);
+            Producto producto2 = Empleado.AltaProducto("Lata gastrointestinal", "Royal canin", ETipo.alimento, 311, 0.200, 60);
+            Producto producto3 = Empleado.AltaProducto("Cepillo rastrillo", "Essentials", ETipo.cuidado, 980, 0.35, 15);
+            Producto producto4 = Empleado.AltaProducto("Cama acolchada", "Essentials", ETipo.cama, 3200, 3, 6);
+            Producto producto5 = Empleado.AltaProducto("Shampoo garrapatas", "Essentials", ETipo.cuidado, 1100, 1, 10);
+            Producto producto6 = Empleado.AltaProducto("Comida para gatos", "Royal canin", ETipo.alimento, 850, 1, 56);
+            Producto producto7 = Empleado.AltaProducto("Comida para gatos 4Kg", "Royal canin", ETipo.alimento, 3000, 4, 32);
+            Producto producto8 = Empleado.AltaProducto("Trepador para gatos", "Royal canin", ETipo.juguete, 2600, 2.5, 3);
+            Producto producto9 = Empleado.AltaProducto("Varita con pluma para gatos", "Can cat", ETipo.juguete, 671, 0.35, 43);
+            Producto producto10 = Empleado.AltaProducto("Collar", "Catycan", ETipo.cuidado, 1560, 0.15, 8);
+            Producto producto11 = Empleado.AltaProducto("Golosina bocaditos", "Dog Chow", ETipo.alimento, 566, 0.500, 33);
+            Producto producto12 = Empleado.AltaProducto("Pelota para perros", "Catycan", ETipo.juguete, 242.40, 0.25, 15);
+            Producto producto13 = Empleado.AltaProducto("Camita para gatos", "Catycan", ETipo.cama, 2300, 3.2, 2);
+            Producto producto14 = Empleado.AltaProducto("Peine/cardina", "Essentials", ETipo.juguete, 992.20, 0.35, 5);
+            Producto producto15 = Empleado.AltaProducto("Alicate corta uñas", "Can cat", ETipo.cuidado, 891, 0.50, 7);
+            Producto producto16 = Empleado.AltaProducto("Cama para perro/gato", "Catycat", ETipo.cama, 1253, 2.30, 4);
+            Producto producto17 = Empleado.AltaProducto("Lata pollo", "Dog Chow", ETipo.alimento, 247, 0.340, 47);
+            Producto producto18 = Empleado.AltaProducto("Golosina huesito", "Royal canin", ETipo.alimento, 220, 0.250, 38);
+            Producto producto19 = Empleado.AltaProducto("Pelota dental", "Dog Chow", ETipo.juguete, 1481, 1, 22);
+            Producto producto20 = Empleado.AltaProducto("Golosina gatuna", "Royal canin", ETipo.alimento, 340, 0.700, 31);
 
             empleados.Add(empleado1);
             empleados.Add(empleado2);
@@ -176,6 +200,27 @@ namespace PetShop
             usuarios.Add(empleado4.Usuario, empleado4.Password);
             usuarios.Add(admin1.Usuario, admin1.Password);
             usuarios.Add(admin2.Usuario, admin2.Password);
+
+            productos.Add(producto1);
+            productos.Add(producto2);
+            productos.Add(producto3);
+            productos.Add(producto4);
+            productos.Add(producto5);
+            productos.Add(producto6);
+            productos.Add(producto7);
+            productos.Add(producto8);
+            productos.Add(producto9);
+            productos.Add(producto10);
+            productos.Add(producto11);
+            productos.Add(producto12);
+            productos.Add(producto13);
+            productos.Add(producto14);
+            productos.Add(producto15);
+            productos.Add(producto16);
+            productos.Add(producto17);
+            productos.Add(producto18);
+            productos.Add(producto19);
+            productos.Add(producto20);
         }
         #endregion
 
@@ -214,6 +259,17 @@ namespace PetShop
         }
 
         /// <summary>
+        /// Devuelve la lista de productos comprados en la misma compra
+        /// </summary>
+        public static Dictionary<Cliente, int> Stocks
+        {
+            get
+            {
+                return stocks;
+            }
+        }
+
+        /// <summary>
         /// Devuelve el diccionario de usuarios
         /// </summary>
         public static Dictionary<string, string> Usuarios
@@ -221,6 +277,17 @@ namespace PetShop
             get
             {
                 return usuarios;
+            }
+        }
+
+        /// <summary>
+        /// Devuelve la factura del cliente
+        /// </summary>
+        public static Dictionary<Cliente, Producto> Facturas
+        {
+            get
+            {
+                return facturas;
             }
         }
 

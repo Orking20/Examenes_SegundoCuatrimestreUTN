@@ -52,6 +52,27 @@ namespace PetShop
             if (FrmLogin.EsAdmin)
             {
                 pnlPrincipal.BackColor = Color.AntiqueWhite;
+                picPrincipal.BackColor = Color.Brown;
+                pnlBarra.BackColor = Color.Brown;
+                pnlInfo.BackColor = Color.Tan;
+                btnClientes.FlatAppearance.MouseOverBackColor = Color.Brown;
+                btnAltaCliente.FlatAppearance.MouseOverBackColor = Color.Brown;
+                btnBajaModificacionCliente.FlatAppearance.MouseOverBackColor = Color.Brown;
+                btnMostrarClientes.FlatAppearance.MouseOverBackColor = Color.Brown;
+                btnProductos.FlatAppearance.MouseOverBackColor = Color.Brown;
+                btnAgregarProductos.FlatAppearance.MouseOverBackColor = Color.Brown;
+                btnEliminarModificarProfuctos.FlatAppearance.MouseOverBackColor = Color.Brown;
+                btnMostrarProductos.FlatAppearance.MouseOverBackColor = Color.Brown;
+                btnVentas.FlatAppearance.MouseOverBackColor = Color.Brown;
+                btnEmpleados.FlatAppearance.MouseOverBackColor = Color.Brown;
+                btnAltaEmpleados.FlatAppearance.MouseOverBackColor = Color.Brown;
+                btnBajaModificacionEmpleados.FlatAppearance.MouseOverBackColor = Color.Brown;
+                btnMostrarEmpleados.FlatAppearance.MouseOverBackColor = Color.Brown;
+                btnAdmin.FlatAppearance.MouseOverBackColor = Color.Brown;
+                btnAltaAdmin.FlatAppearance.MouseOverBackColor = Color.Brown;
+                btnBajaModificacionAdmin.FlatAppearance.MouseOverBackColor = Color.Brown;
+                btnMostrarAdmin.FlatAppearance.MouseOverBackColor = Color.Brown;
+                btnFacturacion.FlatAppearance.MouseOverBackColor = Color.Brown;
                 btnFacturacion.Visible = true;
                 pnlSubMenuEmpleados.Visible = true;
                 pnlSubMenuEmpleados.Visible = false;
@@ -285,6 +306,14 @@ namespace PetShop
             pnlSubMenuEmpleados.Visible = false;
             pnlSubMenuAdmin.Visible = false;
             AbrirFormularioHijo(new FrmVenta());
+        }
+        private void btnFacturacion_Click(object sender, EventArgs e)
+        {
+            pnlSubMenuClientes.Visible = false;
+            pnlSubMenuProductos.Visible = false;
+            pnlSubMenuEmpleados.Visible = false;
+            pnlSubMenuAdmin.Visible = false;
+            AbrirFormularioHijo(new FrmFacturacion());
         }
 
         /// <summary>

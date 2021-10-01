@@ -38,8 +38,7 @@ namespace PetShop
             int stock;
             Producto productoNuevo;
 
-            if (Producto.ValidarNombre(txtNombre.Text) &&
-                double.TryParse(nudPrecio.Text, out precio) &&
+            if (double.TryParse(nudPrecio.Text, out precio) &&
                 Producto.ValidarPrecio(precio) &&
                 double.TryParse(nudPeso.Text, out peso) &&
                 Producto.ValidarPeso(peso) &&

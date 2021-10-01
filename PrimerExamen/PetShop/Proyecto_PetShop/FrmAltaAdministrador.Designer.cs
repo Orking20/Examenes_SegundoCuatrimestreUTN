@@ -29,6 +29,7 @@ namespace PetShop
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAltaAdministrador));
             this.grpEmpleado = new System.Windows.Forms.GroupBox();
             this.lblInfo = new System.Windows.Forms.Label();
             this.lblUsuario = new System.Windows.Forms.Label();
@@ -61,8 +62,10 @@ namespace PetShop
             this.btnLimpiar = new System.Windows.Forms.Button();
             this.lblTitulo = new System.Windows.Forms.Label();
             this.btnAltaEmpleado = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.grpEmpleado.SuspendLayout();
             this.grpPersonal.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // grpEmpleado
@@ -422,10 +425,21 @@ namespace PetShop
             this.btnAltaEmpleado.UseVisualStyleBackColor = false;
             this.btnAltaEmpleado.Click += new System.EventHandler(this.btnAltaEmpleado_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(788, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(123, 111);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 41;
+            this.pictureBox1.TabStop = false;
+            // 
             // FrmAltaAdministrador
             // 
             this.BackColor = System.Drawing.Color.LightSlateGray;
             this.ClientSize = new System.Drawing.Size(923, 442);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.grpEmpleado);
             this.Controls.Add(this.grpPersonal);
             this.Controls.Add(this.btnLimpiar);
@@ -438,6 +452,7 @@ namespace PetShop
             this.grpEmpleado.PerformLayout();
             this.grpPersonal.ResumeLayout(false);
             this.grpPersonal.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -477,5 +492,6 @@ namespace PetShop
         private System.Windows.Forms.Label lblTitulo;
         private System.Windows.Forms.Button btnAltaEmpleado;
         private System.Windows.Forms.Label lblInfo;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

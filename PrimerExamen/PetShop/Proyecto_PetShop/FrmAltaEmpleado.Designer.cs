@@ -29,6 +29,7 @@ namespace PetShop
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAltaEmpleado));
             this.btnLimpiar = new System.Windows.Forms.Button();
             this.lblTitulo = new System.Windows.Forms.Label();
             this.cmbSexo = new System.Windows.Forms.ComboBox();
@@ -60,8 +61,10 @@ namespace PetShop
             this.lblPuesto = new System.Windows.Forms.Label();
             this.lblSueldo = new System.Windows.Forms.Label();
             this.txtSueldo = new System.Windows.Forms.TextBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.grpPersonal.SuspendLayout();
             this.grpEmpleado.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnLimpiar
@@ -409,12 +412,23 @@ namespace PetShop
             this.txtSueldo.Size = new System.Drawing.Size(154, 23);
             this.txtSueldo.TabIndex = 36;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(788, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(123, 111);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 36;
+            this.pictureBox1.TabStop = false;
+            // 
             // FrmAltaEmpleado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSlateGray;
             this.ClientSize = new System.Drawing.Size(923, 442);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.grpEmpleado);
             this.Controls.Add(this.grpPersonal);
             this.Controls.Add(this.btnLimpiar);
@@ -428,6 +442,7 @@ namespace PetShop
             this.grpPersonal.PerformLayout();
             this.grpEmpleado.ResumeLayout(false);
             this.grpEmpleado.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -466,5 +481,6 @@ namespace PetShop
         private System.Windows.Forms.ListBox lstPuesto;
         private System.Windows.Forms.Label lblUsuario;
         private System.Windows.Forms.TextBox txtUsuario;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

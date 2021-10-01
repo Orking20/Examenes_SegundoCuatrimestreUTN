@@ -29,6 +29,7 @@ namespace PetShop
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAltaCliente));
             this.btnAltaCliente = new System.Windows.Forms.Button();
             this.lblNombre = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
@@ -46,6 +47,8 @@ namespace PetShop
             this.cmbSexo = new System.Windows.Forms.ComboBox();
             this.lblTitulo = new System.Windows.Forms.Label();
             this.btnLimpiar = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnAltaCliente
@@ -217,12 +220,23 @@ namespace PetShop
             this.btnLimpiar.UseVisualStyleBackColor = false;
             this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(788, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(123, 111);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 17;
+            this.pictureBox1.TabStop = false;
+            // 
             // FrmAltaCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSlateGray;
             this.ClientSize = new System.Drawing.Size(923, 442);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnLimpiar);
             this.Controls.Add(this.lblTitulo);
             this.Controls.Add(this.cmbSexo);
@@ -245,6 +259,7 @@ namespace PetShop
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cliente";
             this.Load += new System.EventHandler(this.FrmAltaCliente_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -269,5 +284,6 @@ namespace PetShop
         private System.Windows.Forms.ComboBox cmbSexo;
         private System.Windows.Forms.Label lblTitulo;
         private System.Windows.Forms.Button btnLimpiar;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

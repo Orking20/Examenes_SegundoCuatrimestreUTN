@@ -34,7 +34,6 @@ namespace PetShop
             this.nudIdClientes = new System.Windows.Forms.NumericUpDown();
             this.lblIdProducto = new System.Windows.Forms.Label();
             this.nudIdProducto = new System.Windows.Forms.NumericUpDown();
-            this.btnMostrarProducto = new System.Windows.Forms.Button();
             this.grpProducto = new System.Windows.Forms.GroupBox();
             this.lblStockTotal = new System.Windows.Forms.Label();
             this.lblPrecio = new System.Windows.Forms.Label();
@@ -45,7 +44,6 @@ namespace PetShop
             this.lblMarcaProducto = new System.Windows.Forms.Label();
             this.lblNombreProducto = new System.Windows.Forms.Label();
             this.lblInfoProducto = new System.Windows.Forms.Label();
-            this.btnMostrarCliente = new System.Windows.Forms.Button();
             this.lblNombreCliente = new System.Windows.Forms.Label();
             this.lblApellidoCliente = new System.Windows.Forms.Label();
             this.lblDniCliente = new System.Windows.Forms.Label();
@@ -57,18 +55,18 @@ namespace PetShop
             this.btnVender = new System.Windows.Forms.Button();
             this.lblVendido = new System.Windows.Forms.Label();
             this.grpDescripcion = new System.Windows.Forms.GroupBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblPrecioTotalProducto = new System.Windows.Forms.Label();
             this.nudStock = new System.Windows.Forms.NumericUpDown();
             this.lblStock = new System.Windows.Forms.Label();
             this.lblPrecioTotal = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.nudIdClientes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudIdProducto)).BeginInit();
             this.grpProducto.SuspendLayout();
             this.grpCliente.SuspendLayout();
             this.grpDescripcion.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudStock)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudStock)).BeginInit();
             this.SuspendLayout();
             // 
             // lblIdCliente
@@ -106,6 +104,7 @@ namespace PetShop
             0,
             0,
             0});
+            this.nudIdClientes.ValueChanged += new System.EventHandler(this.nudIdClientes_ValueChanged);
             // 
             // lblIdProducto
             // 
@@ -142,20 +141,7 @@ namespace PetShop
             0,
             0,
             0});
-            // 
-            // btnMostrarProducto
-            // 
-            this.btnMostrarProducto.BackColor = System.Drawing.Color.DimGray;
-            this.btnMostrarProducto.FlatAppearance.BorderSize = 0;
-            this.btnMostrarProducto.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DeepSkyBlue;
-            this.btnMostrarProducto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMostrarProducto.Location = new System.Drawing.Point(18, 60);
-            this.btnMostrarProducto.Name = "btnMostrarProducto";
-            this.btnMostrarProducto.Size = new System.Drawing.Size(130, 23);
-            this.btnMostrarProducto.TabIndex = 33;
-            this.btnMostrarProducto.Text = "Mostrar";
-            this.btnMostrarProducto.UseVisualStyleBackColor = false;
-            this.btnMostrarProducto.Click += new System.EventHandler(this.btnMostrarProducto_Click);
+            this.nudIdProducto.ValueChanged += new System.EventHandler(this.nudIdProducto_ValueChanged);
             // 
             // grpProducto
             // 
@@ -168,7 +154,6 @@ namespace PetShop
             this.grpProducto.Controls.Add(this.lblMarcaProducto);
             this.grpProducto.Controls.Add(this.lblNombreProducto);
             this.grpProducto.Controls.Add(this.lblIdProducto);
-            this.grpProducto.Controls.Add(this.btnMostrarProducto);
             this.grpProducto.Controls.Add(this.nudIdProducto);
             this.grpProducto.Location = new System.Drawing.Point(315, 25);
             this.grpProducto.Name = "grpProducto";
@@ -272,20 +257,6 @@ namespace PetShop
             this.lblInfoProducto.Text = "No se encontraron coincidencias";
             this.lblInfoProducto.Visible = false;
             // 
-            // btnMostrarCliente
-            // 
-            this.btnMostrarCliente.BackColor = System.Drawing.Color.DimGray;
-            this.btnMostrarCliente.FlatAppearance.BorderSize = 0;
-            this.btnMostrarCliente.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DeepSkyBlue;
-            this.btnMostrarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMostrarCliente.Location = new System.Drawing.Point(15, 60);
-            this.btnMostrarCliente.Name = "btnMostrarCliente";
-            this.btnMostrarCliente.Size = new System.Drawing.Size(130, 23);
-            this.btnMostrarCliente.TabIndex = 30;
-            this.btnMostrarCliente.Text = "Mostrar";
-            this.btnMostrarCliente.UseVisualStyleBackColor = false;
-            this.btnMostrarCliente.Click += new System.EventHandler(this.btnMostrarCliente_Click);
-            // 
             // lblNombreCliente
             // 
             this.lblNombreCliente.AutoSize = true;
@@ -327,7 +298,6 @@ namespace PetShop
             this.grpCliente.Controls.Add(this.lblDniCliente);
             this.grpCliente.Controls.Add(this.lblApellidoCliente);
             this.grpCliente.Controls.Add(this.lblNombreCliente);
-            this.grpCliente.Controls.Add(this.btnMostrarCliente);
             this.grpCliente.Location = new System.Drawing.Point(12, 25);
             this.grpCliente.Name = "grpCliente";
             this.grpCliente.Size = new System.Drawing.Size(297, 330);
@@ -415,6 +385,16 @@ namespace PetShop
             this.grpDescripcion.TabStop = false;
             this.grpDescripcion.Text = "Descripción";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(61, 29);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(150, 150);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 43;
+            this.pictureBox1.TabStop = false;
+            // 
             // lblPrecioTotalProducto
             // 
             this.lblPrecioTotalProducto.AutoSize = true;
@@ -458,16 +438,6 @@ namespace PetShop
             this.lblPrecioTotal.TabIndex = 39;
             this.lblPrecioTotal.Text = "Precio";
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(61, 29);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(150, 150);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 43;
-            this.pictureBox1.TabStop = false;
-            // 
             // FrmVenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -495,8 +465,8 @@ namespace PetShop
             this.grpCliente.PerformLayout();
             this.grpDescripcion.ResumeLayout(false);
             this.grpDescripcion.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudStock)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudStock)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -508,9 +478,7 @@ namespace PetShop
         private System.Windows.Forms.NumericUpDown nudIdClientes;
         private System.Windows.Forms.Label lblIdProducto;
         private System.Windows.Forms.NumericUpDown nudIdProducto;
-        private System.Windows.Forms.Button btnMostrarProducto;
         private System.Windows.Forms.GroupBox grpProducto;
-        private System.Windows.Forms.Button btnMostrarCliente;
         private System.Windows.Forms.Label lblNombreCliente;
         private System.Windows.Forms.Label lblApellidoCliente;
         private System.Windows.Forms.Label lblDniCliente;

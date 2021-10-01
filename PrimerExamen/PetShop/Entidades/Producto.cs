@@ -68,10 +68,7 @@ namespace Entidades
             }
             set
             {
-                if (ValidarNombre(value))
-                {
-                    this.nombre = value;
-                }
+                this.nombre = value;
             }
         }
 
@@ -176,23 +173,6 @@ namespace Entidades
         #endregion
 
         #region Validaciones
-        /// <summary>
-        /// Valida el nombre del producto
-        /// </summary>
-        /// <param name="nombre">Nombre del producto</param>
-        /// <returns></returns>
-        public static bool ValidarNombre(string nombre)
-        {
-            bool retorno = false;
-
-            if (Persona.EsSoloLetras(nombre))
-            {
-                retorno = true;
-            }
-
-            return retorno;
-        }
-
         /// <summary>
         /// Valida el precio del producto
         /// </summary>
