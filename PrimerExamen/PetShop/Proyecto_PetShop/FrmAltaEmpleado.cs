@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -110,6 +111,7 @@ namespace PetShop
                     FrmLogin.Empleados.Add(empleadoNuevo);
                 }
                 FrmLogin.Usuarios.Add(usuario, password);
+                ReproducirSonidoExito();
 
                 MessageBox.Show($"Esta es la contraseña para el usuario {usuario}: {password}\nEscribala y asegúrese de cambiarla", "Contraseña", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
@@ -134,6 +136,19 @@ namespace PetShop
             {
                 cklDiasLaborales.SetItemChecked(i, false);
             }
+            ReproducirSonidoBoton();
+        }
+
+        private void ReproducirSonidoExito()
+        {
+            SoundPlayer sonidoExito = new SoundPlayer(@"D:\UTN\Segundo cuatrimestre\Programacion II\Examenes\PrimerExamen\Sonidos\Exito.wav");
+            sonidoExito.Play();
+        }
+
+        private void ReproducirSonidoBoton()
+        {
+            SoundPlayer sonidoExito = new SoundPlayer(@"D:\UTN\Segundo cuatrimestre\Programacion II\Examenes\PrimerExamen\Sonidos\Boton.wav");
+            sonidoExito.Play();
         }
     }
 }

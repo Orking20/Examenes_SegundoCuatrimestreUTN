@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -96,6 +97,7 @@ namespace PetShop
             pnlPrincipal.Controls.Add(formularioHijo);
             pnlPrincipal.Tag = formularioHijo;
             formularioHijo.Show();
+            ReproducirSonidoBoton();
         }
 
         /// <summary>
@@ -136,6 +138,7 @@ namespace PetShop
                 pnlSubMenuClientes.Visible = true;
                 pnlSubMenuAdmin.Visible = false;
             }
+            ReproducirSonidoBoton();
         }
 
         /// <summary>
@@ -156,6 +159,7 @@ namespace PetShop
                 pnlSubMenuProductos.Visible = true;
                 pnlSubMenuAdmin.Visible = false;
             }
+            ReproducirSonidoBoton();
         }
 
         /// <summary>
@@ -176,6 +180,7 @@ namespace PetShop
                 pnlSubMenuEmpleados.Visible = true;
                 pnlSubMenuAdmin.Visible = false;
             }
+            ReproducirSonidoBoton();
         }
         private void btnAdmin_Click(object sender, EventArgs e)
         {
@@ -190,6 +195,23 @@ namespace PetShop
                 pnlSubMenuEmpleados.Visible = false;
                 pnlSubMenuAdmin.Visible = true;
             }
+            ReproducirSonidoBoton();
+        }
+        private void btnVentas_Click(object sender, EventArgs e)
+        {
+            pnlSubMenuClientes.Visible = false;
+            pnlSubMenuProductos.Visible = false;
+            pnlSubMenuEmpleados.Visible = false;
+            pnlSubMenuAdmin.Visible = false;
+            AbrirFormularioHijo(new FrmVenta());
+        }
+        private void btnFacturacion_Click(object sender, EventArgs e)
+        {
+            pnlSubMenuClientes.Visible = false;
+            pnlSubMenuProductos.Visible = false;
+            pnlSubMenuEmpleados.Visible = false;
+            pnlSubMenuAdmin.Visible = false;
+            AbrirFormularioHijo(new FrmFacturacion());
         }
 
         /// <summary>
@@ -299,22 +321,6 @@ namespace PetShop
         {
             AbrirFormularioHijo(new FrmMostrarProducto());
         }
-        private void btnVentas_Click(object sender, EventArgs e)
-        {
-            pnlSubMenuClientes.Visible = false;
-            pnlSubMenuProductos.Visible = false;
-            pnlSubMenuEmpleados.Visible = false;
-            pnlSubMenuAdmin.Visible = false;
-            AbrirFormularioHijo(new FrmVenta());
-        }
-        private void btnFacturacion_Click(object sender, EventArgs e)
-        {
-            pnlSubMenuClientes.Visible = false;
-            pnlSubMenuProductos.Visible = false;
-            pnlSubMenuEmpleados.Visible = false;
-            pnlSubMenuAdmin.Visible = false;
-            AbrirFormularioHijo(new FrmFacturacion());
-        }
 
         /// <summary>
         /// Devuelve el valor de clientes
@@ -344,5 +350,10 @@ namespace PetShop
             lblHora.Text = hora.ToString();
         }
 
+        private void ReproducirSonidoBoton()
+        {
+            SoundPlayer sonidoExito = new SoundPlayer(@"D:\UTN\Segundo cuatrimestre\Programacion II\Examenes\PrimerExamen\Sonidos\Boton.wav");
+            sonidoExito.Play();
+        }
     }
 }

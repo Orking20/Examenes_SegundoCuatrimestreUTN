@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -58,6 +59,7 @@ namespace PetShop
             
                 clienteNuevo = Empleado.AltaCliente(sueldo, nombre, apellido, fechaNacimiento, dni, sexo, nacionalidad, domicilio);
                 FrmMenu.Clientes.Add(clienteNuevo);
+                ReproducirSonidoExito();
             }
             else
             {
@@ -72,6 +74,19 @@ namespace PetShop
             txtDni.Text = string.Empty;
             txtNacionalidad.Text = string.Empty;
             txtDomicilio.Text = string.Empty;
+            ReproducirSonidoBoton();
+        }
+
+        private void ReproducirSonidoExito()
+        {
+            SoundPlayer sonidoExito = new SoundPlayer(@"D:\UTN\Segundo cuatrimestre\Programacion II\Examenes\PrimerExamen\Sonidos\Exito.wav");
+            sonidoExito.Play();
+        }
+
+        private void ReproducirSonidoBoton()
+        {
+            SoundPlayer sonidoExito = new SoundPlayer(@"D:\UTN\Segundo cuatrimestre\Programacion II\Examenes\PrimerExamen\Sonidos\Boton.wav");
+            sonidoExito.Play();
         }
     }
 }

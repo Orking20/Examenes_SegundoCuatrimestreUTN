@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -57,6 +58,7 @@ namespace PetShop
                         OcultarTextBox();
                         lblMostrar.Visible = true;
                         lblMostrar.Text = cliente.Mostrar();
+                        ReproducirSonidoBoton();
                         break;
                     }
                     else
@@ -64,12 +66,14 @@ namespace PetShop
                         lblInfo.Visible = true;
                         lblMostrar.Visible = false;
                         OcultarLebel();
+                        ReproducirSonidoFallo();
                     }
                 }
             }
             else
             {
                 lblInfo.Visible = true;
+                ReproducirSonidoFallo();
             }
         }
         #endregion
@@ -89,10 +93,12 @@ namespace PetShop
                 MostrarTextBox();
                 lblMostrar.Visible = false;
                 btnAplicarCambios.Visible = true;
+                ReproducirSonidoBoton();
             }
             else
             {
                 lblInfo.Visible = true;
+                ReproducirSonidoFallo();
             }
         }
 
@@ -127,6 +133,7 @@ namespace PetShop
                             LimpiarTextBox();
                             lblMostrar.Text = cliente.Mostrar();
                             lblMostrar.Visible = true;
+                            ReproducirSonidoExito();
                             break;
                         }
                     }
@@ -134,6 +141,7 @@ namespace PetShop
                 else
                 {
                     lblInfo.Visible = true;
+                    ReproducirSonidoFallo();
                 }
             }
         }
@@ -164,18 +172,21 @@ namespace PetShop
                             Empleado.BajaCliente(FrmMenu.Clientes, cliente);
                             OcultarLebel();
                             lblMostrar.Visible = false;
+                            ReproducirSonidoExito();
                         }
                         break;
                     }
                     else
                     {
                         lblInfo.Visible = true;
+                        ReproducirSonidoFallo();
                     }
                 }
             }
             else
             {
                 lblInfo.Visible = true;
+                ReproducirSonidoFallo();
             }
         }
         #endregion
@@ -341,5 +352,23 @@ namespace PetShop
             txtDomicilio.Text = string.Empty;
         }
         #endregion
+
+        private void ReproducirSonidoExito()
+        {
+            SoundPlayer sonidoExito = new SoundPlayer(@"D:\UTN\Segundo cuatrimestre\Programacion II\Examenes\PrimerExamen\Sonidos\Exito.wav");
+            sonidoExito.Play();
+        }
+
+        private void ReproducirSonidoFallo()
+        {
+            SoundPlayer sonidoFallo = new SoundPlayer(@"D:\UTN\Segundo cuatrimestre\Programacion II\Examenes\PrimerExamen\Sonidos\Fallo.wav");
+            sonidoFallo.Play();
+        }
+
+        private void ReproducirSonidoBoton()
+        {
+            SoundPlayer sonidoExito = new SoundPlayer(@"D:\UTN\Segundo cuatrimestre\Programacion II\Examenes\PrimerExamen\Sonidos\Boton.wav");
+            sonidoExito.Play();
+        }
     }
 }

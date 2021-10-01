@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -68,6 +69,7 @@ namespace PetShop
                     }
                 }
 
+                ReproducirSonidoBoton();
                 new FrmMenu().Show();
                 this.Hide();
             }
@@ -106,6 +108,7 @@ namespace PetShop
         {
             txtUsuario.Text = String.Empty;
             txtPass.Text = String.Empty;
+            ReproducirSonidoBoton();
         }
 
         /// <summary>
@@ -138,6 +141,7 @@ namespace PetShop
                         {
                             txtPass.Text = valorAux;
                             seguirBuscando = false;
+                            ReproducirSonidoBoton();
                         }
                     }
                 }
@@ -302,5 +306,11 @@ namespace PetShop
             }
         }
         #endregion
+
+        private void ReproducirSonidoBoton()
+        {
+            SoundPlayer sonidoExito = new SoundPlayer(@"D:\UTN\Segundo cuatrimestre\Programacion II\Examenes\PrimerExamen\Sonidos\Boton.wav");
+            sonidoExito.Play();
+        }
     }
 }

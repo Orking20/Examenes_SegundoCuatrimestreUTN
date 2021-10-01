@@ -151,7 +151,7 @@ namespace PetShop
             this.pnlLateral.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnlLateral.Location = new System.Drawing.Point(0, 30);
             this.pnlLateral.Name = "pnlLateral";
-            this.pnlLateral.Size = new System.Drawing.Size(221, 946);
+            this.pnlLateral.Size = new System.Drawing.Size(221, 583);
             this.pnlLateral.TabIndex = 6;
             // 
             // pnlLateralBotones
@@ -548,7 +548,7 @@ namespace PetShop
             this.pnlInfo.Controls.Add(this.lblFecha);
             this.pnlInfo.Controls.Add(this.lblHora);
             this.pnlInfo.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnlInfo.Location = new System.Drawing.Point(221, 835);
+            this.pnlInfo.Location = new System.Drawing.Point(221, 472);
             this.pnlInfo.Name = "pnlInfo";
             this.pnlInfo.Size = new System.Drawing.Size(923, 141);
             this.pnlInfo.TabIndex = 7;
@@ -598,7 +598,7 @@ namespace PetShop
             this.pnlPrincipal.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlPrincipal.Location = new System.Drawing.Point(221, 30);
             this.pnlPrincipal.Name = "pnlPrincipal";
-            this.pnlPrincipal.Size = new System.Drawing.Size(923, 805);
+            this.pnlPrincipal.Size = new System.Drawing.Size(923, 442);
             this.pnlPrincipal.TabIndex = 8;
             // 
             // tmrTiempo
@@ -611,7 +611,7 @@ namespace PetShop
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSlateGray;
-            this.ClientSize = new System.Drawing.Size(1144, 976);
+            this.ClientSize = new System.Drawing.Size(1144, 613);
             this.Controls.Add(this.pnlPrincipal);
             this.Controls.Add(this.pnlInfo);
             this.Controls.Add(this.pnlLateral);
