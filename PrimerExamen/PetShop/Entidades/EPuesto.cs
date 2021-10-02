@@ -6,11 +6,14 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
+    /// <summary>
+    /// Contiene los posibles puestos de trabajo
+    /// </summary>
     public enum EPuesto
     {
-        administrador,
         cajero,
         delivery,
-        limpieza
+        limpieza,
+        administrador
     }
 }

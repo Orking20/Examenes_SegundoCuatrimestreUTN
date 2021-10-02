@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
+    /// <summary>
+    /// Contiene los posibles tipos de productos
+    /// </summary>
     public enum ETipo
     {
         alimento,

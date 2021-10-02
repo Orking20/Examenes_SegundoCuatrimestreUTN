@@ -16,6 +16,7 @@ namespace Entidades
         /// <summary>
         /// Inicializa los datos de un administrador
         /// </summary>
+        /// <param name="idAdministrador">ID del administrador</param>
         /// <param name="usuario">Usuario del administrador</param>
         /// <param name="password">Password del administrador</param>
         /// <param name="sueldo">Sueldo del administrador</param>
@@ -38,6 +39,24 @@ namespace Entidades
         #endregion
 
         #region Administrar admin
+        /// <summary>
+        /// Crea un nuevo administrador
+        /// </summary>
+        /// <param name="usuario">Usuario del administrador</param>
+        /// <param name="password">Password del administrador</param>
+        /// <param name="sueldo">Sueldo del administrador</param>
+        /// <param name="puesto">Puesto del administrador</param>
+        /// <param name="diasLaborales">Dias laborales del administrador</param>
+        /// <param name="horarioEntrada">Horario de entrada del administrador</param>
+        /// <param name="horarioSalida">Horario de salida del administrador</param>
+        /// <param name="nombre">Nombre del administrador</param>
+        /// <param name="apellido">Apellido del administrador</param>
+        /// <param name="fechaNacimiento">Fecha de nacimiento del administrador</param>
+        /// <param name="dni">DNI del administrador</param>
+        /// <param name="sexo">Sexo del administrador</param>
+        /// <param name="nacionalidad">Nacionalidad del administrador</param>
+        /// <param name="domicilio">Domicilio del administrador</param>
+        /// <returns>Retorna el nuevo administrador</returns>
         public static Administrador AltaAdministrador(string usuario, string password, double sueldo, EPuesto puesto, string[] diasLaborales, DateTime horarioEntrada, DateTime horarioSalida, string nombre, string apellido, DateTime fechaNacimiento, long dni, string sexo, string nacionalidad, string domicilio)
         {
             idAdministrador++;
@@ -96,12 +115,20 @@ namespace Entidades
             listaEmpleados.Remove(empleado);
         }
 
+        /// <summary>
+        /// Muestra los datos de un empleado
+        /// </summary>
+        /// <param name="empleado">Empleado a mostrar</param>
         public static void MostrarEmpleado(Empleado empleado)
         {
             empleado.Mostrar();
         }
         #endregion
 
+        #region Getter
+        /// <summary>
+        /// Devuelve el ID del administrador
+        /// </summary>
         public int IdAdministrador
         {
             get
@@ -109,5 +136,6 @@ namespace Entidades
                 return idAdmin;
             }
         }
+        #endregion
     }
 }

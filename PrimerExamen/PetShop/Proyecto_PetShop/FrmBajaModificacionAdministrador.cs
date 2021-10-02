@@ -14,6 +14,7 @@ namespace PetShop
 {
     public partial class FrmBajaModificacionAdministrador : Form
     {
+        #region Carga de datos
         /// <summary>
         /// Carga los componentes gráficos del formulario
         /// </summary>
@@ -36,6 +37,7 @@ namespace PetShop
                 this.BackColor = Color.AntiqueWhite;
             }
         }
+        #endregion
 
         #region BotonMostrar
         /// <summary>
@@ -496,22 +498,33 @@ namespace PetShop
         }
         #endregion
 
+        #region Sonido
+        /// <summary>
+        /// Reproduce un sonido indicando que todo salió correctamente
+        /// </summary>
         private void ReproducirSonidoExito()
         {
             SoundPlayer sonidoExito = new SoundPlayer(@"D:\UTN\Segundo cuatrimestre\Programacion II\Examenes\PrimerExamen\Sonidos\Exito.wav");
             sonidoExito.Play();
         }
 
+        /// <summary>
+        /// Reproduce un sonido indicando que algo falló
+        /// </summary>
         private void ReproducirSonidoFallo()
         {
             SoundPlayer sonidoFallo = new SoundPlayer(@"D:\UTN\Segundo cuatrimestre\Programacion II\Examenes\PrimerExamen\Sonidos\Fallo.wav");
             sonidoFallo.Play();
         }
 
+        /// <summary>
+        /// Reproduce un sonido indicando que se presionó un botón
+        /// </summary>
         private void ReproducirSonidoBoton()
         {
             SoundPlayer sonidoExito = new SoundPlayer(@"D:\UTN\Segundo cuatrimestre\Programacion II\Examenes\PrimerExamen\Sonidos\Boton.wav");
             sonidoExito.Play();
         }
+        #endregion
     }
 }

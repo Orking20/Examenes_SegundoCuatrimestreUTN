@@ -13,11 +13,20 @@ namespace PetShop
 {
     public partial class FrmMostrarClientes : Form
     {
+        #region Carga de datos
+        /// <summary>
+        /// Carga los componentes gráficos del formulario
+        /// </summary>
         public FrmMostrarClientes()
         {
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Carga algunos datos antes de mostrar el formulario
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void FrmMostrarClientes_Load(object sender, EventArgs e)
         {
             MostrarClientes();
@@ -27,7 +36,12 @@ namespace PetShop
                 this.BackColor = Color.AntiqueWhite;
             }
         }
+        #endregion
 
+        #region Metodos
+        /// <summary>
+        /// Muestra todos los clientes
+        /// </summary>
         private void MostrarClientes()
         {
             Cliente cliente;
@@ -83,5 +97,6 @@ namespace PetShop
             lblNacionalidad.Text = nacionalidades.ToString();
             lblDomicilio.Text = domicilios.ToString();
         }
+        #endregion
     }
 }

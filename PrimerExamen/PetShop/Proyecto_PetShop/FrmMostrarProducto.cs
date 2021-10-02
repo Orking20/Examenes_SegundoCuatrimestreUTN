@@ -13,11 +13,20 @@ namespace PetShop
 {
     public partial class FrmMostrarProducto : Form
     {
+        #region Carga los datos
+        /// <summary>
+        /// Carga los componentes gráficos del formulario
+        /// </summary>
         public FrmMostrarProducto()
         {
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Carga algunos datos antes de mostrar el formulario
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void FrmMostrarProducto_Load(object sender, EventArgs e)
         {
             if (FrmLogin.EsAdmin)
@@ -27,7 +36,12 @@ namespace PetShop
 
             MostrarProductos();
         }
+        #endregion
 
+        #region Metodos
+        /// <summary>
+        /// Muestra todos los productos
+        /// </summary>
         private void MostrarProductos()
         {
             Producto producto;
@@ -68,5 +82,6 @@ namespace PetShop
             lblPeso.Text = pesos.ToString();
             lblStock.Text = stocks.ToString();
         }
+        #endregion
     }
 }

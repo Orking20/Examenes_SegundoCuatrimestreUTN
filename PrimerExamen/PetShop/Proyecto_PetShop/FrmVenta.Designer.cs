@@ -31,9 +31,7 @@ namespace PetShop
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmVenta));
             this.lblIdCliente = new System.Windows.Forms.Label();
-            this.nudIdClientes = new System.Windows.Forms.NumericUpDown();
             this.lblIdProducto = new System.Windows.Forms.Label();
-            this.nudIdProducto = new System.Windows.Forms.NumericUpDown();
             this.grpProducto = new System.Windows.Forms.GroupBox();
             this.lblStockTotal = new System.Windows.Forms.Label();
             this.lblPrecio = new System.Windows.Forms.Label();
@@ -60,13 +58,15 @@ namespace PetShop
             this.nudStock = new System.Windows.Forms.NumericUpDown();
             this.lblStock = new System.Windows.Forms.Label();
             this.lblPrecioTotal = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.nudIdClientes)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudIdProducto)).BeginInit();
+            this.nudIdClientes = new System.Windows.Forms.NumericUpDown();
+            this.nudIdProducto = new System.Windows.Forms.NumericUpDown();
             this.grpProducto.SuspendLayout();
             this.grpCliente.SuspendLayout();
             this.grpDescripcion.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudStock)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudIdClientes)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudIdProducto)).BeginInit();
             this.SuspendLayout();
             // 
             // lblIdCliente
@@ -81,31 +81,6 @@ namespace PetShop
             this.lblIdCliente.TabIndex = 32;
             this.lblIdCliente.Text = "ID";
             // 
-            // nudIdClientes
-            // 
-            this.nudIdClientes.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.nudIdClientes.Location = new System.Drawing.Point(82, 56);
-            this.nudIdClientes.Maximum = new decimal(new int[] {
-            10000,
-            0,
-            0,
-            0});
-            this.nudIdClientes.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.nudIdClientes.Name = "nudIdClientes";
-            this.nudIdClientes.Size = new System.Drawing.Size(100, 23);
-            this.nudIdClientes.TabIndex = 31;
-            this.nudIdClientes.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.nudIdClientes.ValueChanged += new System.EventHandler(this.nudIdClientes_ValueChanged);
-            // 
             // lblIdProducto
             // 
             this.lblIdProducto.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -118,33 +93,9 @@ namespace PetShop
             this.lblIdProducto.TabIndex = 35;
             this.lblIdProducto.Text = "ID";
             // 
-            // nudIdProducto
-            // 
-            this.nudIdProducto.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.nudIdProducto.Location = new System.Drawing.Point(48, 29);
-            this.nudIdProducto.Maximum = new decimal(new int[] {
-            50000,
-            0,
-            0,
-            0});
-            this.nudIdProducto.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.nudIdProducto.Name = "nudIdProducto";
-            this.nudIdProducto.Size = new System.Drawing.Size(100, 23);
-            this.nudIdProducto.TabIndex = 34;
-            this.nudIdProducto.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.nudIdProducto.ValueChanged += new System.EventHandler(this.nudIdProducto_ValueChanged);
-            // 
             // grpProducto
             // 
+            this.grpProducto.Controls.Add(this.nudIdProducto);
             this.grpProducto.Controls.Add(this.lblStockTotal);
             this.grpProducto.Controls.Add(this.lblPrecio);
             this.grpProducto.Controls.Add(this.lblMarca);
@@ -154,7 +105,6 @@ namespace PetShop
             this.grpProducto.Controls.Add(this.lblMarcaProducto);
             this.grpProducto.Controls.Add(this.lblNombreProducto);
             this.grpProducto.Controls.Add(this.lblIdProducto);
-            this.grpProducto.Controls.Add(this.nudIdProducto);
             this.grpProducto.Location = new System.Drawing.Point(315, 25);
             this.grpProducto.Name = "grpProducto";
             this.grpProducto.Size = new System.Drawing.Size(314, 330);
@@ -292,6 +242,7 @@ namespace PetShop
             // 
             // grpCliente
             // 
+            this.grpCliente.Controls.Add(this.nudIdClientes);
             this.grpCliente.Controls.Add(this.lblDni);
             this.grpCliente.Controls.Add(this.lblApellido);
             this.grpCliente.Controls.Add(this.lblNombreC);
@@ -404,6 +355,7 @@ namespace PetShop
             this.lblPrecioTotalProducto.Size = new System.Drawing.Size(53, 21);
             this.lblPrecioTotalProducto.TabIndex = 42;
             this.lblPrecioTotalProducto.Text = "Precio";
+            this.lblPrecioTotalProducto.Visible = false;
             // 
             // nudStock
             // 
@@ -438,6 +390,32 @@ namespace PetShop
             this.lblPrecioTotal.TabIndex = 39;
             this.lblPrecioTotal.Text = "Precio";
             // 
+            // nudIdClientes
+            // 
+            this.nudIdClientes.Location = new System.Drawing.Point(70, 29);
+            this.nudIdClientes.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.nudIdClientes.Name = "nudIdClientes";
+            this.nudIdClientes.Size = new System.Drawing.Size(120, 23);
+            this.nudIdClientes.TabIndex = 42;
+            this.nudIdClientes.ValueChanged += new System.EventHandler(this.nudIdClientes_ValueChanged_1);
+            // 
+            // nudIdProducto
+            // 
+            this.nudIdProducto.Location = new System.Drawing.Point(48, 29);
+            this.nudIdProducto.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.nudIdProducto.Name = "nudIdProducto";
+            this.nudIdProducto.Size = new System.Drawing.Size(120, 23);
+            this.nudIdProducto.TabIndex = 44;
+            this.nudIdProducto.ValueChanged += new System.EventHandler(this.nudIdProducto_ValueChanged_1);
+            // 
             // FrmVenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -450,15 +428,12 @@ namespace PetShop
             this.Controls.Add(this.btnVender);
             this.Controls.Add(this.lblIdCliente);
             this.Controls.Add(this.lblInfoProducto);
-            this.Controls.Add(this.nudIdClientes);
             this.Controls.Add(this.grpCliente);
             this.Controls.Add(this.grpProducto);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmVenta";
             this.Text = "FrmVenta";
             this.Load += new System.EventHandler(this.FrmVenta_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.nudIdClientes)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudIdProducto)).EndInit();
             this.grpProducto.ResumeLayout(false);
             this.grpProducto.PerformLayout();
             this.grpCliente.ResumeLayout(false);
@@ -467,6 +442,8 @@ namespace PetShop
             this.grpDescripcion.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudStock)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudIdClientes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudIdProducto)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -475,9 +452,7 @@ namespace PetShop
         #endregion
 
         private System.Windows.Forms.Label lblIdCliente;
-        private System.Windows.Forms.NumericUpDown nudIdClientes;
         private System.Windows.Forms.Label lblIdProducto;
-        private System.Windows.Forms.NumericUpDown nudIdProducto;
         private System.Windows.Forms.GroupBox grpProducto;
         private System.Windows.Forms.Label lblNombreCliente;
         private System.Windows.Forms.Label lblApellidoCliente;
@@ -504,5 +479,7 @@ namespace PetShop
         private System.Windows.Forms.NumericUpDown nudStock;
         private System.Windows.Forms.Label lblPrecioTotalProducto;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.NumericUpDown nudIdClientes;
+        private System.Windows.Forms.NumericUpDown nudIdProducto;
     }
 }

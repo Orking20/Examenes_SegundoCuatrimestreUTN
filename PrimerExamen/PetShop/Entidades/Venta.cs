@@ -6,8 +6,16 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
-    public sealed class Venta
+    public abstract class Venta
     {
+        #region Metodos
+        /// <summary>
+        /// Calcula el precio a pagar, lo resta del saldo al cliente y resta el stock del producto
+        /// </summary>
+        /// <param name="producto">Producto que se está vendiendo</param>
+        /// <param name="cliente">Cliente que está comprando</param>
+        /// <param name="stock">Cantidad de productos vendidos</param>
+        /// <returns>Retorna un mensaje indicando si se pudo vender correctamente o si hubo algun error</returns>
         public static string VenderProducto(Producto producto, Cliente cliente, int stock)
         {
             double precio = producto.Precio;
@@ -48,6 +56,12 @@ namespace Entidades
             return retorno;
         }
 
+        /// <summary>
+        /// Calcula el precio total a pagar multiplicando el precio de un determinado producto por la cantidad de productos
+        /// </summary>
+        /// <param name="precio">Precio individual de un progucto</param>
+        /// <param name="stock">Cantidad de productos</param>
+        /// <returns>Retorna el precio total de la compra</returns>
         public static double PrecioTotal(double precio, int stock)
         {
             double precioTotal;
@@ -56,5 +70,6 @@ namespace Entidades
 
             return precioTotal;
         }
+        #endregion
     }
 }

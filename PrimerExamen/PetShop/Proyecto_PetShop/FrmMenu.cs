@@ -18,6 +18,7 @@ namespace PetShop
         private static List<Cliente> clientes;
         private static bool flagPrimeraVez = true;
 
+        #region Carga los datos
         /// <summary>
         /// Carga los componentes gráficos del formulario
         /// </summary>
@@ -27,7 +28,7 @@ namespace PetShop
         }
 
         /// <summary>
-        /// Carga algunos datos
+        /// Carga algunos datos antes de mostrar el formulario
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -83,7 +84,13 @@ namespace PetShop
                 btnAdmin.Visible = true;
             }
         }
+        #endregion
 
+        #region PanelPrincipal
+        /// <summary>
+        /// Abre el formulario pasado por parámetro
+        /// </summary>
+        /// <param name="formularioHijo">Formulario a abrir</param>
         private void AbrirFormularioHijo(Form formularioHijo)
         {
             if (formularioActivo != null)
@@ -99,7 +106,9 @@ namespace PetShop
             formularioHijo.Show();
             ReproducirSonidoBoton();
         }
+        #endregion
 
+        #region Botones
         /// <summary>
         /// Cierra la aplicación
         /// </summary>
@@ -182,6 +191,12 @@ namespace PetShop
             }
             ReproducirSonidoBoton();
         }
+
+        /// <summary>
+        /// Abre el sub menú de administradores y oculta el resto
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnAdmin_Click(object sender, EventArgs e)
         {
             if (pnlSubMenuAdmin.Visible)
@@ -197,6 +212,12 @@ namespace PetShop
             }
             ReproducirSonidoBoton();
         }
+
+        /// <summary>
+        /// Abre el formulario de ventas
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnVentas_Click(object sender, EventArgs e)
         {
             pnlSubMenuClientes.Visible = false;
@@ -205,6 +226,12 @@ namespace PetShop
             pnlSubMenuAdmin.Visible = false;
             AbrirFormularioHijo(new FrmVenta());
         }
+
+        /// <summary>
+        /// Abre el formulario de factuaraciones
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnFacturacion_Click(object sender, EventArgs e)
         {
             pnlSubMenuClientes.Visible = false;
@@ -235,7 +262,7 @@ namespace PetShop
         }
 
         /// <summary>
-        /// Abre un formulario para modificar o eliminar clientes
+        /// Abre un formulario para eliminar y/o modificar uno o varios clientes
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -265,7 +292,7 @@ namespace PetShop
         }
 
         /// <summary>
-        /// Abre un formulario para modificar o eliminar empleados
+        /// Abre un formulario para eliminar y/o modificar uno o varios empleados
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -295,7 +322,7 @@ namespace PetShop
         }
 
         /// <summary>
-        /// Abre un formulario para modificar o eliminar administradores
+        /// Abre un formulario para eliminar y/o modificar uno o varios administradores
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -313,26 +340,29 @@ namespace PetShop
         {
             AbrirFormularioHijo(new FrmAgregarProducto());
         }
+
+        /// <summary>
+        /// Abre un formulario para eliminar y/o modificar uno o varios productos
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnEliminarModificarProfuctos_Click(object sender, EventArgs e)
         {
             AbrirFormularioHijo(new FrmEliminarModificarProducto());
         }
+
+        /// <summary>
+        /// Abre un formulario para mostrar los productos
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnMostrarProductos_Click(object sender, EventArgs e)
         {
             AbrirFormularioHijo(new FrmMostrarProducto());
         }
+        #endregion
 
-        /// <summary>
-        /// Devuelve el valor de clientes
-        /// </summary>
-        public static List<Cliente> Clientes
-        {
-            get
-            {
-                return clientes;
-            }
-        }
-
+        #region Fecha y hora
         /// <summary>
         /// Muestra la fecha y hora actual
         /// </summary>
@@ -349,11 +379,30 @@ namespace PetShop
             lblFecha.Text = fecha.ToString();
             lblHora.Text = hora.ToString();
         }
+        #endregion
 
+        #region Getters
+        /// <summary>
+        /// Devuelve el valor de clientes
+        /// </summary>
+        public static List<Cliente> Clientes
+        {
+            get
+            {
+                return clientes;
+            }
+        }
+        #endregion
+
+        #region Sonido
+        /// <summary>
+        /// Reproduce un sonido indicando que se presionó un botón
+        /// </summary>
         private void ReproducirSonidoBoton()
         {
             SoundPlayer sonidoExito = new SoundPlayer(@"D:\UTN\Segundo cuatrimestre\Programacion II\Examenes\PrimerExamen\Sonidos\Boton.wav");
             sonidoExito.Play();
         }
+        #endregion
     }
 }

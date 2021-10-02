@@ -17,11 +17,12 @@ namespace PetShop
         private static List<Empleado> empleados;
         private static List<Administrador> administradores;
         private static List<Producto> productos;
+        private static List<Factura> facturas;
         private static Dictionary<Cliente, int> stocks;
         private static Dictionary<string, string> usuarios;
-        private static Dictionary<Cliente, Producto> facturas;
         private static bool esAdmin;
 
+        #region Carga de datos
         /// <summary>
         /// Carga los componentes gráficos
         /// </summary>
@@ -31,7 +32,7 @@ namespace PetShop
         }
 
         /// <summary>
-        /// Carga algunos datos
+        /// Carga algunos datos antes de mostrar el formulario
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -39,7 +40,9 @@ namespace PetShop
         {
             Hardcodeo();
         }
+        #endregion
 
+        #region Botones
         /// <summary>
         /// Si el usuario y la contraseña son correctas accede al menú
         /// </summary>
@@ -136,7 +139,7 @@ namespace PetShop
                     if (Usuarios.Keys.ElementAt(valorAleatorio) == Usuarios.Keys.ElementAt(contador))
                     {
                         txtUsuario.Text = Usuarios.Keys.ElementAt(contador);
-                    
+
                         if (Usuarios.TryGetValue(txtUsuario.Text, out valorAux))
                         {
                             txtPass.Text = valorAux;
@@ -149,6 +152,7 @@ namespace PetShop
                 contador++;
             }
         }
+        #endregion
 
         #region Hardcodeo
         /// <summary>
@@ -159,9 +163,9 @@ namespace PetShop
             empleados = new List<Empleado>();
             administradores = new List<Administrador>();
             productos = new List<Producto>();
+            facturas = new List<Factura>();
             stocks = new Dictionary<Cliente, int>();
             usuarios = new Dictionary<string, string>();
-            facturas = new Dictionary<Cliente, Producto>();
 
             Empleado empleado1 = Administrador.AltaEmpleado("Gonzalo", "Kublai", 25000, EPuesto.cajero, new string[] { "L", "Ma", "Mi", "J", "V", null, null }, Convert.ToDateTime("12:00"), Convert.ToDateTime("19:00"), "Gonzalo", "Marquinez", Convert.ToDateTime("14/07/1992"), 41542195, "Masculino", "Argentina", "Cabrera 3015");
             Empleado empleado2 = Administrador.AltaEmpleado("Juli", "EmpanadaFrita", 19000, EPuesto.delivery, new string[] { "L", "Ma", "Mi", "J", "V", null, null }, Convert.ToDateTime("13:00"), Convert.ToDateTime("19:00"), "Julia", "Dominguez", Convert.ToDateTime("23/03/2000"), 40462485, "Femenino", "Argentina", "Bompland 5002");
@@ -263,6 +267,17 @@ namespace PetShop
         }
 
         /// <summary>
+        /// Devuelve la lista de facturas
+        /// </summary>
+        public static List<Factura> Facturas
+        {
+            get
+            {
+                return facturas;
+            }
+        }
+
+        /// <summary>
         /// Devuelve la lista de productos comprados en la misma compra
         /// </summary>
         public static Dictionary<Cliente, int> Stocks
@@ -285,17 +300,6 @@ namespace PetShop
         }
 
         /// <summary>
-        /// Devuelve la factura del cliente
-        /// </summary>
-        public static Dictionary<Cliente, Producto> Facturas
-        {
-            get
-            {
-                return facturas;
-            }
-        }
-
-        /// <summary>
         /// Devuelve el valor de esAdmin
         /// </summary>
         public static bool EsAdmin
@@ -307,10 +311,15 @@ namespace PetShop
         }
         #endregion
 
+        #region Sonido
+        /// <summary>
+        /// Reproduce un sonido indicando que se presionó un botón
+        /// </summary>
         private void ReproducirSonidoBoton()
         {
             SoundPlayer sonidoExito = new SoundPlayer(@"D:\UTN\Segundo cuatrimestre\Programacion II\Examenes\PrimerExamen\Sonidos\Boton.wav");
             sonidoExito.Play();
         }
+        #endregion
     }
 }

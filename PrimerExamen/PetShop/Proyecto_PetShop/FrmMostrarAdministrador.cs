@@ -13,11 +13,20 @@ namespace PetShop
 {
     public partial class FrmMostrarAdministrador : Form
     {
+        #region Carga de datos
+        /// <summary>
+        /// Carga los componentes gráficos del formulario
+        /// </summary>
         public FrmMostrarAdministrador()
         {
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Carga algunos datos antes de mostrar el formulario
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void FrmMostrarAdministrador_Load(object sender, EventArgs e)
         {
             MostrarAdministradores();
@@ -27,7 +36,12 @@ namespace PetShop
                 this.BackColor = Color.AntiqueWhite;
             }
         }
+        #endregion
 
+        #region Metodos
+        /// <summary>
+        /// Muestra todos los administradores
+        /// </summary>
         private void MostrarAdministradores()
         {
             Administrador administrador;
@@ -78,6 +92,6 @@ namespace PetShop
                 lblHoraSalida.Text = horaSalida.ToString();
             }
         }
-
+        #endregion
     }
 }

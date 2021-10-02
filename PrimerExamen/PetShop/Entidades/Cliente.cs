@@ -58,7 +58,7 @@ namespace Entidades
         {
             get
             {
-                return idCliente;
+                return this.idCliente;
             }
         }
         #endregion

@@ -61,7 +61,7 @@ namespace PetShop
             this.ca1FechaNacimiento = new System.Windows.Forms.MonthCalendar();
             this.btnLimpiar = new System.Windows.Forms.Button();
             this.lblTitulo = new System.Windows.Forms.Label();
-            this.btnAltaEmpleado = new System.Windows.Forms.Button();
+            this.btnAltaAdministrador = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.grpEmpleado.SuspendLayout();
             this.grpPersonal.SuspendLayout();
@@ -411,19 +411,19 @@ namespace PetShop
             this.lblTitulo.TabIndex = 37;
             this.lblTitulo.Text = "Alta administrador";
             // 
-            // btnAltaEmpleado
+            // btnAltaAdministrador
             // 
-            this.btnAltaEmpleado.BackColor = System.Drawing.Color.DimGray;
-            this.btnAltaEmpleado.FlatAppearance.BorderSize = 0;
-            this.btnAltaEmpleado.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DeepSkyBlue;
-            this.btnAltaEmpleado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAltaEmpleado.Location = new System.Drawing.Point(704, 371);
-            this.btnAltaEmpleado.Name = "btnAltaEmpleado";
-            this.btnAltaEmpleado.Size = new System.Drawing.Size(128, 33);
-            this.btnAltaEmpleado.TabIndex = 36;
-            this.btnAltaEmpleado.Text = "Agregar empleado";
-            this.btnAltaEmpleado.UseVisualStyleBackColor = false;
-            this.btnAltaEmpleado.Click += new System.EventHandler(this.btnAltaEmpleado_Click);
+            this.btnAltaAdministrador.BackColor = System.Drawing.Color.DimGray;
+            this.btnAltaAdministrador.FlatAppearance.BorderSize = 0;
+            this.btnAltaAdministrador.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DeepSkyBlue;
+            this.btnAltaAdministrador.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAltaAdministrador.Location = new System.Drawing.Point(704, 371);
+            this.btnAltaAdministrador.Name = "btnAltaAdministrador";
+            this.btnAltaAdministrador.Size = new System.Drawing.Size(128, 33);
+            this.btnAltaAdministrador.TabIndex = 36;
+            this.btnAltaAdministrador.Text = "Agregar admin";
+            this.btnAltaAdministrador.UseVisualStyleBackColor = false;
+            this.btnAltaAdministrador.Click += new System.EventHandler(this.btnAltaAdministrador_Click);
             // 
             // pictureBox1
             // 
@@ -444,7 +444,7 @@ namespace PetShop
             this.Controls.Add(this.grpPersonal);
             this.Controls.Add(this.btnLimpiar);
             this.Controls.Add(this.lblTitulo);
-            this.Controls.Add(this.btnAltaEmpleado);
+            this.Controls.Add(this.btnAltaAdministrador);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmAltaAdministrador";
             this.Load += new System.EventHandler(this.FrmAltaAdministrador_Load);
@@ -490,7 +490,7 @@ namespace PetShop
         private System.Windows.Forms.MonthCalendar ca1FechaNacimiento;
         private System.Windows.Forms.Button btnLimpiar;
         private System.Windows.Forms.Label lblTitulo;
-        private System.Windows.Forms.Button btnAltaEmpleado;
+        private System.Windows.Forms.Button btnAltaAdministrador;
         private System.Windows.Forms.Label lblInfo;
         private System.Windows.Forms.PictureBox pictureBox1;
     }

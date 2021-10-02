@@ -14,11 +14,20 @@ namespace PetShop
 {
     public partial class FrmAltaCliente : Form
     {
+        #region Carga de datos
+        /// <summary>
+        /// Carga los componentes gráficos del formulario
+        /// </summary>
         public FrmAltaCliente()
         {
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Carga algunos datos antes de mostrar el formulario
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void FrmAltaCliente_Load(object sender, EventArgs e)
         {
             this.cmbSexo.Text = "Masculino";
@@ -28,7 +37,14 @@ namespace PetShop
                 this.BackColor = Color.AntiqueWhite;
             }
         }
+        #endregion
 
+        #region Botones
+        /// <summary>
+        /// Crea un cliente con los datos ingresados por el usuario
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnAltaCliente_Click(object sender, EventArgs e)
         {
             double sueldo;
@@ -67,6 +83,11 @@ namespace PetShop
             }
         }
 
+        /// <summary>
+        /// Borra cualquier cosa escrita en los textBox
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
             txtNombre.Text = string.Empty;
@@ -76,17 +97,26 @@ namespace PetShop
             txtDomicilio.Text = string.Empty;
             ReproducirSonidoBoton();
         }
+        #endregion
 
+        #region Sonido
+        /// <summary>
+        /// Reproduce un sonido indicando que todo salió correctamente
+        /// </summary>
         private void ReproducirSonidoExito()
         {
             SoundPlayer sonidoExito = new SoundPlayer(@"D:\UTN\Segundo cuatrimestre\Programacion II\Examenes\PrimerExamen\Sonidos\Exito.wav");
             sonidoExito.Play();
         }
 
+        /// <summary>
+        /// Reproduce un sonido indicando que algo falló
+        /// </summary>
         private void ReproducirSonidoBoton()
         {
             SoundPlayer sonidoExito = new SoundPlayer(@"D:\UTN\Segundo cuatrimestre\Programacion II\Examenes\PrimerExamen\Sonidos\Boton.wav");
             sonidoExito.Play();
         }
+        #endregion
     }
 }

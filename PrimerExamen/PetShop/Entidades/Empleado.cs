@@ -38,7 +38,8 @@ namespace Entidades
         /// <param name="sexo">Sexo del empleado</param>
         /// <param name="nacionalidad">Nacionalidad del empleado</param>
         /// <param name="domicilio">Domicilio del empleado</param>
-        public Empleado(string usuario, string password, double sueldo, EPuesto puesto, string[] diasLaborales, DateTime horarioEntrada, DateTime horarioSalida, int idEmpleado, string nombre, string apellido, DateTime fechaNacimiento, long dni, string sexo, string nacionalidad, string domicilio) : base(nombre, apellido, fechaNacimiento, dni, sexo, nacionalidad, domicilio)
+        public Empleado(string usuario, string password, double sueldo, EPuesto puesto, string[] diasLaborales, DateTime horarioEntrada, DateTime horarioSalida, int idEmpleado, string nombre, string apellido, DateTime fechaNacimiento, long dni, string sexo, string nacionalidad, string domicilio)
+            : base(nombre, apellido, fechaNacimiento, dni, sexo, nacionalidad, domicilio)
         {
             this.Usuario = usuario;
             this.Password = password;
@@ -82,6 +83,11 @@ namespace Entidades
             listaClientes.Remove(cliente);
         }
 
+        /// <summary>
+        /// Muestra los datos de un cliente
+        /// </summary>
+        /// <param name="cliente">Cliente a mostrar</param>
+        /// <returns>Retorna un string con todos los datos</returns>
         public static string MostrarCliente(Cliente cliente)
         {
             StringBuilder st = new StringBuilder();
@@ -106,7 +112,7 @@ namespace Entidades
         /// <param name="precio">Precio del producto</param>
         /// <param name="peso">Peso del producto</param>
         /// <param name="stock">Stock del producto</param>
-        /// <returns></returns>
+        /// <returns>Retorna el producto creado</returns>
         public static Producto AltaProducto(string nombre, string marca, ETipo tipo, double precio, double peso, int stock)
         {
             idProducto++;
@@ -127,6 +133,10 @@ namespace Entidades
         }
         #endregion
 
+        /// <summary>
+        /// Muestra los datos de un producto empleado
+        /// </summary>
+        /// <returns>Retorna un string con todos los datos</returns>
         public override string Mostrar()
         {
             StringBuilder st = new StringBuilder();

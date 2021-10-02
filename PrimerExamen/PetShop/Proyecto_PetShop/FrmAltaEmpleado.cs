@@ -14,11 +14,20 @@ namespace PetShop
 {
     public partial class FrmAltaEmpleado : Form
     {
+        #region Carga de datos
+        /// <summary>
+        /// Carga los componentes gráficos del formulario
+        /// </summary>
         public FrmAltaEmpleado()
         {
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Carga algunos datos antes de mostrar el formulario
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void FrmAltaEmpleado_Load(object sender, EventArgs e)
         {
             this.lstPuesto.DataSource = Enum.GetValues(typeof(EPuesto));
@@ -29,7 +38,14 @@ namespace PetShop
                 this.BackColor = Color.AntiqueWhite;
             }
         }
+        #endregion
 
+        #region Botones
+        /// <summary>
+        /// Crea un cliente con los datos ingresados por el usuario
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnAltaEmpleado_Click(object sender, EventArgs e)
         {
             string usuario;
@@ -121,6 +137,11 @@ namespace PetShop
             }
         }
 
+        /// <summary>
+        /// Borra cualquier cosa escrita en los textBox y desmarca las casillas de los días
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
             txtUsuario.Text = string.Empty;
@@ -138,17 +159,26 @@ namespace PetShop
             }
             ReproducirSonidoBoton();
         }
+        #endregion
 
+        #region Sonido
+        /// <summary>
+        /// Reproduce un sonido indicando que todo salió correctamente
+        /// </summary>
         private void ReproducirSonidoExito()
         {
             SoundPlayer sonidoExito = new SoundPlayer(@"D:\UTN\Segundo cuatrimestre\Programacion II\Examenes\PrimerExamen\Sonidos\Exito.wav");
             sonidoExito.Play();
         }
 
+        /// <summary>
+        /// Reproduce un sonido indicando que algo falló
+        /// </summary>
         private void ReproducirSonidoBoton()
         {
             SoundPlayer sonidoExito = new SoundPlayer(@"D:\UTN\Segundo cuatrimestre\Programacion II\Examenes\PrimerExamen\Sonidos\Boton.wav");
             sonidoExito.Play();
         }
+        #endregion
     }
 }

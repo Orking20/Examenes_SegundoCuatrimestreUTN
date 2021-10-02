@@ -13,11 +13,20 @@ namespace PetShop
 {
     public partial class FrmMostrarEmpleados : Form
     {
+        #region Carga de datos
+        /// <summary>
+        /// Carga los componentes gráficos del formulario
+        /// </summary>
         public FrmMostrarEmpleados()
         {
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Carga algunos datos antes de mostrar el formulario
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void FrmMostrarEmpleados_Load(object sender, EventArgs e)
         {
             MostrarEmpleados();
@@ -27,7 +36,12 @@ namespace PetShop
                 this.BackColor = Color.AntiqueWhite;
             }
         }
+        #endregion
 
+        #region Metodos
+        /// <summary>
+        /// Muestra todos los empleados
+        /// </summary>
         private void MostrarEmpleados()
         {
             Empleado empleado;
@@ -82,5 +96,6 @@ namespace PetShop
                 lblHoraSalida.Text = horaSalida.ToString();
             }
         }
+        #endregion
     }
 }
