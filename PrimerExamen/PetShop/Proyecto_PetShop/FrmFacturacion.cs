@@ -76,7 +76,7 @@ namespace PetShop
                     cantidades.AppendLine(stock.ToString());
                     preciosTotales.AppendLine(precioTotal.ToString());
 
-                    TextWriter texto = new StreamWriter("D:\\UTN\\Segundo cuatrimestre\\Programacion II\\Examenes\\PrimerExamen\\Facturas.txt", true);
+                    TextWriter texto = new StreamWriter($"{FrmLogin.Path}\\Facturas.txt", true);
                     texto.WriteLine($"ID: {cliente.IdCliente} | Nombre cliente: {cliente.Nombre} | Nombre producto: {producto.Nombre} | Precio: {producto.Precio} | Stock: {stock} | Precio Total: {precioTotal}");
                     texto.Close();
                 }

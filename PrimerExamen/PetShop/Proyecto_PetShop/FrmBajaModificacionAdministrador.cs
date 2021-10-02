@@ -504,8 +504,8 @@ namespace PetShop
         /// </summary>
         private void ReproducirSonidoExito()
         {
-            SoundPlayer sonidoExito = new SoundPlayer(@"D:\UTN\Segundo cuatrimestre\Programacion II\Examenes\PrimerExamen\Sonidos\Exito.wav");
-            sonidoExito.Play();
+            SoundPlayer sonido = new SoundPlayer($"{FrmLogin.Path}\\Sonidos\\Exito.wav");
+            sonido.Play();
         }
 
         /// <summary>
@@ -513,8 +513,8 @@ namespace PetShop
         /// </summary>
         private void ReproducirSonidoFallo()
         {
-            SoundPlayer sonidoFallo = new SoundPlayer(@"D:\UTN\Segundo cuatrimestre\Programacion II\Examenes\PrimerExamen\Sonidos\Fallo.wav");
-            sonidoFallo.Play();
+            SoundPlayer sonido = new SoundPlayer($"{FrmLogin.Path}\\Sonidos\\Fallo.wav");
+            sonido.Play();
         }
 
         /// <summary>
@@ -522,8 +522,8 @@ namespace PetShop
         /// </summary>
         private void ReproducirSonidoBoton()
         {
-            SoundPlayer sonidoExito = new SoundPlayer(@"D:\UTN\Segundo cuatrimestre\Programacion II\Examenes\PrimerExamen\Sonidos\Boton.wav");
-            sonidoExito.Play();
+            SoundPlayer sonido = new SoundPlayer($"{FrmLogin.Path}\\Sonidos\\Boton.wav");
+            sonido.Play();
         }
         #endregion
     }

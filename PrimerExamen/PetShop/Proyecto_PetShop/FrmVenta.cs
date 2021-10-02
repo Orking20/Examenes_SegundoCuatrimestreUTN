@@ -137,26 +137,6 @@ namespace PetShop
         }
         #endregion
 
-        #region Sonido
-        /// <summary>
-        /// Reproduce un sonido indicando que todo salió correctamente
-        /// </summary>
-        private void ReproducirSonidoExito()
-        {
-            SoundPlayer sonidoExito = new SoundPlayer(@"D:\UTN\Segundo cuatrimestre\Programacion II\Examenes\PrimerExamen\Sonidos\Exito.wav");
-            sonidoExito.Play();
-        }
-
-        /// <summary>
-        /// Reproduce un sonido indicando que algo falló
-        /// </summary>
-        private void ReproducirSonidoFallo()
-        {
-            SoundPlayer sonidoFallo = new SoundPlayer(@"D:\UTN\Segundo cuatrimestre\Programacion II\Examenes\PrimerExamen\Sonidos\Fallo.wav");
-            sonidoFallo.Play();
-        }
-        #endregion
-
         #region Metodos
         /// <summary>
         /// Busca el cliente seleccionado según el ID
@@ -247,6 +227,26 @@ namespace PetShop
             }
 
             return producto;
+        }
+        #endregion
+
+        #region Sonido
+        /// <summary>
+        /// Reproduce un sonido indicando que todo salió correctamente
+        /// </summary>
+        private void ReproducirSonidoExito()
+        {
+            SoundPlayer sonido = new SoundPlayer($"{FrmLogin.Path}\\Sonidos\\Exito.wav");
+            sonido.Play();
+        }
+
+        /// <summary>
+        /// Reproduce un sonido indicando que algo falló
+        /// </summary>
+        private void ReproducirSonidoFallo()
+        {
+            SoundPlayer sonido = new SoundPlayer($"{FrmLogin.Path}\\Sonidos\\Fallo.wav");
+            sonido.Play();
         }
         #endregion
 

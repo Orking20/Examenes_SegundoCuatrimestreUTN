@@ -400,8 +400,8 @@ namespace PetShop
         /// </summary>
         private void ReproducirSonidoBoton()
         {
-            SoundPlayer sonidoExito = new SoundPlayer(@"D:\UTN\Segundo cuatrimestre\Programacion II\Examenes\PrimerExamen\Sonidos\Boton.wav");
-            sonidoExito.Play();
+            SoundPlayer sonido = new SoundPlayer($"{FrmLogin.Path}\\Sonidos\\Boton.wav");
+            sonido.Play();
         }
         #endregion
     }

@@ -1,2 +1,4 @@
-2
-
+ID: 1 | Nombre cliente: Roberto | Nombre producto: Lata gastrointestinal | Precio: 311 | Stock: 1 | Precio Total: 311
+ID: 2 | Nombre cliente: Mariana | Nombre producto: Lata gastrointestinal | Precio: 311 | Stock: 1 | Precio Total: 311
+ID: 4 | Nombre cliente: Marcelo | Nombre producto: Hueso | Precio: 480 | Stock: 1 | Precio Total: 480
+ID: 1 | Nombre cliente: Roberto | Nombre producto: Hueso | Precio: 480 | Stock: 1 | Precio Total: 480

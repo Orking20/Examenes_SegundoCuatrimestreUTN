@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Media;
 using System.Text;
@@ -14,6 +15,7 @@ namespace PetShop
 {
     public partial class FrmLogin : Form
     {
+        private static string path;
         private static List<Empleado> empleados;
         private static List<Administrador> administradores;
         private static List<Producto> productos;
@@ -39,6 +41,7 @@ namespace PetShop
         private void FrmLogin_Load(object sender, EventArgs e)
         {
             Hardcodeo();
+            path = Directory.GetCurrentDirectory();
         }
         #endregion
 
@@ -309,6 +312,17 @@ namespace PetShop
                 return esAdmin;
             }
         }
+
+        /// <summary>
+        /// Devuelve el valor de path
+        /// </summary>
+        public static string Path
+        {
+            get
+            {
+                return path;
+            }
+        }
         #endregion
 
         #region Sonido
@@ -317,8 +331,8 @@ namespace PetShop
         /// </summary>
         private void ReproducirSonidoBoton()
         {
-            SoundPlayer sonidoExito = new SoundPlayer(@"D:\UTN\Segundo cuatrimestre\Programacion II\Examenes\PrimerExamen\Sonidos\Boton.wav");
-            sonidoExito.Play();
+            SoundPlayer sonido = new SoundPlayer($"{Path}\\Sonidos\\Boton.wav");
+            sonido.Play();
         }
         #endregion
     }
