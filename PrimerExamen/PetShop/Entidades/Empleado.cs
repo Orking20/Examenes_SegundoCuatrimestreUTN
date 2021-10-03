@@ -155,6 +155,52 @@ namespace Entidades
             return base.Mostrar() + st.ToString();
         }
 
+        #region Sobrecarga de operadores
+        /// <summary>
+        /// Compara dos empleados y retorna el que tenga mayor sueldo
+        /// </summary>
+        /// <param name="empleado1">Primer empleado a comparar</param>
+        /// <param name="empleado2">Segundo empleado a comparar</param>
+        /// <returns>Retorna el empleado con mayor sueldo</returns>
+        public static Empleado operator + (Empleado empleado1, Empleado empleado2)
+        {
+            Empleado empleadoMasPagado;
+
+            if (empleado1.Sueldo > empleado2.Sueldo)
+            {
+                empleadoMasPagado = empleado1;
+            }
+            else
+            {
+                empleadoMasPagado = empleado2;
+            }
+
+            return empleadoMasPagado;
+        }
+
+        /// <summary>
+        /// Compara dos empleados y retorna el que tenga menor sueldo
+        /// </summary>
+        /// <param name="empleado1">Primer empleado a comparar</param>
+        /// <param name="empleado2">Segundo empleado a comparar</param>
+        /// <returns>Retorna el empleado con menor sueldo</returns>
+        public static Empleado operator - (Empleado empleado1, Empleado empleado2)
+        {
+            Empleado empleadoMasPagado;
+
+            if (empleado1.Sueldo < empleado2.Sueldo)
+            {
+                empleadoMasPagado = empleado1;
+            }
+            else
+            {
+                empleadoMasPagado = empleado2;
+            }
+
+            return empleadoMasPagado;
+        }
+        #endregion
+
         #region Getters/Setters
         /// <summary>
         /// Devuelve o establece el valor de usuario

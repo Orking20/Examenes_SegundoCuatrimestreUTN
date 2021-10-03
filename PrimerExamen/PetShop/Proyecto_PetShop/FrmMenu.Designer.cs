@@ -184,7 +184,7 @@ namespace PetShop
             this.btnFacturacion.Name = "btnFacturacion";
             this.btnFacturacion.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnFacturacion.Size = new System.Drawing.Size(221, 44);
-            this.btnFacturacion.TabIndex = 60;
+            this.btnFacturacion.TabIndex = 17;
             this.btnFacturacion.Text = "Facturación";
             this.btnFacturacion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnFacturacion.UseVisualStyleBackColor = true;
@@ -216,7 +216,7 @@ namespace PetShop
             this.btnMostrarAdmin.Name = "btnMostrarAdmin";
             this.btnMostrarAdmin.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
             this.btnMostrarAdmin.Size = new System.Drawing.Size(221, 39);
-            this.btnMostrarAdmin.TabIndex = 20;
+            this.btnMostrarAdmin.TabIndex = 16;
             this.btnMostrarAdmin.Text = "Mostrar";
             this.btnMostrarAdmin.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnMostrarAdmin.UseVisualStyleBackColor = false;
@@ -235,7 +235,7 @@ namespace PetShop
             this.btnBajaModificacionAdmin.Name = "btnBajaModificacionAdmin";
             this.btnBajaModificacionAdmin.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
             this.btnBajaModificacionAdmin.Size = new System.Drawing.Size(221, 39);
-            this.btnBajaModificacionAdmin.TabIndex = 60;
+            this.btnBajaModificacionAdmin.TabIndex = 15;
             this.btnBajaModificacionAdmin.Text = "Baja/Modificación";
             this.btnBajaModificacionAdmin.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnBajaModificacionAdmin.UseVisualStyleBackColor = false;
@@ -254,7 +254,7 @@ namespace PetShop
             this.btnAltaAdmin.Name = "btnAltaAdmin";
             this.btnAltaAdmin.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
             this.btnAltaAdmin.Size = new System.Drawing.Size(221, 39);
-            this.btnAltaAdmin.TabIndex = 18;
+            this.btnAltaAdmin.TabIndex = 14;
             this.btnAltaAdmin.Text = "Alta";
             this.btnAltaAdmin.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAltaAdmin.UseVisualStyleBackColor = false;
@@ -272,7 +272,7 @@ namespace PetShop
             this.btnAdmin.Name = "btnAdmin";
             this.btnAdmin.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnAdmin.Size = new System.Drawing.Size(221, 44);
-            this.btnAdmin.TabIndex = 17;
+            this.btnAdmin.TabIndex = 13;
             this.btnAdmin.Text = "Administradores";
             this.btnAdmin.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAdmin.UseVisualStyleBackColor = true;
@@ -304,7 +304,7 @@ namespace PetShop
             this.btnMostrarEmpleados.Name = "btnMostrarEmpleados";
             this.btnMostrarEmpleados.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
             this.btnMostrarEmpleados.Size = new System.Drawing.Size(221, 39);
-            this.btnMostrarEmpleados.TabIndex = 15;
+            this.btnMostrarEmpleados.TabIndex = 12;
             this.btnMostrarEmpleados.Text = "Mostrar";
             this.btnMostrarEmpleados.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnMostrarEmpleados.UseVisualStyleBackColor = false;
@@ -323,7 +323,7 @@ namespace PetShop
             this.btnBajaModificacionEmpleados.Name = "btnBajaModificacionEmpleados";
             this.btnBajaModificacionEmpleados.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
             this.btnBajaModificacionEmpleados.Size = new System.Drawing.Size(221, 39);
-            this.btnBajaModificacionEmpleados.TabIndex = 13;
+            this.btnBajaModificacionEmpleados.TabIndex = 11;
             this.btnBajaModificacionEmpleados.Text = "Baja/Modificación";
             this.btnBajaModificacionEmpleados.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnBajaModificacionEmpleados.UseVisualStyleBackColor = false;
@@ -342,7 +342,7 @@ namespace PetShop
             this.btnAltaEmpleados.Name = "btnAltaEmpleados";
             this.btnAltaEmpleados.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
             this.btnAltaEmpleados.Size = new System.Drawing.Size(221, 39);
-            this.btnAltaEmpleados.TabIndex = 12;
+            this.btnAltaEmpleados.TabIndex = 10;
             this.btnAltaEmpleados.Text = "Alta";
             this.btnAltaEmpleados.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAltaEmpleados.UseVisualStyleBackColor = false;
@@ -360,7 +360,7 @@ namespace PetShop
             this.btnEmpleados.Name = "btnEmpleados";
             this.btnEmpleados.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnEmpleados.Size = new System.Drawing.Size(221, 44);
-            this.btnEmpleados.TabIndex = 11;
+            this.btnEmpleados.TabIndex = 9;
             this.btnEmpleados.Text = "Empleados";
             this.btnEmpleados.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnEmpleados.UseVisualStyleBackColor = true;
@@ -379,7 +379,7 @@ namespace PetShop
             this.btnVentas.Name = "btnVentas";
             this.btnVentas.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnVentas.Size = new System.Drawing.Size(221, 44);
-            this.btnVentas.TabIndex = 10;
+            this.btnVentas.TabIndex = 8;
             this.btnVentas.Text = "Ventas";
             this.btnVentas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnVentas.UseVisualStyleBackColor = true;
@@ -410,7 +410,7 @@ namespace PetShop
             this.btnMostrarProductos.Name = "btnMostrarProductos";
             this.btnMostrarProductos.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
             this.btnMostrarProductos.Size = new System.Drawing.Size(221, 39);
-            this.btnMostrarProductos.TabIndex = 9;
+            this.btnMostrarProductos.TabIndex = 7;
             this.btnMostrarProductos.Text = "Mostrar";
             this.btnMostrarProductos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnMostrarProductos.UseVisualStyleBackColor = false;
@@ -429,7 +429,7 @@ namespace PetShop
             this.btnEliminarModificarProfuctos.Name = "btnEliminarModificarProfuctos";
             this.btnEliminarModificarProfuctos.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
             this.btnEliminarModificarProfuctos.Size = new System.Drawing.Size(221, 39);
-            this.btnEliminarModificarProfuctos.TabIndex = 7;
+            this.btnEliminarModificarProfuctos.TabIndex = 6;
             this.btnEliminarModificarProfuctos.Text = "Eliminar/Modificar";
             this.btnEliminarModificarProfuctos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnEliminarModificarProfuctos.UseVisualStyleBackColor = false;
@@ -448,7 +448,7 @@ namespace PetShop
             this.btnAgregarProductos.Name = "btnAgregarProductos";
             this.btnAgregarProductos.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
             this.btnAgregarProductos.Size = new System.Drawing.Size(221, 39);
-            this.btnAgregarProductos.TabIndex = 6;
+            this.btnAgregarProductos.TabIndex = 5;
             this.btnAgregarProductos.Text = "Agregar";
             this.btnAgregarProductos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAgregarProductos.UseVisualStyleBackColor = false;
@@ -466,7 +466,7 @@ namespace PetShop
             this.btnProductos.Name = "btnProductos";
             this.btnProductos.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnProductos.Size = new System.Drawing.Size(221, 44);
-            this.btnProductos.TabIndex = 5;
+            this.btnProductos.TabIndex = 4;
             this.btnProductos.Text = "Productos";
             this.btnProductos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnProductos.UseVisualStyleBackColor = true;
@@ -497,7 +497,7 @@ namespace PetShop
             this.btnMostrarClientes.Name = "btnMostrarClientes";
             this.btnMostrarClientes.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
             this.btnMostrarClientes.Size = new System.Drawing.Size(221, 39);
-            this.btnMostrarClientes.TabIndex = 4;
+            this.btnMostrarClientes.TabIndex = 3;
             this.btnMostrarClientes.Text = "Mostrar";
             this.btnMostrarClientes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnMostrarClientes.UseVisualStyleBackColor = false;
@@ -566,6 +566,7 @@ namespace PetShop
             this.btnCambioPass.TabIndex = 59;
             this.btnCambioPass.Text = "Cambiar password";
             this.btnCambioPass.UseVisualStyleBackColor = false;
+            this.btnCambioPass.Click += new System.EventHandler(this.btnCambioPass_Click);
             // 
             // lblFecha
             // 

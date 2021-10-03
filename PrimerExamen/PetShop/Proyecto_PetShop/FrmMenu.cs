@@ -34,6 +34,8 @@ namespace PetShop
         /// <param name="e"></param>
         private void FrmMenu_Load(object sender, EventArgs e)
         {
+            AbrirFormularioHijo(new FrmMostrarProducto());
+
             if (flagPrimeraVez)
             {
                 clientes = new List<Cliente>();
@@ -360,6 +362,16 @@ namespace PetShop
         {
             AbrirFormularioHijo(new FrmMostrarProducto());
         }
+
+        /// <summary>
+        /// Abre un formulario para cambiar la contraseña de usuario
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnCambioPass_Click(object sender, EventArgs e)
+        {
+            AbrirFormularioHijo(new FrmUsuarioPass());
+        }
         #endregion
 
         #region Fecha y hora
@@ -404,5 +416,6 @@ namespace PetShop
             sonido.Play();
         }
         #endregion
+
     }
 }

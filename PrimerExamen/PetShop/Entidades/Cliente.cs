@@ -63,6 +63,21 @@ namespace Entidades
         }
         #endregion
 
+        #region Implicit
+        /// <summary>
+        /// Junta en un mismo string el nombre y apellido de un cliente
+        /// </summary>
+        /// <param name="cliente"></param>
+        public static implicit operator string(Cliente cliente)
+        {
+            string nombreConApellido;
+
+            nombreConApellido = $"{cliente.Nombre} {cliente.Apellido}";
+
+            return nombreConApellido;
+        }
+        #endregion
+
         #region Validaciones
         /// <summary>
         /// Valida que el saldo sea mayor o igual a 0 

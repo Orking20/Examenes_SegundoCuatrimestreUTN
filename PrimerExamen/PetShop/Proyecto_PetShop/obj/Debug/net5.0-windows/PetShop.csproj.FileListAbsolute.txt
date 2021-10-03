@@ -35,3 +35,4 @@ D:\UTN\Segundo cuatrimestre\Programacion II\Examenes\PrimerExamen\PetShop\Proyec
 D:\UTN\Segundo cuatrimestre\Programacion II\Examenes\PrimerExamen\PetShop\Proyecto_PetShop\obj\Debug\net5.0-windows\PetShop.FrmMostrarProducto.resources
 D:\UTN\Segundo cuatrimestre\Programacion II\Examenes\PrimerExamen\PetShop\Proyecto_PetShop\obj\Debug\net5.0-windows\PetShop.FrmVenta.resources
 D:\UTN\Segundo cuatrimestre\Programacion II\Examenes\PrimerExamen\PetShop\Proyecto_PetShop\obj\Debug\net5.0-windows\PetShop.FrmFacturacion.resources
+D:\UTN\Segundo cuatrimestre\Programacion II\Examenes\PrimerExamen\PetShop\Proyecto_PetShop\obj\Debug\net5.0-windows\PetShop.FrmUsuarioPass.resources

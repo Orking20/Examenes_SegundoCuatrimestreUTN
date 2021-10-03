@@ -166,7 +166,7 @@ namespace PetShop
             this.btnLimpiar.Location = new System.Drawing.Point(107, 504);
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.Size = new System.Drawing.Size(56, 25);
-            this.btnLimpiar.TabIndex = 4;
+            this.btnLimpiar.TabIndex = 5;
             this.btnLimpiar.Text = "Limpiar";
             this.btnLimpiar.UseVisualStyleBackColor = false;
             this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
@@ -181,7 +181,7 @@ namespace PetShop
             this.btnAutoCompletar.Location = new System.Drawing.Point(78, 473);
             this.btnAutoCompletar.Name = "btnAutoCompletar";
             this.btnAutoCompletar.Size = new System.Drawing.Size(112, 25);
-            this.btnAutoCompletar.TabIndex = 12;
+            this.btnAutoCompletar.TabIndex = 4;
             this.btnAutoCompletar.Text = "Auto completar";
             this.btnAutoCompletar.UseVisualStyleBackColor = false;
             this.btnAutoCompletar.Click += new System.EventHandler(this.btnAutoCompletar_Click);

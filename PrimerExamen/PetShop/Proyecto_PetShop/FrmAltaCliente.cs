@@ -55,6 +55,7 @@ namespace PetShop
             string sexo;
             string nacionalidad;
             string domicilio;
+            string nombreYApellido;
             Cliente clienteNuevo;
             Random sueldoRandom = new Random();
 
@@ -75,6 +76,9 @@ namespace PetShop
             
                 clienteNuevo = Empleado.AltaCliente(sueldo, nombre, apellido, fechaNacimiento, dni, sexo, nacionalidad, domicilio);
                 FrmMenu.Clientes.Add(clienteNuevo);
+
+                nombreYApellido = clienteNuevo;
+                MessageBox.Show($"{nombreYApellido} fue agregado correctamente");
                 ReproducirSonidoExito();
             }
             else

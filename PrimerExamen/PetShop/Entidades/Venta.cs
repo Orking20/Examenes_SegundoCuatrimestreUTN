@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
-    public sealed class Venta
+    public static class Venta
     {
         #region Metodos
         /// <summary>

@@ -196,6 +196,10 @@ namespace PetShop
             Producto producto18 = Empleado.AltaProducto("Golosina huesito", "Royal canin", ETipo.alimento, 220, 0.250, 38);
             Producto producto19 = Empleado.AltaProducto("Pelota dental", "Dog Chow", ETipo.juguete, 1481, 1, 22);
             Producto producto20 = Empleado.AltaProducto("Golosina gatuna", "Royal canin", ETipo.alimento, 340, 0.700, 31);
+            Cliente cliente1 = new Cliente(2000, 1, "Roberto", "Morales", Convert.ToDateTime("14/05/1992"), 37452102, "Masculino", "Argentina", "Charlone 1302");
+            Cliente cliente2 = new Cliente(4200, 2, "Mariana", "Rodriguez", Convert.ToDateTime("03/12/1962"), 30640222, "Femenino", "Argentina", "Moldes 1429");
+            Factura factura1 = new Factura(cliente1, producto8, 1);
+            Factura factura2 = new Factura(cliente2, producto17, 4);
 
             empleados.Add(empleado1);
             empleados.Add(empleado2);
@@ -232,6 +236,9 @@ namespace PetShop
             productos.Add(producto18);
             productos.Add(producto19);
             productos.Add(producto20);
+
+            facturas.Add(factura1);
+            facturas.Add(factura2);
         }
         #endregion
 
