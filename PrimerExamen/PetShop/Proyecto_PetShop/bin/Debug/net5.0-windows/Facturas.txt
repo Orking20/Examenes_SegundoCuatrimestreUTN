@@ -1,6 +1,2 @@
-ID: 2 | Nombre cliente: Mariana | Nombre producto: Lata pollo | Precio: 247 | Stock: 4 | Precio Total: 988
 ID: 1 | Nombre cliente: Roberto | Nombre producto: Trepador para gatos | Precio: 2600 | Stock: 1 | Precio Total: 2600
 ID: 2 | Nombre cliente: Mariana | Nombre producto: Lata pollo | Precio: 247 | Stock: 4 | Precio Total: 988
-ID: 1 | Nombre cliente: Roberto | Nombre producto: Hueso | Precio: 480 | Stock: 1 | Precio Total: 480
-ID: 1 | Nombre cliente: Roberto | Nombre producto: Hueso | Precio: 480 | Stock: 3 | Precio Total: 1440
-ID: 2 | Nombre cliente: Mariana | Nombre producto: Hueso | Precio: 480 | Stock: 3 | Precio Total: 1440
